@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>nautargo — strumenti semplici per problemi reali</title>
+<meta name="description" content="Nautargo crea app che uniscono creatività e intelligenza artificiale per risolvere piccoli problemi quotidiani.">
+<meta property="og:title" content="nautargo">
+<meta property="og:description" content="Strumenti semplici per problemi reali.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nautargo.com">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22300%2085%20220%20335%22%3E%3Cpath%20d%3D%22M475.937%2098.7457L452.965%20215.21L351.835%20240.434L475.937%2098.7457Z%22%20fill%3D%22%232B3840%22%2F%3E%3Cpath%20d%3D%22M452.945%20215.214L351.845%20240.423L408.472%20267.511L452.945%20215.214Z%22%20fill%3D%22%23263039%22%2F%3E%3Cpath%20d%3D%22M351.84%20240.421L407.127%20266.797L335.389%20347.492L351.84%20240.421Z%22%20fill%3D%22%232F3A40%22%2F%3E%3Cpath%20d%3D%22M438.972%20261.011L452.957%20215.21L491.352%20298.816L438.972%20261.011Z%22%20fill%3D%22%232D3A42%22%2F%3E%3Cpath%20d%3D%22M335.397%20347.455L377.479%20344.597L459.711%20301.475L438.972%20261.011L335.397%20347.455Z%22%20fill%3D%22%23242F37%22%2F%3E%3Cpath%20d%3D%22M335.386%20347.489L438.972%20261.011L452.961%20215.198L335.386%20347.489Z%22%20fill%3D%22%233F484F%22%2F%3E%3Cpath%20d%3D%22M459.695%20301.468L491.357%20298.844L438.98%20261.015L459.695%20301.468Z%22%20fill%3D%22%233F484E%22%2F%3E%3Cpath%20d%3D%22M311.404%20363.14L392.687%20408.599L381.125%20357.818L311.404%20363.14Z%22%20fill%3D%22%23CB763F%22%2F%3E%3Cpath%20d%3D%22M392.678%20408.589L418.308%20408.507L503.519%20311.874L463.239%20314.994L381.119%20357.813L392.678%20408.589Z%22%20fill%3D%22%23D07C49%22%2F%3E%3Cpath%20d%3D%22M507.958%20359.386L503.521%20311.871L418.301%20408.507L507.958%20359.386Z%22%20fill%3D%22%23C06A37%22%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --slate:#2B3036;
+    --slate-deep:#22262B;
+    --slate-soft:#4A515A;
+    --sunset:#DD7A3B;
+    --amber:#E8A867;
+    --paper:#FAF8F5;
+    --paper-warm:#F6EFE6;
+    --paper-line:#EDE7DE;
+    --on-dark:#F4EFE8;
+    --on-dark-dim:#B8BDC4;
+    --radius:16px;
+    --maxw:960px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Poppins',system-ui,sans-serif;
+    font-weight:400;
+    color:var(--slate);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  button{font:inherit;cursor:pointer}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+    background:var(--paper);
+  }
+  /* Forme poligonali di sfondo (parallasse), nei colori palette */
+  .shape{position:absolute;pointer-events:none;will-change:transform}
+  .s1{top:-6%;right:-4%;width:38vw;max-width:440px;aspect-ratio:1;
+      background:rgba(221,122,59,.10);
+      clip-path:polygon(62% 0,100% 52%,32% 100%,0 42%)}
+  .s2{bottom:-12%;left:-6%;width:34vw;max-width:400px;aspect-ratio:1;
+      background:rgba(232,168,103,.16);
+      clip-path:polygon(0 28%,78% 0,100% 72%,26% 100%)}
+  .s3{top:22%;left:8%;width:14vw;max-width:150px;aspect-ratio:1;
+      background:rgba(43,48,54,.05);
+      clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+  .s4{bottom:16%;right:12%;width:11vw;max-width:120px;aspect-ratio:1;
+      background:rgba(221,122,59,.14);
+      clip-path:polygon(20% 0,100% 30%,80% 100%,0 70%)}
+
+  .hero-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;padding:48px 24px}
+  .mark{width:clamp(150px,24vw,230px);height:auto;
+        filter:drop-shadow(0 14px 24px rgba(43,48,54,.14))}
+  /* Scafo: rollio di tutto il blocco */
+  .mark .hull{transform-box:fill-box;transform-origin:center;
+        animation:roll 6.5s ease-in-out infinite}
+  @keyframes roll{
+    0%,100%{transform:rotate(-1.3deg)}
+    50%{transform:rotate(1.3deg)}
+  }
+  /* Vela: traslazioni leggere e sfasate (vento) */
+  .mark .v{will-change:transform}
+  .mark .wa{animation:windA 4.6s ease-in-out infinite}
+  .mark .wb{animation:windB 5.8s ease-in-out infinite}
+  .mark .wc{animation:windC 5.2s ease-in-out infinite}
+  @keyframes windA{0%,100%{transform:translate(0,0)}50%{transform:translate(2.6px,-1.6px)}}
+  @keyframes windB{0%,100%{transform:translate(0,0)}50%{transform:translate(-1.8px,1px)}}
+  @keyframes windC{0%,100%{transform:translate(1.3px,.4px)}50%{transform:translate(-1.3px,-.9px)}}
+  .wordmark{
+    font-weight:600;
+    font-size:clamp(30px,5.4vw,46px);
+    letter-spacing:-.015em;
+    line-height:1.05;
+    margin-top:18px;
+    color:var(--slate);
+  }
+  .tagline{
+    font-weight:500;
+    font-size:clamp(15px,2.4vw,19px);
+    margin-top:10px;
+    color:var(--slate-soft);
+  }
+  .hero-cue{
+    position:absolute;left:50%;bottom:26px;transform:translateX(-50%);
+    z-index:1;opacity:.4;font-size:22px;line-height:1;
+    animation:cue 2.6s ease-in-out infinite;text-decoration:none;color:var(--slate);
+  }
+  @keyframes cue{
+    0%,100%{transform:translateX(-50%) translateY(0)}
+    50%{transform:translateX(-50%) translateY(7px)}
+  }
+
+  /* ---------- Sezioni ---------- */
+  section{padding:96px 0}
+  .eyebrow{
+    display:inline-block;font-size:13px;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--sunset);margin-bottom:14px;
+  }
+
+  /* ---------- Sero ---------- */
+  .sero{background:var(--paper-warm)}
+  .sero-card{
+    display:flex;align-items:center;gap:40px;
+    background:#fff;border:1px solid var(--paper-line);border-radius:var(--radius);
+    padding:48px;box-shadow:0 6px 30px rgba(43,48,54,.05);
+  }
+  .sero-logo{flex:0 0 auto;width:96px;height:96px}
+  .sero-name{font-weight:600;font-size:clamp(30px,4.5vw,40px);letter-spacing:-.01em;line-height:1.1}
+  .sero-desc{margin-top:8px;color:var(--slate-soft);max-width:46ch}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+  .store-btn{
+    display:inline-flex;align-items:center;gap:11px;
+    padding:10px 18px;border-radius:12px;text-decoration:none;
+    background:var(--slate);color:var(--on-dark);border:1px solid var(--slate);
+    transition:background .2s,transform .2s,opacity .2s;
+  }
+  .store-btn:hover{background:var(--slate-deep);transform:translateY(-1px)}
+  .store-btn svg{flex:0 0 auto}
+  .store-tx{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+  .store-top{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+  .store-name{font-size:16px;font-weight:600}
+  .store-btn[aria-disabled="true"]{opacity:.55;cursor:not-allowed;pointer-events:none}
+
+  /* ---------- Novità ---------- */
+  .news{background:var(--slate);color:var(--on-dark);text-align:center}
+  .news h2{font-weight:600;font-size:clamp(26px,4vw,34px);letter-spacing:-.01em}
+  .news p{max-width:46ch;margin:14px auto 0;color:var(--on-dark-dim)}
+  .btn-sunset{
+    display:inline-flex;align-items:center;gap:10px;margin-top:30px;
+    padding:14px 28px;border-radius:999px;border:none;
+    font-weight:600;font-size:16px;background:var(--sunset);color:#fff;text-decoration:none;
+    transition:background .2s,transform .2s;
+  }
+  .btn-sunset:hover{background:#C96A2F;transform:translateY(-1px)}
+  .news-form{max-width:440px;margin:30px auto 0;text-align:left}
+  .news-form .row{display:flex;gap:10px}
+  .news-form input[type="email"]{
+    flex:1;padding:13px 16px;border-radius:999px;border:1.5px solid var(--slate-soft);
+    background:var(--slate-deep);color:var(--on-dark);font:inherit;font-size:15px;
+  }
+  .news-form input[type="email"]::placeholder{color:var(--on-dark-dim)}
+  .consent{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:13px;color:var(--on-dark-dim)}
+  .consent input{margin-top:4px;accent-color:var(--sunset)}
+  .consent a{color:var(--amber)}
+  .form-msg{margin-top:12px;font-size:14px;color:var(--amber);min-height:1.4em}
+  [hidden]{display:none !important}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--slate-deep);color:var(--on-dark-dim);padding:36px 0;font-size:14px}
+  .foot-row{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+  .foot-links{display:flex;gap:22px;align-items:center}
+  .foot-links a{text-decoration:none;transition:color .2s}
+  .foot-links a:hover{color:var(--on-dark)}
+  .langs{display:flex;gap:4px}
+  .lang{background:none;border:none;color:var(--on-dark-dim);font-weight:500;font-size:13px;
+    letter-spacing:.06em;padding:6px 8px;border-radius:8px;transition:color .2s}
+  .lang:hover{color:var(--on-dark)}
+  .lang.active{color:var(--sunset);font-weight:600}
+  .copy{opacity:.7}
+
+  /* ---------- Overlay privacy ---------- */
+  .overlay{position:fixed;inset:0;z-index:50;background:rgba(34,38,43,.6);
+    display:flex;align-items:center;justify-content:center;padding:24px}
+  .overlay-panel{background:#fff;color:var(--slate);max-width:640px;width:100%;
+    max-height:82vh;overflow-y:auto;border-radius:var(--radius);padding:36px;position:relative}
+  .overlay-panel h3{font-weight:600;font-size:22px;margin-bottom:8px}
+  .overlay-panel h4{font-weight:600;font-size:16px;margin:24px 0 8px}
+  .overlay-panel p,.overlay-panel li{font-size:14px;color:var(--slate-soft)}
+  .overlay-panel ul{padding-left:20px;display:grid;gap:6px;margin-top:8px}
+  .overlay-close{position:absolute;top:14px;right:14px;background:none;border:none;
+    font-size:22px;line-height:1;color:var(--slate-soft);padding:8px;border-radius:8px}
+  .overlay-close:hover{color:var(--slate)}
+  .ph{background:#FBEFE3;border-radius:4px;padding:0 4px}
+
+  /* ---------- Reveal ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  :focus-visible{outline:3px solid var(--sunset);outline-offset:3px;border-radius:6px}
+
+  @media (prefers-reduced-motion:reduce){
+    .mark .hull,.mark .v{animation:none}
+    .hero-cue{animation:none}
+    .shape{transform:none !important}
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+  @media (max-width:640px){
+    section{padding:72px 0}
+    .sero-card{flex-direction:column;text-align:center;padding:36px 24px}
+    .sero-desc{margin-left:auto;margin-right:auto}
+    .cta-row{justify-content:center}
+    .foot-row{flex-direction:column;justify-content:center;text-align:center}
+    .news-form .row{flex-direction:column}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="shape s1" data-speed="0.18"></div>
+  <div class="shape s2" data-speed="0.30"></div>
+  <div class="shape s3" data-speed="0.45"></div>
+  <div class="shape s4" data-speed="0.55"></div>
+
+  <div class="hero-inner">
+    <svg class="mark" viewBox="300 85 220 335" role="img" aria-label="Logo Nautargo" xmlns="http://www.w3.org/2000/svg">
+      <g class="sail">
+        <path class="v wa" d="M475.937 98.7457L452.965 215.21L351.835 240.434L475.937 98.7457Z" fill="#2B3840"/>
+        <path class="v wb" d="M452.945 215.214L351.845 240.423L408.472 267.511L452.945 215.214Z" fill="#263039"/>
+        <path class="v wc" d="M351.84 240.421L407.127 266.797L335.389 347.492L351.84 240.421Z" fill="#2F3A40"/>
+        <path class="v wb" d="M438.972 261.011L452.957 215.21L491.352 298.816L438.972 261.011Z" fill="#2D3A42"/>
+        <path class="v wa" d="M335.397 347.455L377.479 344.597L459.711 301.475L438.972 261.011L335.397 347.455Z" fill="#242F37"/>
+        <path class="v wc" d="M335.386 347.489L438.972 261.011L452.961 215.198L335.386 347.489Z" fill="#3F484F"/>
+        <path class="v wb" d="M459.695 301.468L491.357 298.844L438.98 261.015L459.695 301.468Z" fill="#3F484E"/>
+      </g>
+      <g class="hull">
+        <path d="M311.404 363.14L392.687 408.599L381.125 357.818L311.404 363.14Z" fill="url(#p0)"/>
+        <path d="M392.678 408.589L418.308 408.507L503.519 311.874L463.239 314.994L381.119 357.813L392.678 408.589Z" fill="url(#p1)"/>
+        <path d="M507.958 359.386L503.521 311.871L418.301 408.507L507.958 359.386Z" fill="#C06A37"/>
+      </g>
+      <defs>
+        <linearGradient id="p0" x1="330.997" y1="369.012" x2="381.997" y2="383.012" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#C7723C"/><stop offset="1" stop-color="#D6804D"/>
+        </linearGradient>
+        <linearGradient id="p1" x1="397.358" y1="359.121" x2="436.337" y2="365.754" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#C36935"/><stop offset="1" stop-color="#DC8653"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <h1 class="wordmark">nautargo</h1>
+    <p class="tagline" data-i18n="tagline">Strumenti semplici per problemi reali</p>
+  </div>
+  <a class="hero-cue" href="#sero" aria-hidden="true" tabindex="-1">↓</a>
+</header>
+
+<main>
+<!-- ================= SERO ================= -->
+<section class="sero" id="sero">
+  <div class="wrap reveal">
+    <div class="sero-card">
+      <svg class="sero-logo" viewBox="0 0 64 64" role="img" aria-label="Logo Sero" xmlns="http://www.w3.org/2000/svg">
+        <rect x="23" y="6" width="18" height="12" rx="5" fill="none" stroke="#2B3036" stroke-width="4"/>
+        <rect x="8" y="14" width="48" height="42" rx="10" fill="#2B3036"/>
+        <path d="M21 36 l8 8 l15 -17" fill="none" stroke="#DD7A3B" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <span class="eyebrow" data-i18n="sero_eyebrow">In arrivo</span>
+        <h2 class="sero-name">sero</h2>
+        <p class="sero-desc" data-i18n="sero_desc">Il packing assistant calmo: ti dice se il bagaglio ci sta, prima di partire.</p>
+        <div class="cta-row">
+          <a class="store-btn" id="cta-play" href="#" aria-disabled="true" tabindex="-1" aria-label="Google Play">
+            <svg width="22" height="24" viewBox="0 0 24 26" aria-hidden="true"><path d="M2.5 1.2 14.8 13 2.5 24.8c-.5-.3-.8-.9-.8-1.6V2.8c0-.7.3-1.3.8-1.6Z" fill="#E8A867"/><path d="M2.5 1.2c.5-.3 1.1-.3 1.7.1l12.9 7.4-3.3 3.1L2.5 1.2Z" fill="#5BC8AC"/><path d="m17.1 8.7 3.6 2.1c1 .6 1 1.9 0 2.5l-3.7 2.1-3.3-3.1 3.4-3.6Z" fill="#F6C34D"/><path d="M2.5 24.8 13.8 13.3l3.3 3.1L5.1 24c-.9.5-1.9.5-2.6.8Z" fill="#E1604C"/></svg>
+            <span class="store-tx"><span class="store-top" data-i18n="soon">presto</span><span class="store-name">Google Play</span></span>
+          </a>
+          <a class="store-btn" id="cta-web" href="#" aria-disabled="true" tabindex="-1" aria-label="Web app">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8A867" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><ellipse cx="12" cy="12" rx="4" ry="9.5"/><path d="M2.8 9h18.4M2.8 15h18.4"/></svg>
+            <span class="store-tx"><span class="store-top" data-i18n="soon">presto</span><span class="store-name" data-i18n="store_web">Web app</span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NOVITÀ ================= -->
+<section class="news" id="news">
+  <div class="wrap reveal">
+    <h2 data-i18n="news_title">Segui la rotta</h2>
+    <p data-i18n="news_desc">Aggiornamenti occasionali su Nautargo e sulle prossime app. Niente rumore.</p>
+
+    <div id="news-instagram">
+      <a class="btn-sunset" id="ig-link" href="https://instagram.com/nautargo.dev" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.6" cy="6.4" r="1" fill="currentColor" stroke="none"/></svg>
+        <span data-i18n="ig_cta">Segui su Instagram</span>
+      </a>
+    </div>
+
+    <form id="news-form" class="news-form" hidden novalidate>
+      <div class="row">
+        <input type="email" id="nl-email" name="EMAIL" required autocomplete="email" data-i18n-ph="nl_placeholder" placeholder="nome@esempio.com" aria-label="Email">
+        <button type="submit" class="btn-sunset" style="margin-top:0" data-i18n="nl_cta">Iscrivimi</button>
+      </div>
+      <label class="consent">
+        <input type="checkbox" id="nl-consent" required>
+        <span><span data-i18n="nl_consent">Acconsento al trattamento della mia email per ricevere aggiornamenti su Nautargo.</span>
+        <a href="#" class="open-privacy" data-i18n="nl_privacy_link">Informativa privacy</a></span>
+      </label>
+      <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-row">
+    <div class="foot-links">
+      <a href="mailto:info@nautargo.com">info@nautargo.com</a>
+      <a href="#" class="open-privacy" data-i18n="footer_privacy">Privacy</a>
+    </div>
+    <nav class="langs" aria-label="Lingua">
+      <button class="lang" data-lang="it">IT</button>
+      <button class="lang" data-lang="en">EN</button>
+      <button class="lang" data-lang="es">ES</button>
+    </nav>
+    <span class="copy">© 2026 nautargo</span>
+  </div>
+</footer>
+
+<!-- ================= OVERLAY PRIVACY ================= -->
+<div class="overlay" id="privacy-overlay" role="dialog" aria-modal="true" aria-labelledby="privacy-title" hidden>
+  <div class="overlay-panel">
+    <button class="overlay-close" id="privacy-close" aria-label="Chiudi">×</button>
+    <h3 id="privacy-title" data-i18n="pv_title">Privacy</h3>
+    <p data-i18n="pv_site">nautargo.com è una pagina statica: non usa cookie di profilazione e non raccoglie dati di navigazione.</p>
+    <div id="pv-newsletter" hidden>
+      <h4 data-i18n="pv_nl_title">Informativa newsletter (art. 13 GDPR)</h4>
+      <ul>
+        <li><span data-i18n="pv_owner">Titolare del trattamento:</span> <span class="ph">[NOME COGNOME]</span>, <span data-i18n="pv_owner2">titolare del sito nautargo.com. Contatto: info@nautargo.com.</span></li>
+        <li data-i18n="pv_data">Dati raccolti: solo l'indirizzo email.</li>
+        <li data-i18n="pv_purpose">Finalità: invio di aggiornamenti su Nautargo e sulle sue app.</li>
+        <li data-i18n="pv_basis">Base giuridica: consenso esplicito (art. 6.1.a GDPR), revocabile in ogni momento.</li>
+        <li data-i18n="pv_recipients">Responsabile del trattamento: Brevo (Sendinblue SAS, Francia), server nell'UE. Trasferimenti extra UE non previsti.</li>
+        <li data-i18n="pv_retention">Conservazione: fino alla revoca del consenso o alla disiscrizione.</li>
+        <li data-i18n="pv_rights">Diritti: accesso, rettifica, cancellazione, limitazione, opposizione, portabilità (artt. 15-22 GDPR).</li>
+        <li data-i18n="pv_withdraw">Revoca: link "disiscriviti" presente in ogni email.</li>
+        <li data-i18n="pv_complaint">Reclamo: Garante per la protezione dei dati personali.</li>
+        <li data-i18n="pv_optional">Il conferimento dell'email è facoltativo: senza, semplicemente non riceverai aggiornamenti.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+const CONFIG = {
+  newsChannel: 'instagram',
+  instagramUrl: 'https://instagram.com/nautargo.dev',
+  brevoFormAction: '',
+  playStoreUrl: '',
+  seroWebAppUrl: ''
+};
+
+const I18N = {
+  it: {
+    title: 'nautargo — strumenti semplici per problemi reali',
+    tagline: 'Strumenti semplici per problemi reali',
+    sero_eyebrow: 'In arrivo',
+    sero_desc: 'Il packing assistant calmo: ti dice se il bagaglio ci sta, prima di partire.',
+    soon: 'presto',
+    news_title: 'Segui la rotta',
+    news_desc: 'Aggiornamenti occasionali su Nautargo e sulle prossime app. Niente rumore.',
+    ig_cta: 'Segui',
+    store_web: 'Web app',
+    store_get: 'Scarica su',
+    store_open: 'Apri',
+    nl_placeholder: 'nome@esempio.com',
+    nl_cta: 'Iscrivimi',
+    nl_consent: 'Acconsento al trattamento della mia email per ricevere aggiornamenti su Nautargo.',
+    nl_privacy_link: 'Informativa privacy',
+    nl_ok: 'Iscrizione inviata. Controlla la casella per confermare.',
+    nl_err_consent: 'Per iscriverti serve il consenso.',
+    nl_err_email: 'Inserisci un indirizzo email valido.',
+    nl_err_config: 'Form non ancora attivo: manca la configurazione Brevo.',
+    footer_privacy: 'Privacy',
+    pv_title: 'Privacy',
+    pv_site: 'nautargo.com è una pagina statica: non usa cookie di profilazione e non raccoglie dati di navigazione.',
+    pv_nl_title: 'Informativa newsletter (art. 13 GDPR)',
+    pv_owner: 'Titolare del trattamento:',
+    pv_owner2: 'titolare del sito nautargo.com. Contatto: info@nautargo.com.',
+    pv_data: "Dati raccolti: solo l'indirizzo email.",
+    pv_purpose: 'Finalità: invio di aggiornamenti su Nautargo e sulle sue app.',
+    pv_basis: 'Base giuridica: consenso esplicito (art. 6.1.a GDPR), revocabile in ogni momento.',
+    pv_recipients: "Responsabile del trattamento: Brevo (Sendinblue SAS, Francia), server nell'UE. Trasferimenti extra UE non previsti.",
+    pv_retention: 'Conservazione: fino alla revoca del consenso o alla disiscrizione.',
+    pv_rights: 'Diritti: accesso, rettifica, cancellazione, limitazione, opposizione, portabilità (artt. 15-22 GDPR).',
+    pv_withdraw: 'Revoca: link "disiscriviti" presente in ogni email.',
+    pv_complaint: 'Reclamo: Garante per la protezione dei dati personali.',
+    pv_optional: "Il conferimento dell'email è facoltativo: senza, semplicemente non riceverai aggiornamenti."
+  },
+  en: {
+    title: 'nautargo — simple tools for real problems',
+    tagline: 'Simple tools for real problems',
+    sero_eyebrow: 'Coming soon',
+    sero_desc: 'The calm packing assistant: it tells you if your luggage fits, before you leave.',
+    soon: 'soon',
+    news_title: 'Follow the course',
+    news_desc: 'Occasional updates on Nautargo and upcoming apps. No noise.',
+    ig_cta: 'Follow',
+    store_web: 'Web app',
+    store_get: 'Get it on',
+    store_open: 'Open',
+    nl_placeholder: 'name@example.com',
+    nl_cta: 'Sign me up',
+    nl_consent: 'I consent to the processing of my email to receive updates about Nautargo.',
+    nl_privacy_link: 'Privacy notice',
+    nl_ok: 'Signup sent. Check your inbox to confirm.',
+    nl_err_consent: 'Consent is required to sign up.',
+    nl_err_email: 'Please enter a valid email address.',
+    nl_err_config: 'Form not active yet: Brevo configuration is missing.',
+    footer_privacy: 'Privacy',
+    pv_title: 'Privacy',
+    pv_site: 'nautargo.com is a static page: it uses no profiling cookies and collects no browsing data.',
+    pv_nl_title: 'Newsletter privacy notice (art. 13 GDPR)',
+    pv_owner: 'Data controller:',
+    pv_owner2: 'owner of nautargo.com. Contact: info@nautargo.com.',
+    pv_data: 'Data collected: email address only.',
+    pv_purpose: 'Purpose: sending updates about Nautargo and its apps.',
+    pv_basis: 'Legal basis: explicit consent (art. 6.1.a GDPR), revocable at any time.',
+    pv_recipients: 'Data processor: Brevo (Sendinblue SAS, France), servers in the EU. No transfers outside the EU planned.',
+    pv_retention: 'Retention: until consent is withdrawn or you unsubscribe.',
+    pv_rights: 'Rights: access, rectification, erasure, restriction, objection, portability (arts. 15-22 GDPR).',
+    pv_withdraw: 'Withdrawal: "unsubscribe" link included in every email.',
+    pv_complaint: 'Complaints: Italian Data Protection Authority (Garante).',
+    pv_optional: "Providing your email is optional: without it, you simply won't receive updates."
+  },
+  es: {
+    title: 'nautargo — herramientas simples para problemas reales',
+    tagline: 'Herramientas simples para problemas reales',
+    sero_eyebrow: 'Próximamente',
+    sero_desc: 'El asistente de equipaje tranquilo: te dice si tu maleta cabe, antes de salir.',
+    soon: 'pronto',
+    news_title: 'Sigue el rumbo',
+    news_desc: 'Novedades ocasionales sobre Nautargo y las próximas apps. Sin ruido.',
+    ig_cta: 'Síguenos',
+    store_web: 'Web app',
+    store_get: 'Descárgalo en',
+    store_open: 'Abrir',
+    nl_placeholder: 'nombre@ejemplo.com',
+    nl_cta: 'Suscribirme',
+    nl_consent: 'Doy mi consentimiento al tratamiento de mi email para recibir novedades sobre Nautargo.',
+    nl_privacy_link: 'Aviso de privacidad',
+    nl_ok: 'Suscripción enviada. Revisa tu correo para confirmar.',
+    nl_err_consent: 'Para suscribirte es necesario el consentimiento.',
+    nl_err_email: 'Introduce una dirección de email válida.',
+    nl_err_config: 'Formulario aún no activo: falta la configuración de Brevo.',
+    footer_privacy: 'Privacidad',
+    pv_title: 'Privacidad',
+    pv_site: 'nautargo.com es una página estática: no usa cookies de perfilado y no recopila datos de navegación.',
+    pv_nl_title: 'Aviso de privacidad de la newsletter (art. 13 RGPD)',
+    pv_owner: 'Responsable del tratamiento:',
+    pv_owner2: 'titular del sitio nautargo.com. Contacto: info@nautargo.com.',
+    pv_data: 'Datos recogidos: solo la dirección de email.',
+    pv_purpose: 'Finalidad: envío de novedades sobre Nautargo y sus apps.',
+    pv_basis: 'Base jurídica: consentimiento explícito (art. 6.1.a RGPD), revocable en cualquier momento.',
+    pv_recipients: 'Encargado del tratamiento: Brevo (Sendinblue SAS, Francia), servidores en la UE. No se prevén transferencias fuera de la UE.',
+    pv_retention: 'Conservación: hasta la revocación del consentimiento o la baja.',
+    pv_rights: 'Derechos: acceso, rectificación, supresión, limitación, oposición, portabilidad (arts. 15-22 RGPD).',
+    pv_withdraw: 'Revocación: enlace "darse de baja" incluido en cada email.',
+    pv_complaint: 'Reclamación: autoridad de protección de datos competente.',
+    pv_optional: 'Facilitar el email es opcional: sin él, simplemente no recibirás novedades.'
+  }
+};
+
+let currentLang = 'en';
+
+function detectLang(){
+  try{ const s = localStorage.getItem('nautargo-lang'); if(s && I18N[s]) return s; }catch(e){}
+  const nav = (navigator.language || 'en').toLowerCase();
+  if(nav.startsWith('it')) return 'it';
+  if(nav.startsWith('es')) return 'es';
+  return 'en';
+}
+function setLang(lang){
+  currentLang = lang;
+  const d = I18N[lang];
+  document.documentElement.lang = lang;
+  document.title = d.title;
+  document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.getAttribute('data-i18n'); if(d[k]!==undefined) el.textContent = d[k]; });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => { const k = el.getAttribute('data-i18n-ph'); if(d[k]!==undefined) el.setAttribute('placeholder', d[k]); });
+  document.querySelectorAll('.lang').forEach(b => b.classList.toggle('active', b.dataset.lang===lang));
+  try{ localStorage.setItem('nautargo-lang', lang); }catch(e){}
+}
+document.querySelectorAll('.lang').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+
+function initNewsChannel(){
+  const ig = document.getElementById('news-instagram');
+  const form = document.getElementById('news-form');
+  const pvNl = document.getElementById('pv-newsletter');
+  if(CONFIG.newsChannel === 'form'){
+    ig.hidden = true; form.hidden = false; pvNl.hidden = false;
+  }else{
+    ig.hidden = false; form.hidden = true; pvNl.hidden = true;
+    document.getElementById('ig-link').href = CONFIG.instagramUrl;
+  }
+}
+function activateCta(a, url, topKey){
+  a.href = url; a.removeAttribute('aria-disabled'); a.removeAttribute('tabindex');
+  const top = a.querySelector('.store-top');
+  if(top){ top.setAttribute('data-i18n', topKey); top.textContent = I18N[currentLang][topKey]; }
+}
+function initCtas(){
+  if(CONFIG.playStoreUrl) activateCta(document.getElementById('cta-play'), CONFIG.playStoreUrl, 'store_get');
+  if(CONFIG.seroWebAppUrl) activateCta(document.getElementById('cta-web'), CONFIG.seroWebAppUrl, 'store_open');
+}
+
+const nlForm = document.getElementById('news-form');
+nlForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const msg = document.getElementById('form-msg');
+  const d = I18N[currentLang];
+  const email = document.getElementById('nl-email');
+  const consent = document.getElementById('nl-consent');
+  if(!email.value || !email.checkValidity()){ msg.textContent = d.nl_err_email; return; }
+  if(!consent.checked){ msg.textContent = d.nl_err_consent; return; }
+  if(!CONFIG.brevoFormAction){ msg.textContent = d.nl_err_config; return; }
+  try{
+    const fd = new FormData(); fd.append('EMAIL', email.value);
+    await fetch(CONFIG.brevoFormAction, { method:'POST', body:fd, mode:'no-cors' });
+    msg.textContent = d.nl_ok; email.value=''; consent.checked=false;
+  }catch(err){ msg.textContent = d.nl_err_config; }
+});
+
+const overlay = document.getElementById('privacy-overlay');
+let lastFocus = null;
+function openPrivacy(){ lastFocus = document.activeElement; overlay.hidden=false; document.getElementById('privacy-close').focus(); }
+function closePrivacy(){ overlay.hidden=true; if(lastFocus) lastFocus.focus(); }
+document.querySelectorAll('.open-privacy').forEach(a => a.addEventListener('click', e => { e.preventDefault(); openPrivacy(); }));
+document.getElementById('privacy-close').addEventListener('click', closePrivacy);
+overlay.addEventListener('click', e => { if(e.target===overlay) closePrivacy(); });
+document.addEventListener('keydown', e => { if(e.key==='Escape' && !overlay.hidden) closePrivacy(); });
+
+/* Parallasse forme hero */
+function initParallax(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const shapes = [...document.querySelectorAll('.shape')];
+  let ticking = false;
+  function update(){
+    const y = window.scrollY;
+    shapes.forEach(s => { const sp = parseFloat(s.dataset.speed)||0.2; s.style.transform = 'translate3d(0,'+(y*sp)+'px,0)'; });
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => { if(!ticking){ requestAnimationFrame(update); ticking=true; } }, {passive:true});
+  update();
+}
+
+function initReveal(){
+  const els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(el => el.classList.add('in')); return;
+  }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.15 });
+  els.forEach(el => io.observe(el));
+}
+
+setLang(detectLang());
+initNewsChannel();
+initCtas();
+initParallax();
+initReveal();
+</script>
+</body>
+</html>
