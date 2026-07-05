@@ -69,23 +69,8 @@
       clip-path:polygon(20% 0,100% 30%,80% 100%,0 70%)}
 
   .hero-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;padding:48px 24px}
-  .mark{width:clamp(150px,24vw,230px);height:auto;
+  .mark{width:clamp(150px,24vw,230px);height:auto;overflow:visible;
         filter:drop-shadow(0 14px 24px rgba(43,48,54,.14))}
-  /* Scafo: rollio di tutto il blocco */
-  .mark .hull{transform-box:fill-box;transform-origin:center;
-        animation:roll 6.5s ease-in-out infinite}
-  @keyframes roll{
-    0%,100%{transform:rotate(-1.3deg)}
-    50%{transform:rotate(1.3deg)}
-  }
-  /* Vela: traslazioni leggere e sfasate (vento) */
-  .mark .v{will-change:transform}
-  .mark .wa{animation:windA 4.6s ease-in-out infinite}
-  .mark .wb{animation:windB 5.8s ease-in-out infinite}
-  .mark .wc{animation:windC 5.2s ease-in-out infinite}
-  @keyframes windA{0%,100%{transform:translate(0,0)}50%{transform:translate(2.6px,-1.6px)}}
-  @keyframes windB{0%,100%{transform:translate(0,0)}50%{transform:translate(-1.8px,1px)}}
-  @keyframes windC{0%,100%{transform:translate(1.3px,.4px)}50%{transform:translate(-1.3px,-.9px)}}
   .wordmark{
     font-weight:600;
     font-size:clamp(30px,5.4vw,46px);
@@ -112,30 +97,29 @@
 
   /* ---------- Sezioni ---------- */
   section{padding:96px 0}
-  .eyebrow{
-    display:inline-block;font-size:13px;font-weight:600;
-    letter-spacing:.14em;text-transform:uppercase;color:var(--sunset);margin-bottom:14px;
-  }
 
   /* ---------- Sero ---------- */
   .sero{background:var(--paper-warm)}
   .sero-card{
-    display:flex;align-items:center;gap:40px;
+    display:flex;align-items:center;gap:48px;
     background:#fff;border:1px solid var(--paper-line);border-radius:var(--radius);
     padding:48px;box-shadow:0 6px 30px rgba(43,48,54,.05);
   }
-  .sero-logo{flex:0 0 auto;width:96px;height:96px}
-  .sero-name{font-weight:600;font-size:clamp(30px,4.5vw,40px);letter-spacing:-.01em;line-height:1.1}
-  .sero-desc{margin-top:8px;color:var(--slate-soft);max-width:46ch}
+  .sero-brand{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:12px}
+  .sero-logo{width:88px;height:88px}
+  .sero-content{min-width:0}
+  .sero-name{font-weight:600;font-size:clamp(26px,3.6vw,32px);letter-spacing:-.01em;line-height:1.1;text-align:center}
+  .sero-desc{color:var(--slate-soft);max-width:46ch}
   .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
   .store-btn{
-    display:inline-flex;align-items:center;gap:11px;
-    padding:10px 18px;border-radius:12px;text-decoration:none;
+    display:inline-flex;align-items:center;justify-content:flex-start;gap:11px;
+    width:196px;padding:10px 18px;border-radius:12px;text-decoration:none;
     background:var(--slate);color:var(--on-dark);border:1px solid var(--slate);
     transition:background .2s,transform .2s,opacity .2s;
   }
   .store-btn:hover{background:var(--slate-deep);transform:translateY(-1px)}
-  .store-btn svg{flex:0 0 auto}
+  .store-icon{flex:0 0 22px;width:22px;height:22px;display:flex;align-items:center;justify-content:center}
+  .store-icon svg{width:100%;height:100%;display:block}
   .store-tx{display:flex;flex-direction:column;line-height:1.15;text-align:left}
   .store-top{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
   .store-name{font-size:16px;font-weight:600}
@@ -198,7 +182,6 @@
   :focus-visible{outline:3px solid var(--sunset);outline-offset:3px;border-radius:6px}
 
   @media (prefers-reduced-motion:reduce){
-    .mark .hull,.mark .v{animation:none}
     .hero-cue{animation:none}
     .shape{transform:none !important}
     .reveal{opacity:1;transform:none;transition:none}
@@ -224,30 +207,19 @@
   <div class="shape s4" data-speed="0.55"></div>
 
   <div class="hero-inner">
-    <svg class="mark" viewBox="300 85 220 335" role="img" aria-label="Logo Nautargo" xmlns="http://www.w3.org/2000/svg">
-      <g class="sail">
-        <path class="v wa" d="M475.937 98.7457L452.965 215.21L351.835 240.434L475.937 98.7457Z" fill="#2B3840"/>
-        <path class="v wb" d="M452.945 215.214L351.845 240.423L408.472 267.511L452.945 215.214Z" fill="#263039"/>
-        <path class="v wc" d="M351.84 240.421L407.127 266.797L335.389 347.492L351.84 240.421Z" fill="#2F3A40"/>
-        <path class="v wb" d="M438.972 261.011L452.957 215.21L491.352 298.816L438.972 261.011Z" fill="#2D3A42"/>
-        <path class="v wa" d="M335.397 347.455L377.479 344.597L459.711 301.475L438.972 261.011L335.397 347.455Z" fill="#242F37"/>
-        <path class="v wc" d="M335.386 347.489L438.972 261.011L452.961 215.198L335.386 347.489Z" fill="#3F484F"/>
-        <path class="v wb" d="M459.695 301.468L491.357 298.844L438.98 261.015L459.695 301.468Z" fill="#3F484E"/>
-      </g>
-      <g class="hull">
-        <path d="M311.404 363.14L392.687 408.599L381.125 357.818L311.404 363.14Z" fill="url(#p0)"/>
-        <path d="M392.678 408.589L418.308 408.507L503.519 311.874L463.239 314.994L381.119 357.813L392.678 408.589Z" fill="url(#p1)"/>
-        <path d="M507.958 359.386L503.521 311.871L418.301 408.507L507.958 359.386Z" fill="#C06A37"/>
-      </g>
-      <defs>
-        <linearGradient id="p0" x1="330.997" y1="369.012" x2="381.997" y2="383.012" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#C7723C"/><stop offset="1" stop-color="#D6804D"/>
-        </linearGradient>
-        <linearGradient id="p1" x1="397.358" y1="359.121" x2="436.337" y2="365.754" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#C36935"/><stop offset="1" stop-color="#DC8653"/>
-        </linearGradient>
-      </defs>
-    </svg>
+    <svg class="mark L3" viewBox="285 75 250 355" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo Nautargo"><style>
+.L3bob{animation:L3Bob 5.5s ease-in-out infinite}
+.L3hull{animation:L3Pitch 5.5s ease-in-out infinite}
+.L3sail{animation:L3Puff 5.5s ease-in-out infinite;animation-delay:-.8s}
+@keyframes L3Bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes L3Pitch{0%,100%{transform:rotate(1.5deg)}50%{transform:rotate(-1.5deg)}}
+@keyframes L3Puff{0%,100%{transform:scale(1,1) skewX(0deg)}50%{transform:scale(1.03,.985) skewX(-1.3deg)}}
+
+.L3 .frag{opacity:0;transform-box:fill-box;transform-origin:center;animation:L3Flash 6.6s ease-in-out infinite}
+@keyframes L3Flash{0%,70%,100%{opacity:0}22%{opacity:.16}40%{opacity:.05}}
+.L3 .g1{animation-delay:-.24s}.L3 .g2{animation-delay:-1.08s}.L3 .g3{animation-delay:-2.04s}
+.L3 .g4{animation-delay:-3.12s}.L3 .g5{animation-delay:-4.08s}.L3 .g6{animation-delay:-4.92s}.L3 .g7{animation-delay:-5.76s}
+@media (prefers-reduced-motion:reduce){.L3 *{animation:none!important}}</style><defs><linearGradient id="L3g0" x1="330.997" y1="369.012" x2="381.997" y2="383.012" gradientUnits="userSpaceOnUse"><stop stop-color="#C7723C"/><stop offset="1" stop-color="#D6804D"></stop></linearGradient><linearGradient id="L3g1" x1="397.358" y1="359.121" x2="436.337" y2="365.754" gradientUnits="userSpaceOnUse"><stop stop-color="#C36935"/><stop offset="1" stop-color="#DC8653"></stop></linearGradient><clipPath id="L3clip"><path d="M475.937 98.7457L452.965 215.21L351.835 240.434Z"/><path d="M452.945 215.214L351.845 240.423L408.472 267.511Z"/><path d="M351.84 240.421L407.127 266.797L335.389 347.492Z"/><path d="M438.972 261.011L452.957 215.21L491.352 298.816Z"/><path d="M335.397 347.455L377.479 344.597L459.711 301.475L438.972 261.011L335.397 347.455Z"/><path d="M335.386 347.489L438.972 261.011L452.961 215.198Z"/><path d="M459.695 301.468L491.357 298.844L438.98 261.015Z"/></clipPath></defs><g class="L3bob"><g transform="translate(400 347)"><g class="L3sail"><g transform="translate(-400 -347)"><path d="M475.937 98.7457L452.965 215.21L351.835 240.434Z" fill="#2B3840"/><path d="M452.945 215.214L351.845 240.423L408.472 267.511Z" fill="#263039"/><path d="M351.84 240.421L407.127 266.797L335.389 347.492Z" fill="#2F3A40"/><path d="M438.972 261.011L452.957 215.21L491.352 298.816Z" fill="#2D3A42"/><path d="M335.397 347.455L377.479 344.597L459.711 301.475L438.972 261.011L335.397 347.455Z" fill="#242F37"/><path d="M335.386 347.489L438.972 261.011L452.961 215.198Z" fill="#3F484F"/><path d="M459.695 301.468L491.357 298.844L438.98 261.015Z" fill="#3F484E"/><g clip-path="url(#L3clip)"><path class="frag g1" d="M475.937 98.7457L452.965 215.21L351.835 240.434Z" fill="#FFFFFF"/><path class="frag g2" d="M452.945 215.214L351.845 240.423L408.472 267.511Z" fill="#FFFFFF"/><path class="frag g3" d="M351.84 240.421L407.127 266.797L335.389 347.492Z" fill="#FFFFFF"/><path class="frag g4" d="M438.972 261.011L452.957 215.21L491.352 298.816Z" fill="#FFFFFF"/><path class="frag g5" d="M335.397 347.455L377.479 344.597L459.711 301.475L438.972 261.011L335.397 347.455Z" fill="#FFFFFF"/><path class="frag g6" d="M335.386 347.489L438.972 261.011L452.961 215.198Z" fill="#FFFFFF"/><path class="frag g7" d="M459.695 301.468L491.357 298.844L438.98 261.015Z" fill="#FFFFFF"/></g></g></g></g><g transform="translate(503 360)"><g class="L3hull"><g transform="translate(-503 -360)"><path d="M311.404 363.14L392.687 408.599L381.125 357.818Z" fill="url(#L3g0)"/><path d="M392.678 408.589L418.308 408.507L503.519 311.874L463.239 314.994L381.119 357.813L392.678 408.589Z" fill="url(#L3g1)"/><path d="M507.958 359.386L503.521 311.871L418.301 408.507Z" fill="#C06A37"/></g></g></g></g></svg>
     <h1 class="wordmark">nautargo</h1>
     <p class="tagline" data-i18n="tagline">Strumenti semplici per problemi reali</p>
   </div>
@@ -259,22 +231,23 @@
 <section class="sero" id="sero">
   <div class="wrap reveal">
     <div class="sero-card">
-      <svg class="sero-logo" viewBox="0 0 64 64" role="img" aria-label="Logo Sero" xmlns="http://www.w3.org/2000/svg">
-        <rect x="23" y="6" width="18" height="12" rx="5" fill="none" stroke="#2B3036" stroke-width="4"/>
-        <rect x="8" y="14" width="48" height="42" rx="10" fill="#2B3036"/>
-        <path d="M21 36 l8 8 l15 -17" fill="none" stroke="#DD7A3B" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <div>
-        <span class="eyebrow" data-i18n="sero_eyebrow">In arrivo</span>
+      <div class="sero-brand">
+        <svg class="sero-logo" viewBox="0 0 64 64" role="img" aria-label="Logo Sero" xmlns="http://www.w3.org/2000/svg">
+          <rect x="23" y="6" width="18" height="12" rx="5" fill="none" stroke="#2B3036" stroke-width="4"/>
+          <rect x="8" y="14" width="48" height="42" rx="10" fill="#2B3036"/>
+          <path d="M21 36 l8 8 l15 -17" fill="none" stroke="#DD7A3B" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         <h2 class="sero-name">sero</h2>
+      </div>
+      <div class="sero-content">
         <p class="sero-desc" data-i18n="sero_desc">Il packing assistant calmo: ti dice se il bagaglio ci sta, prima di partire.</p>
         <div class="cta-row">
           <a class="store-btn" id="cta-play" href="#" aria-disabled="true" tabindex="-1" aria-label="Google Play">
-            <svg width="22" height="24" viewBox="0 0 24 26" aria-hidden="true"><path d="M2.5 1.2 14.8 13 2.5 24.8c-.5-.3-.8-.9-.8-1.6V2.8c0-.7.3-1.3.8-1.6Z" fill="#E8A867"/><path d="M2.5 1.2c.5-.3 1.1-.3 1.7.1l12.9 7.4-3.3 3.1L2.5 1.2Z" fill="#5BC8AC"/><path d="m17.1 8.7 3.6 2.1c1 .6 1 1.9 0 2.5l-3.7 2.1-3.3-3.1 3.4-3.6Z" fill="#F6C34D"/><path d="M2.5 24.8 13.8 13.3l3.3 3.1L5.1 24c-.9.5-1.9.5-2.6.8Z" fill="#E1604C"/></svg>
+            <span class="store-icon"><svg viewBox="0 0 24 26" aria-hidden="true"><path d="M2.5 1.2 14.8 13 2.5 24.8c-.5-.3-.8-.9-.8-1.6V2.8c0-.7.3-1.3.8-1.6Z" fill="#E8A867"/><path d="M2.5 1.2c.5-.3 1.1-.3 1.7.1l12.9 7.4-3.3 3.1L2.5 1.2Z" fill="#5BC8AC"/><path d="m17.1 8.7 3.6 2.1c1 .6 1 1.9 0 2.5l-3.7 2.1-3.3-3.1 3.4-3.6Z" fill="#F6C34D"/><path d="M2.5 24.8 13.8 13.3l3.3 3.1L5.1 24c-.9.5-1.9.5-2.6.8Z" fill="#E1604C"/></svg></span>
             <span class="store-tx"><span class="store-top" data-i18n="soon">presto</span><span class="store-name">Google Play</span></span>
           </a>
           <a class="store-btn" id="cta-web" href="#" aria-disabled="true" tabindex="-1" aria-label="Web app">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8A867" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><ellipse cx="12" cy="12" rx="4" ry="9.5"/><path d="M2.8 9h18.4M2.8 15h18.4"/></svg>
+            <span class="store-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#E8A867" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><ellipse cx="12" cy="12" rx="4" ry="9.5"/><path d="M2.8 9h18.4M2.8 15h18.4"/></svg></span>
             <span class="store-tx"><span class="store-top" data-i18n="soon">presto</span><span class="store-name" data-i18n="store_web">Web app</span></span>
           </a>
         </div>
@@ -365,7 +338,6 @@ const I18N = {
   it: {
     title: 'nautargo — strumenti semplici per problemi reali',
     tagline: 'Strumenti semplici per problemi reali',
-    sero_eyebrow: 'In arrivo',
     sero_desc: 'Il packing assistant calmo: ti dice se il bagaglio ci sta, prima di partire.',
     soon: 'presto',
     news_title: 'Segui la rotta',
@@ -401,7 +373,6 @@ const I18N = {
   en: {
     title: 'nautargo — simple tools for real problems',
     tagline: 'Simple tools for real problems',
-    sero_eyebrow: 'Coming soon',
     sero_desc: 'The calm packing assistant: it tells you if your luggage fits, before you leave.',
     soon: 'soon',
     news_title: 'Follow the course',
@@ -437,7 +408,6 @@ const I18N = {
   es: {
     title: 'nautargo — herramientas simples para problemas reales',
     tagline: 'Herramientas simples para problemas reales',
-    sero_eyebrow: 'Próximamente',
     sero_desc: 'El asistente de equipaje tranquilo: te dice si tu maleta cabe, antes de salir.',
     soon: 'pronto',
     news_title: 'Sigue el rumbo',
@@ -572,4 +542,4 @@ initParallax();
 initReveal();
 </script>
 </body>
-</html>
+  </html>
