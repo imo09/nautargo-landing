@@ -1,0 +1,13 @@
+{
+  "name": "nautargo",
+  "short_name": "nautargo",
+  "description": "Studio indipendente: piccole app calme per problemi reali.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#171C22",
+  "theme_color": "#171C22",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

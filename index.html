@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>nautargo — il quotidiano, navigato con calma</title>
+<meta name="description" content="nautargo è uno studio indipendente che costruisce piccole app calme per problemi reali. Prima nave: Sero, il packing assistant.">
+<meta name="theme-color" content="#171C22">
+<link rel="canonical" href="https://nautargo.com/">
+<link rel="alternate" hreflang="it" href="https://nautargo.com/?lang=it">
+<link rel="alternate" hreflang="en" href="https://nautargo.com/?lang=en">
+<link rel="alternate" hreflang="es" href="https://nautargo.com/?lang=es">
+<link rel="alternate" hreflang="x-default" href="https://nautargo.com/">
+<meta property="og:site_name" content="nautargo">
+<meta property="og:title" content="nautargo — il quotidiano, navigato con calma">
+<meta property="og:description" content="Piccole app che risolvono problemi reali. Una alla volta, senza rumore.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nautargo.com/">
+<meta property="og:image" content="https://nautargo.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="nautargo — il quotidiano, navigato con calma">
+<meta name="twitter:description" content="Piccole app che risolvono problemi reali. Una alla volta, senza rumore.">
+<meta name="twitter:image" content="https://nautargo.com/og-image.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22300%2085%20220%20335%22%3E%3Cpath%20d%3D%22M475.937%2098.7457L452.965%20215.21L351.835%20240.434L475.937%2098.7457Z%22%20fill%3D%22%232B3840%22%2F%3E%3Cpath%20d%3D%22M452.945%20215.214L351.845%20240.423L408.472%20267.511L452.945%20215.214Z%22%20fill%3D%22%23263039%22%2F%3E%3Cpath%20d%3D%22M351.84%20240.421L407.127%20266.797L335.389%20347.492L351.84%20240.421Z%22%20fill%3D%22%232F3A40%22%2F%3E%3Cpath%20d%3D%22M438.972%20261.011L452.957%20215.21L491.352%20298.816L438.972%20261.011Z%22%20fill%3D%22%232D3A42%22%2F%3E%3Cpath%20d%3D%22M335.397%20347.455L377.479%20344.597L459.711%20301.475L438.972%20261.011L335.397%20347.455Z%22%20fill%3D%22%23242F37%22%2F%3E%3Cpath%20d%3D%22M335.386%20347.489L438.972%20261.011L452.961%20215.198L335.386%20347.489Z%22%20fill%3D%22%233F484F%22%2F%3E%3Cpath%20d%3D%22M459.695%20301.468L491.357%20298.844L438.98%20261.015L459.695%20301.468Z%22%20fill%3D%22%233F484E%22%2F%3E%3Cpath%20d%3D%22M311.404%20363.14L392.687%20408.599L381.125%20357.818L311.404%20363.14Z%22%20fill%3D%22%23CB763F%22%2F%3E%3Cpath%20d%3D%22M392.678%20408.589L418.308%20408.507L503.519%20311.874L463.239%20314.994L381.119%20357.813L392.678%20408.589Z%22%20fill%3D%22%23D07C49%22%2F%3E%3Cpath%20d%3D%22M507.958%20359.386L503.521%20311.871L418.301%20408.507L507.958%20359.386Z%22%20fill%3D%22%23C06A37%22%2F%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"nautargo","url":"https://nautargo.com","logo":"https://nautargo.com/icon-512.png","description":"Studio indipendente: piccole app calme per problemi reali.","sameAs":["https://instagram.com/nautargo.dev"]}
+</script>
+<style>
+  :root{
+    --abisso:#171C22;        /* cielo notturno / fondo hero */
+    --slate:#2B3036;         /* brand slate ink */
+    --mare:#1B222A;          /* sezione rotta */
+    --porto:#20272E;         /* sezione news */
+    --fondale:#12161B;       /* footer */
+    --sunset:#DD7A3B;        /* brand */
+    --sunset-deep:#C96A2F;
+    --amber:#E8A867;         /* brand */
+    --alba:#FBF7F1;          /* carta chiara */
+    --sabbia:#F4ECE0;        /* carta calda */
+    --linea:#E7DFD2;
+    --inchiostro-soft:#5B636D;
+    --on-dark:#F4EFE8;
+    --on-dark-dim:#9AA3AF;
+    --radius:18px;
+    --maxw:1080px;
+    --disp:'Bricolage Grotesque',Georgia,serif;
+    --body:'Poppins',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--body);font-weight:400;color:var(--slate);
+    background:var(--alba);line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  button{font:inherit;cursor:pointer}
+  img,svg{display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  [hidden]{display:none !important}
+  :focus-visible{outline:3px solid var(--sunset);outline-offset:3px;border-radius:6px}
+  ::selection{background:var(--amber);color:var(--slate)}
+
+  .mono{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);
+    font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--sunset)}
+  .eyebrow::before{content:"";width:9px;height:9px;background:var(--sunset);
+    clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);flex:0 0 auto}
+  h2.title{font-family:var(--disp);font-weight:600;letter-spacing:-.02em;
+    font-size:clamp(30px,4.6vw,44px);line-height:1.12;margin-top:16px}
+
+  /* ============ NAV ============ */
+  .nav{position:absolute;top:0;left:0;right:0;z-index:5;padding:22px 0}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+  .brand svg{width:22px;height:auto}
+  .brand span{font-weight:600;font-size:19px;letter-spacing:-.01em;color:var(--on-dark)}
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .nav-mail{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--on-dark-dim);
+    text-decoration:none;transition:color .2s}
+  .nav-mail:hover{color:var(--amber)}
+  .langs{display:flex;gap:2px;background:rgba(244,239,232,.07);border:1px solid rgba(244,239,232,.12);
+    border-radius:999px;padding:3px}
+  .lang{background:none;border:none;color:var(--on-dark-dim);font-family:var(--mono);
+    font-size:11px;font-weight:500;letter-spacing:.08em;padding:5px 10px;border-radius:999px;transition:color .2s,background .2s}
+  .lang:hover{color:var(--on-dark)}
+  .lang.active{color:var(--abisso);background:var(--amber);font-weight:500}
+  footer .langs{background:rgba(244,239,232,.05)}
+
+  /* ============ HERO ============ */
+  .hero{--horiz-h:min(36svh, 140px + 13vw);--sun-w:clamp(84px, 11vw, 160px);
+    position:relative;min-height:100svh;background:linear-gradient(180deg,#12161C 0%,#171C22 34%,#232B33 62%,#3A3A3C 78%,#6B4A33 90%,#8A5432 100%);
+    color:var(--on-dark);overflow:hidden;display:flex;flex-direction:column}
+  .stars{position:absolute;inset:0 0 var(--horiz-h) 0;pointer-events:none}
+  .starfield{width:100%;height:100%}
+  .tw{animation:tw 4.8s ease-in-out infinite}
+  @keyframes tw{0%,100%{opacity:.15}50%{opacity:.75}}
+  .t2{animation-delay:-1.4s}.t3{animation-delay:-2.6s}.t4{animation-delay:-3.7s}
+
+  .hero-inner{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;
+    padding:110px 24px calc(var(--horiz-h) + var(--sun-w)/2 + 6svh)}
+  .hero-eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.3em;
+    text-transform:uppercase;color:var(--amber);opacity:.9}
+  .mark{width:clamp(120px,17vw,180px);height:auto;overflow:visible;margin:26px 0 8px;
+    filter:drop-shadow(0 18px 30px rgba(0,0,0,.4))}
+  .headline{font-family:var(--disp);font-weight:600;letter-spacing:-.025em;line-height:1.06;
+    font-size:clamp(38px,7vw,74px);max-width:15ch;margin-top:10px}
+  .headline em{font-style:normal;color:var(--amber)}
+
+  .sun-halo{position:absolute;left:50%;bottom:var(--horiz-h);transform:translate(-50%,50%);
+    width:min(150vw,calc(var(--sun-w)*8.2));aspect-ratio:1;pointer-events:none;z-index:1;
+    background:radial-gradient(circle at center,
+      rgba(246,203,146,.34) 0%,
+      rgba(232,168,103,.22) 22%,
+      rgba(221,122,59,.10) 42%,
+      rgba(221,122,59,0) 66%)}
+  .horizon{position:absolute;left:0;right:0;bottom:0;height:var(--horiz-h);pointer-events:none;z-index:1}
+    .h-line{position:absolute;left:0;right:0;top:-1px;height:1.5px;background:rgba(232,168,103,.5)}
+  .sea{position:absolute;inset:0;width:100%;height:100%}
+  .hero-inner,.stars{will-change:transform}
+  /* Superfici calde: colonna sotto al sole (sA-sD, base chiara + bagliori alternati)
+     e bagliori spot leggerissimi sui triangoli scuri (dA-dD) */
+  .gl.dA{animation:dGlA 15s ease-in-out infinite}
+  @keyframes dGlA{0%,82%,100%{fill:#1D242B}91%{fill:#3B3834}}
+  .gl.dB{animation:dGlB 15s ease-in-out infinite}
+  @keyframes dGlB{0%,82%,100%{fill:#20272F}91%{fill:#3E3A37}}
+  .gl.dC{animation:dGlC 15s ease-in-out infinite}
+  @keyframes dGlC{0%,82%,100%{fill:#232B33}91%{fill:#413E3B}}
+  .gl.dD{animation:dGlD 15s ease-in-out infinite}
+  @keyframes dGlD{0%,82%,100%{fill:#151B21}91%{fill:#35302C}}
+
+  /* Costellazioni alternate nel cielo */
+  .const{position:absolute;height:auto;opacity:0;transition:opacity 2.8s ease}
+  .const.vis{opacity:1}
+  .const line{stroke:rgba(232,168,103,.36);stroke-width:1;stroke-dasharray:1;stroke-dashoffset:1}
+  .const.draw line{animation:cdraw 2.1s ease forwards}
+  .const.draw line:nth-of-type(2){animation-delay:.55s}.const.draw line:nth-of-type(3){animation-delay:1.1s}
+  .const.draw line:nth-of-type(4){animation-delay:1.65s}.const.draw line:nth-of-type(5){animation-delay:2.2s}
+  .const.draw line:nth-of-type(6){animation-delay:2.75s}.const.draw line:nth-of-type(7){animation-delay:3.3s}
+  @keyframes cdraw{to{stroke-dashoffset:0}}
+  .const circle{fill:#FBF4E8;animation:tw 5.2s ease-in-out infinite}
+  .const circle:nth-of-type(2n){animation-delay:-2.2s}.const circle:nth-of-type(3n){animation-delay:-3.6s}
+  .c1{left:7%;top:12%;width:min(28vw,290px);aspect-ratio:400/290}
+  .c2{right:6%;top:16%;width:min(24vw,250px);aspect-ratio:360/200}
+  .c3{left:50%;top:7%;transform:translateX(-50%);width:min(26vw,270px);aspect-ratio:320/110}
+
+  /* CTA hero: testo + freccia, in basso come nella v2 */
+  .hero-cue{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:3;
+    display:inline-flex;flex-direction:column;align-items:center;gap:2px;
+    color:var(--on-dark);opacity:.62;text-decoration:none;
+    font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+  .hero-cue:hover{opacity:.9}
+  .hero-cue .arr{font-size:18px;line-height:1;animation:cue 2.6s ease-in-out infinite}
+  @keyframes cue{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+  /* Pausa animazioni hero fuori viewport (gestita da IntersectionObserver) */
+  .hero.paused .tw,.hero.paused .gl,.hero.paused .shooting,
+  .hero.paused .const line,.hero.paused .const circle{animation-play-state:paused}
+
+
+  /* ============ SEZIONI ============ */
+  section{padding:110px 0}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---- Bussola ---- */
+  .bussola{background:var(--alba)}
+  .b-lead{margin-top:18px;color:var(--inchiostro-soft);max-width:52ch;
+    font-size:clamp(16px,2.1vw,19px);font-weight:400}
+  .b-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:40px}
+  .b-card{background:#fff;border:1px solid var(--linea);border-radius:var(--radius);
+    padding:30px 28px;transition:transform .25s ease,box-shadow .25s ease}
+  .b-card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(43,48,54,.08)}
+  .b-card svg{width:30px;height:30px;margin-bottom:16px}
+  .b-card h3{font-family:var(--disp);font-weight:600;font-size:20px;letter-spacing:-.01em}
+  .b-card p{margin-top:8px;color:var(--inchiostro-soft);font-size:15px}
+  .b-nl{display:inline-block;margin-top:32px;color:var(--sunset-deep);font-weight:500;
+    font-size:15px;text-decoration:none;border-bottom:1px solid rgba(221,122,59,.35);padding-bottom:2px}
+  .b-nl:hover{color:var(--sunset);border-color:var(--sunset)}
+
+  /* ---- Sero ---- */
+  .sero{background:var(--sabbia)}
+  .sero-grid{display:grid;grid-template-columns:320px 1fr;gap:64px;align-items:center;margin-top:48px}
+  .phone-wrap{display:flex;justify-content:center}
+  .phone{width:264px;background:#fff;border:1px solid var(--linea);border-radius:38px;
+    padding:20px 18px 22px;box-shadow:0 30px 60px rgba(43,48,54,.16),0 4px 14px rgba(43,48,54,.06);
+    transform:rotate(-4deg);transition:transform .4s ease;animation:float 6s ease-in-out infinite}
+  .phone:hover{transform:rotate(0deg)}
+  @keyframes float{0%,100%{translate:0 0}50%{translate:0 -8px}}
+  .ph-notch{width:74px;height:6px;border-radius:99px;background:var(--linea);margin:0 auto 18px}
+  .ph-trip{display:flex;align-items:center;gap:8px;font-weight:600;font-size:15px}
+  .ph-trip .emo{font-size:18px}
+  .ph-cat{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--sunset);margin:18px 0 10px}
+  .ph-item{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #F1EBE1;font-size:13.5px}
+  .ph-item:last-of-type{border-bottom:none}
+  .ph-check{width:19px;height:19px;flex:0 0 auto;border-radius:50%;background:var(--sunset);
+    display:flex;align-items:center;justify-content:center}
+  .ph-check svg{width:10px;height:10px}
+  .ph-verdict{margin-top:16px;background:var(--alba);border:1px solid var(--linea);
+    border-radius:14px;padding:13px 14px}
+  .ph-verdict .lbl{font-family:var(--mono);font-size:9px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--inchiostro-soft)}
+  .ph-bar{display:flex;gap:4px;margin-top:8px}
+  .ph-seg{height:7px;flex:1;border-radius:99px;background:#E9E1D4}
+  .ph-seg.on{background:linear-gradient(90deg,var(--sunset),var(--amber))}
+  .ph-word{margin-top:8px;font-weight:600;font-size:14px;color:var(--sunset-deep)}
+
+  .sero-brand{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+  .sero-head{display:flex;align-items:center;gap:16px}
+  .sero-logo{width:64px;height:64px;flex:0 0 auto}
+  .sero-name{font-family:var(--body);font-weight:600;font-size:34px;letter-spacing:-.01em;line-height:1}
+  .sero-tag{font-family:var(--disp);font-weight:600;font-size:clamp(24px,3.4vw,32px);
+    letter-spacing:-.015em;line-height:1.15;margin-top:18px}
+  .sero-desc{margin-top:12px;color:var(--inchiostro-soft);max-width:46ch}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+  .chip{font-family:var(--mono);font-size:11px;letter-spacing:.06em;padding:7px 13px;
+    border:1px solid rgba(43,48,54,.18);border-radius:999px;color:var(--slate);background:rgba(255,255,255,.5)}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .store-btn{display:inline-flex;align-items:center;justify-content:flex-start;gap:11px;
+    width:196px;padding:11px 18px;border-radius:13px;text-decoration:none;
+    background:var(--slate);color:var(--on-dark);border:1px solid var(--slate);
+    transition:background .2s,transform .2s,opacity .2s}
+  .store-btn:hover{background:var(--abisso);transform:translateY(-2px)}
+  .store-icon{flex:0 0 22px;width:22px;height:22px;display:flex;align-items:center;justify-content:center}
+  .store-icon svg{width:100%;height:100%}
+  .store-tx{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+  .store-top{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+  .store-name{font-size:16px;font-weight:600}
+  .store-btn[aria-disabled="true"]{opacity:.55;cursor:not-allowed;pointer-events:none}
+
+  /* ---- Rotta ---- */
+  .rotta{background-color:var(--mare);
+    background-image:repeating-linear-gradient(0deg,transparent 0 89px,rgba(244,239,232,.025) 89px 90px),
+    repeating-linear-gradient(90deg,transparent 0 89px,rgba(244,239,232,.025) 89px 90px);
+    color:var(--on-dark);position:relative;overflow:hidden;margin-top:-40px;
+    clip-path:polygon(0 26px,9% 6px,22% 22px,36% 2px,51% 18px,65% 4px,79% 24px,91% 8px,100% 20px,100% 100%,0 100%);
+    padding-top:170px}
+  .compass{position:absolute;right:-70px;bottom:-70px;width:340px;opacity:.05;pointer-events:none}
+  .rotta .title{color:var(--on-dark)}
+  .route-wrap{position:relative;margin-top:56px}
+  .route-svg{position:absolute;inset:-30px 0 auto 0;height:120px;width:100%;pointer-events:none;opacity:.5}
+  .route-svg path{stroke:var(--amber);stroke-width:1.6;fill:none;stroke-dasharray:3 9;
+    stroke-linecap:round;animation:sail 30s linear infinite}
+  @keyframes sail{to{stroke-dashoffset:-600}}
+  .wp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;position:relative;z-index:1}
+  .wp{background:rgba(244,239,232,.045);border:1px solid rgba(232,168,103,.14);
+    border-radius:var(--radius);padding:28px 26px;backdrop-filter:blur(2px)}
+  .wp.ghost{background:transparent;border-style:dashed;border-color:rgba(232,168,103,.3)}
+  .wp-code{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--on-dark-dim)}
+  .wp-dia{width:15px;height:15px;margin:18px 0 14px;background:linear-gradient(135deg,var(--amber) 50%,var(--sunset) 50%);
+    clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+  .wp.ghost .wp-dia{background:transparent;border:1.5px dashed var(--amber);clip-path:none;transform:rotate(45deg);width:12px;height:12px;margin-left:2px}
+  .wp h3{font-family:var(--disp);font-weight:600;font-size:21px;letter-spacing:-.01em;line-height:1.2}
+  .wp-pill{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:10.5px;
+    letter-spacing:.14em;text-transform:uppercase;padding:5px 11px;border-radius:999px}
+  .pill-sail{background:var(--sunset);color:#fff}
+  .pill-chart{border:1px solid var(--amber);color:var(--amber)}
+  .pill-open{border:1px dashed var(--on-dark-dim);color:var(--on-dark-dim)}
+  .wp p{margin-top:14px;font-size:14.5px;color:var(--on-dark-dim)}
+  .wp-cta{display:inline-flex;align-items:center;gap:7px;margin-top:16px;font-weight:500;font-size:14px;
+    color:var(--amber);text-decoration:none;border-bottom:1px solid rgba(232,168,103,.4);padding-bottom:2px;transition:border-color .2s}
+  .wp-cta:hover{border-color:var(--amber)}
+
+  /* ---- A bordo ---- */
+  .bordo{background:var(--alba)}
+  .log{max-width:680px;margin:0 auto;text-align:center}
+  .log-label{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--sunset);display:inline-flex;align-items:center;gap:14px}
+  .log-label::before,.log-label::after{content:"";width:44px;height:1px;background:var(--linea)}
+  .log blockquote{font-family:var(--disp);font-weight:500;font-size:clamp(21px,3vw,28px);
+    line-height:1.42;letter-spacing:-.012em;margin-top:30px;color:var(--slate)}
+  .log-sign{margin-top:22px;font-family:var(--mono);font-size:13px;letter-spacing:.1em;color:var(--inchiostro-soft)}
+
+  /* ---- News ---- */
+  .news{background:var(--porto);color:var(--on-dark);text-align:center;position:relative;margin-top:-36px;
+    clip-path:polygon(0 22px,11% 4px,26% 20px,40% 2px,55% 18px,69% 6px,83% 22px,94% 8px,100% 16px,100% 100%,0 100%);
+    padding-top:160px}
+  .news .title{color:var(--on-dark);margin-top:14px}
+  .news p.lead{max-width:46ch;margin:16px auto 0;color:var(--on-dark-dim)}
+  .btn-sunset{display:inline-flex;align-items:center;gap:10px;margin-top:34px;
+    padding:15px 30px;border-radius:999px;border:none;font-weight:600;font-size:16px;
+    background:var(--sunset);color:#fff;text-decoration:none;transition:background .2s,transform .2s}
+  .btn-sunset:hover{background:var(--sunset-deep);transform:translateY(-2px)}
+  .btn-sunset:disabled{opacity:.45;cursor:not-allowed;pointer-events:none;transform:none}
+  .news-form{max-width:460px;margin:34px auto 0;text-align:left}
+  .news-form .row{display:flex;gap:10px}
+  .news-form input[type="email"]{flex:1;padding:14px 18px;border-radius:999px;
+    border:1.5px solid rgba(154,163,175,.5);background:rgba(18,22,27,.6);color:var(--on-dark);font:inherit;font-size:15px}
+  .news-form input[type="email"]::placeholder{color:var(--on-dark-dim)}
+  .consent{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:13px;color:var(--on-dark-dim)}
+  .consent input{margin-top:4px;accent-color:var(--sunset)}
+  .consent a{color:var(--amber)}
+  .form-msg{margin-top:12px;font-size:14px;color:var(--amber);min-height:1.4em}
+
+  /* ---- Footer ---- */
+  footer{background:var(--fondale);color:var(--on-dark-dim);padding:44px 0;font-size:14px}
+  .foot-row{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+  .foot-brand{display:flex;align-items:center;gap:9px}
+  .foot-brand svg{width:17px;height:auto;opacity:.85}
+  .foot-brand b{font-weight:600;color:var(--on-dark)}
+  .foot-links{display:flex;gap:22px;align-items:center}
+  .foot-links a{text-decoration:none;transition:color .2s}
+  .foot-links a:hover{color:var(--on-dark)}
+  .copy{opacity:.6;font-family:var(--mono);font-size:12px;letter-spacing:.06em}
+
+  /* ---- Overlay privacy ---- */
+  .overlay{position:fixed;inset:0;z-index:50;background:rgba(18,22,27,.72);
+    display:flex;align-items:center;justify-content:center;padding:24px}
+  .overlay-panel{background:var(--alba);color:var(--slate);max-width:640px;width:100%;
+    max-height:82vh;overflow-y:auto;border-radius:var(--radius);padding:38px;position:relative}
+  .overlay-panel h3{font-family:var(--disp);font-weight:600;font-size:24px;margin-bottom:8px}
+  .overlay-panel h4{font-weight:600;font-size:16px;margin:24px 0 8px}
+  .overlay-panel p,.overlay-panel li{font-size:14px;color:var(--inchiostro-soft)}
+  .overlay-panel ul{padding-left:20px;display:grid;gap:6px;margin-top:8px}
+  .overlay-close{position:absolute;top:14px;right:14px;background:none;border:none;
+    font-size:22px;line-height:1;color:var(--inchiostro-soft);padding:8px;border-radius:8px}
+  .overlay-close:hover{color:var(--slate)}
+  .ph-mark{background:#FBEFE3;border-radius:4px;padding:0 4px}
+
+  /* ---- Wordmark inline ---- */
+  .nm{font-family:var(--body);font-weight:600;text-transform:lowercase;letter-spacing:-.01em;font-style:normal}
+
+  /* ---- News form + Instagram ---- */
+  .news-ig{margin-top:22px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+  .ig-or{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--on-dark-dim)}
+  .ig-follow{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--amber);
+    font-weight:500;font-size:14px;border-bottom:1px solid rgba(232,168,103,.4);padding-bottom:2px;transition:border-color .2s}
+  .ig-follow:hover{border-color:var(--amber)}
+  .open-contact{cursor:pointer}
+
+  /* ---- Tips ---- */
+  .tips{background:var(--sabbia)}
+  .tips-card{display:flex;align-items:center;gap:30px;max-width:720px;margin:0 auto;
+    background:#fff;border:1px solid var(--linea);border-radius:var(--radius);padding:36px 38px;
+    box-shadow:0 6px 30px rgba(43,48,54,.05)}
+  .tips-ico{width:46px;height:46px;flex:0 0 auto}
+  .tips-body .title{margin-top:10px;font-size:clamp(24px,3.2vw,30px)}
+  .tips-body p{margin-top:10px;color:var(--inchiostro-soft);font-size:15px}
+  .btn-tip{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:13px 24px;
+    border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;
+    background:var(--sunset);color:#fff;transition:background .2s,transform .2s,opacity .2s}
+  .btn-tip:hover{background:var(--sunset-deep);transform:translateY(-2px)}
+  .btn-tip .store-top{background:rgba(255,255,255,.22);padding:2px 8px;border-radius:999px;opacity:1}
+  .btn-tip[aria-disabled="true"]{opacity:.6;cursor:not-allowed;pointer-events:none}
+
+  /* ---- Form contatto ---- */
+  .contact-form{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+  .contact-form input[type="email"],.contact-form textarea{
+    width:100%;padding:13px 16px;border-radius:14px;border:1.5px solid var(--linea);
+    background:#fff;color:var(--slate);font:inherit;font-size:15px;resize:vertical}
+  .contact-form input[type="email"]:focus,.contact-form textarea:focus{border-color:var(--sunset);outline:none}
+  .contact-form .btn-sunset{align-self:flex-start;margin-top:4px}
+  .contact-form .form-msg{color:var(--sunset-deep)}
+  .ct-note{font-size:12.5px;color:var(--inchiostro-soft)}
+  .ct-note a{color:var(--sunset)}
+  .hp{position:absolute;left:-5000px;width:1px;height:1px;opacity:0;pointer-events:none}
+
+  /* ---- Stella cadente ---- */
+  /* La scia e' orientata lungo la traiettoria (--ang) e la testa luminosa
+     guida il moto: il movimento avviene lungo l'asse ruotato (translateX). */
+  .shooting{position:absolute;width:120px;height:2px;border-radius:99px;
+    background:linear-gradient(90deg,rgba(255,252,244,.95) 0%,rgba(244,239,232,.5) 22%,rgba(244,239,232,0) 100%);
+    transform:rotate(var(--ang,-24deg)) translateX(0);transform-origin:left center;
+    opacity:0;pointer-events:none;z-index:1;will-change:transform,opacity}
+  .shooting::after{content:"";position:absolute;left:-2px;top:50%;translate:0 -50%;
+    width:4px;height:4px;border-radius:50%;background:#FFFCF4;
+    box-shadow:0 0 8px 2px rgba(246,203,146,.85)}
+  .shooting.go{animation:shoot 1s linear forwards}
+  @keyframes shoot{
+    0%{opacity:0;transform:rotate(var(--ang,-24deg)) translateX(0)}
+    8%{opacity:1}
+    78%{opacity:.95}
+    100%{opacity:0;transform:rotate(var(--ang,-24deg)) translateX(-300px)}
+  }
+
+  /* ---- Kick vascello (click) ---- */
+  .mark{cursor:pointer}
+  .mark.kick{animation:kick 1.1s ease-in-out}
+  @keyframes kick{
+    0%,100%{rotate:0deg}
+    22%{rotate:-5deg}
+    55%{rotate:4deg}
+    80%{rotate:-1.6deg}
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width:900px){
+    .b-grid,.wp-grid{grid-template-columns:1fr;gap:18px}
+    .sero-grid{grid-template-columns:1fr;gap:52px}
+    .route-svg{display:none}
+    .wp-grid{padding-left:18px;border-left:1.5px dashed rgba(232,168,103,.3)}
+  }
+  @media (max-width:640px){
+    section{padding:84px 0}
+    .rotta{padding-top:110px}
+    .news{padding-top:104px}
+    .nav-mail{display:none}
+    .hero-inner{padding-bottom:calc(var(--horiz-h) + var(--sun-w)/2 + 7svh)}
+    .sero-brand{align-items:center;text-align:center;width:100%}
+    .sero-head{flex-direction:column;gap:10px}
+    .sero-desc{margin-left:auto;margin-right:auto}
+    .chips,.cta-row{justify-content:center}
+    .sero-tag{text-align:center}
+    .foot-row{flex-direction:column;justify-content:center;text-align:center}
+    .news-form .row{flex-direction:column}
+    .tips-card{flex-direction:column;text-align:center;padding:32px 24px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .tw,.gl,.phone,.route-svg path,.shooting,.mark.kick,.const line,.const circle,.hero-cue .arr{animation:none}
+    .const{transition:none}
+    .const line{stroke-dashoffset:0}
+    .reveal{opacity:1;transform:none;transition:none}
+    .b-card,.store-btn,.btn-sunset{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <nav class="nav" aria-label="Principale">
+    <div class="wrap nav-row">
+      <a class="brand" href="#top" aria-label="Nautargo, torna su">
+        <svg viewBox="300 85 220 335" aria-hidden="true"><path d="M475.937 98.7457L452.965 215.21L351.835 240.434Z" fill="#5A646E"/><path d="M452.945 215.214L351.845 240.423L408.472 267.511Z" fill="#4C565F"/><path d="M351.84 240.421L407.127 266.797L335.389 347.492Z" fill="#5A646E"/><path d="M438.972 261.011L452.957 215.21L491.352 298.816Z" fill="#525C66"/><path d="M335.397 347.455L377.479 344.597L459.711 301.475L438.972 261.011L335.397 347.455Z" fill="#48525B"/><path d="M335.386 347.489L438.972 261.011L452.961 215.198Z" fill="#6A747E"/><path d="M459.695 301.468L491.357 298.844L438.98 261.015Z" fill="#6A747E"/><path d="M311.404 363.14L392.687 408.599L381.125 357.818Z" fill="#CB763F"/><path d="M392.678 408.589L418.308 408.507L503.519 311.874L463.239 314.994L381.119 357.813L392.678 408.589Z" fill="#D07C49"/><path d="M507.958 359.386L503.521 311.871L418.301 408.507Z" fill="#C06A37"/></svg>
+        <span class="nm">nautargo</span>
+      </a>
+      <div class="nav-right">
+        <a class="nav-mail open-contact" href="#contatto" data-i18n="contact_cta">Scrivici</a>
+        <nav class="langs" aria-label="Lingua">
+          <button type="button" class="lang" data-lang="it">IT</button>
+          <button type="button" class="lang" data-lang="en">EN</button>
+          <button type="button" class="lang" data-lang="es">ES</button>
+        </nav>
+      </div>
+    </div>
+  </nav>
+
+  <div class="stars" aria-hidden="true"><svg class="starfield" viewBox="0 0 1440 480" preserveAspectRatio="xMidYMin slice" xmlns="http://www.w3.org/2000/svg"><circle class="tw" cx="471.6" cy="74.9" r="1.35" fill="#F4EFE8" opacity="0.54"/><circle class="tw t2" cx="147.7" cy="260.6" r="1.61" fill="#F4EFE8" opacity="0.26"/><circle class="tw t4" cx="626.4" cy="40.0" r="0.79" fill="#F4EFE8" opacity="0.27"/><circle class="tw" cx="812.3" cy="417.4" r="1.33" fill="#F4EFE8" opacity="0.45"/><circle class="tw t2" cx="574.3" cy="429.8" r="0.75" fill="#F4EFE8" opacity="0.35"/><circle class="tw t2" cx="218.4" cy="60.7" r="1.01" fill="#F4EFE8" opacity="0.29"/><circle class="tw" cx="820.4" cy="90.8" r="0.8" fill="#F4EFE8" opacity="0.45"/><circle class="tw t3" cx="887.8" cy="223.5" r="1.23" fill="#F4EFE8" opacity="0.41"/><circle class="tw t2" cx="1317.1" cy="165.5" r="0.95" fill="#F4EFE8" opacity="0.49"/><circle class="tw t3" cx="359.2" cy="257.0" r="1.23" fill="#F4EFE8" opacity="0.51"/><circle class="tw t4" cx="421.0" cy="431.5" r="0.82" fill="#F4EFE8" opacity="0.31"/><circle class="tw" cx="497.3" cy="411.3" r="1.12" fill="#F4EFE8" opacity="0.52"/><circle class="tw t3" cx="823.0" cy="386.5" r="1.01" fill="#F4EFE8" opacity="0.46"/><circle class="tw t3" cx="832.7" cy="206.2" r="1.54" fill="#F4EFE8" opacity="0.42"/><circle class="tw t4" cx="951.5" cy="36.1" r="1.4" fill="#F4EFE8" opacity="0.35"/><circle class="tw t4" cx="559.0" cy="297.5" r="0.72" fill="#F4EFE8" opacity="0.37"/><circle class="tw t3" cx="876.4" cy="222.3" r="0.92" fill="#F4EFE8" opacity="0.3"/><circle class="tw" cx="364.1" cy="178.1" r="1.57" fill="#F4EFE8" opacity="0.31"/><circle class="tw t4" cx="581.3" cy="129.5" r="0.84" fill="#F4EFE8" opacity="0.55"/><circle class="tw t4" cx="407.6" cy="188.6" r="1.06" fill="#F4EFE8" opacity="0.59"/><circle class="tw t2" cx="227.8" cy="85.8" r="0.93" fill="#F4EFE8" opacity="0.25"/><circle class="tw t2" cx="1186.8" cy="88.4" r="0.98" fill="#F4EFE8" opacity="0.4"/><circle class="tw" cx="535.6" cy="253.5" r="1.65" fill="#F4EFE8" opacity="0.41"/><circle class="tw t4" cx="1243.1" cy="419.3" r="1.38" fill="#F4EFE8" opacity="0.39"/><circle class="tw t2" cx="570.7" cy="217.1" r="1.1" fill="#F4EFE8" opacity="0.27"/><circle class="tw" cx="309.4" cy="79.8" r="1.04" fill="#F4EFE8" opacity="0.29"/><circle class="tw" cx="814.2" cy="240.7" r="1.65" fill="#F4EFE8" opacity="0.27"/><circle class="tw t3" cx="308.2" cy="171.8" r="1.33" fill="#F4EFE8" opacity="0.46"/><circle class="tw t4" cx="683.6" cy="59.6" r="1.19" fill="#F4EFE8" opacity="0.42"/><circle class="tw t3" cx="454.7" cy="72.0" r="1.45" fill="#F4EFE8" opacity="0.42"/><circle class="tw t3" cx="990.8" cy="232.0" r="0.91" fill="#F4EFE8" opacity="0.3"/><circle class="tw" cx="780.9" cy="21.6" r="1.23" fill="#F4EFE8" opacity="0.49"/><circle class="tw t2" cx="383.2" cy="167.7" r="0.87" fill="#F4EFE8" opacity="0.44"/><circle class="tw t2" cx="1113.5" cy="151.8" r="0.92" fill="#F4EFE8" opacity="0.53"/><circle class="tw t4" cx="1168.8" cy="328.1" r="0.93" fill="#F4EFE8" opacity="0.37"/><circle class="tw t3" cx="55.9" cy="22.0" r="0.98" fill="#F4EFE8" opacity="0.32"/><circle class="tw t3" cx="868.2" cy="158.0" r="1.51" fill="#F4EFE8" opacity="0.58"/><circle class="tw t2" cx="529.1" cy="104.8" r="0.93" fill="#F4EFE8" opacity="0.37"/><circle class="tw" cx="695.5" cy="433.7" r="1.31" fill="#F4EFE8" opacity="0.42"/><circle class="tw" cx="935.7" cy="353.8" r="0.78" fill="#F4EFE8" opacity="0.57"/><circle class="tw t2" cx="1118.0" cy="332.6" r="1.18" fill="#F4EFE8" opacity="0.4"/><circle class="tw t4" cx="911.5" cy="47.3" r="1.65" fill="#F4EFE8" opacity="0.41"/><circle class="tw t2" cx="1063.1" cy="46.5" r="0.86" fill="#F4EFE8" opacity="0.26"/><circle class="tw t4" cx="848.0" cy="210.1" r="1.36" fill="#F4EFE8" opacity="0.48"/><circle class="tw" cx="509.1" cy="245.9" r="0.83" fill="#F4EFE8" opacity="0.53"/><circle class="tw t2" cx="1039.2" cy="54.2" r="1.45" fill="#F4EFE8" opacity="0.4"/></svg><svg class="const c1" viewBox="0 0 400 290"><line pathLength="1" x1="256" y1="26" x2="126" y2="170"/><line pathLength="1" x1="126" y1="170" x2="212" y2="186"/><line pathLength="1" x1="212" y1="186" x2="256" y2="26"/><line pathLength="1" x1="212" y1="186" x2="206" y2="254"/><line pathLength="1" x1="112" y1="226" x2="206" y2="254"/><line pathLength="1" x1="206" y1="254" x2="298" y2="198"/><circle cx="256" cy="26" r="2.6"/><circle cx="126" cy="170" r="2.2"/><circle cx="212" cy="186" r="2.4"/><circle cx="112" cy="226" r="2.2"/><circle cx="206" cy="254" r="2.8"/><circle cx="298" cy="198" r="2.4"/></svg><svg class="const c2" viewBox="0 0 360 200"><line pathLength="1" x1="140" y1="120" x2="210" y2="95"/><line pathLength="1" x1="210" y1="95" x2="235" y2="160"/><line pathLength="1" x1="235" y1="160" x2="150" y2="175"/><line pathLength="1" x1="150" y1="175" x2="140" y2="120"/><line pathLength="1" x1="210" y1="95" x2="270" y2="60"/><line pathLength="1" x1="270" y1="60" x2="330" y2="45"/><line pathLength="1" x1="330" y1="45" x2="352" y2="18"/><circle cx="140" cy="120" r="2.4"/><circle cx="210" cy="95" r="2.6"/><circle cx="235" cy="160" r="2.2"/><circle cx="150" cy="175" r="2.3"/><circle cx="270" cy="60" r="2.2"/><circle cx="330" cy="45" r="2.5"/><circle cx="352" cy="18" r="2.1"/></svg><svg class="const c3" viewBox="0 0 320 110"><line pathLength="1" x1="20" y1="90" x2="90" y2="30"/><line pathLength="1" x1="90" y1="30" x2="160" y2="80"/><line pathLength="1" x1="160" y1="80" x2="230" y2="20"/><line pathLength="1" x1="230" y1="20" x2="300" y2="70"/><circle cx="20" cy="90" r="2.3"/><circle cx="90" cy="30" r="2.6"/><circle cx="160" cy="80" r="2.2"/><circle cx="230" cy="20" r="2.6"/><circle cx="300" cy="70" r="2.3"/></svg></div>
+
+  <div class="sun-halo" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow" data-i18n="hero_eyebrow">Studio indipendente</p>
+        <svg class="mark L3" viewBox="285 75 250 355" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo Nautargo"><style>
+.L3bob{animation:L3Bob 5.5s ease-in-out infinite}
+.L3hull{animation:L3Pitch 5.5s ease-in-out infinite}
+.L3sail{animation:L3Puff 5.5s ease-in-out infinite;animation-delay:-.8s}
+@keyframes L3Bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes L3Pitch{0%,100%{transform:rotate(1.5deg)}50%{transform:rotate(-1.5deg)}}
+@keyframes L3Puff{0%,100%{transform:scale(1,1) skewX(0deg)}50%{transform:scale(1.03,.985) skewX(-1.3deg)}}
+
+.L3 .frag{opacity:0;transform-box:fill-box;transform-origin:center;animation:L3Flash 6.6s ease-in-out infinite}
+@keyframes L3Flash{0%,70%,100%{opacity:0}22%{opacity:.16}40%{opacity:.05}}
+.L3 .g1{animation-delay:-.24s}.L3 .g2{animation-delay:-1.08s}.L3 .g3{animation-delay:-2.04s}
+.L3 .g4{animation-delay:-3.12s}.L3 .g5{animation-delay:-4.08s}.L3 .g6{animation-delay:-4.92s}.L3 .g7{animation-delay:-5.76s}
+@media (prefers-reduced-motion:reduce){.L3 *{animation:none!important}}</style><defs><linearGradient id="L3g0" x1="330.997" y1="369.012" x2="381.997" y2="383.012" gradientUnits="userSpaceOnUse"><stop stop-color="#C7723C"/><stop offset="1" stop-color="#D6804D"></stop></linearGradient><linearGradient id="L3g1" x1="397.358" y1="359.121" x2="436.337" y2="365.754" gradientUnits="userSpaceOnUse"><stop stop-color="#C36935"/><stop offset="1" stop-color="#DC8653"></stop></linearGradient><clipPath id="L3clip"><path d="M475.937 98.7457L452.965 215.21L351.835 240.434Z"/><path d="M452.945 215.214L351.845 240.423L408.472 267.511Z"/><path d="M351.84 240.421L407.127 266.797L335.389 347.492Z"/><path d="M438.972 261.011L452.957 215.21L491.352 298.816Z"/><path d="M335.397 347.455L377.479 344.597L459.711 301.475L438.972 261.011L335.397 347.455Z"/><path d="M335.386 347.489L438.972 261.011L452.961 215.198Z"/><path d="M459.695 301.468L491.357 298.844L438.98 261.015Z"/></clipPath></defs><g class="L3bob"><g transform="translate(400 347)"><g class="L3sail"><g transform="translate(-400 -347)"><path d="M475.937 98.7457L452.965 215.21L351.835 240.434Z" fill="#2B3840"/><path d="M452.945 215.214L351.845 240.423L408.472 267.511Z" fill="#263039"/><path d="M351.84 240.421L407.127 266.797L335.389 347.492Z" fill="#2F3A40"/><path d="M438.972 261.011L452.957 215.21L491.352 298.816Z" fill="#2D3A42"/><path d="M335.397 347.455L377.479 344.597L459.711 301.475L438.972 261.011L335.397 347.455Z" fill="#242F37"/><path d="M335.386 347.489L438.972 261.011L452.961 215.198Z" fill="#3F484F"/><path d="M459.695 301.468L491.357 298.844L438.98 261.015Z" fill="#3F484E"/><g clip-path="url(#L3clip)"><path class="frag g1" d="M475.937 98.7457L452.965 215.21L351.835 240.434Z" fill="#FFFFFF"/><path class="frag g2" d="M452.945 215.214L351.845 240.423L408.472 267.511Z" fill="#FFFFFF"/><path class="frag g3" d="M351.84 240.421L407.127 266.797L335.389 347.492Z" fill="#FFFFFF"/><path class="frag g4" d="M438.972 261.011L452.957 215.21L491.352 298.816Z" fill="#FFFFFF"/><path class="frag g5" d="M335.397 347.455L377.479 344.597L459.711 301.475L438.972 261.011L335.397 347.455Z" fill="#FFFFFF"/><path class="frag g6" d="M335.386 347.489L438.972 261.011L452.961 215.198Z" fill="#FFFFFF"/><path class="frag g7" d="M459.695 301.468L491.357 298.844L438.98 261.015Z" fill="#FFFFFF"/></g></g></g></g><g transform="translate(503 360)"><g class="L3hull"><g transform="translate(-503 -360)"><path d="M311.404 363.14L392.687 408.599L381.125 357.818Z" fill="url(#L3g0)"/><path d="M392.678 408.589L418.308 408.507L503.519 311.874L463.239 314.994L381.119 357.813L392.678 408.589Z" fill="url(#L3g1)"/><path d="M507.958 359.386L503.521 311.871L418.301 408.507Z" fill="#C06A37"/></g></g></g></g></svg>
+    <h1 class="headline" data-i18n-html="hero_head">Il quotidiano, navigato <em>con calma</em>.</h1>
+  </div>
+  <a class="hero-cue" href="#bussola"><span data-i18n="hero_cta">Scopri la rotta</span><span class="arr" aria-hidden="true">↓</span></a>
+
+  <div class="horizon" aria-hidden="true"><!-- sole disattivato: riattivabile ripristinando lo <svg class="sun"> qui --><svg class="sea" viewBox="0 120 1440 240" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg"><polygon points="-46,120 -10,120 -43.4,149.2" fill="#1D242B"/><polygon points="-10,120 -11.0,146.4 -43.4,149.2" fill="#1D242B"/><polygon points="-10,120 26,120 -11.0,146.4" fill="#1D242B"/><polygon points="26,120 35.6,143.3 -11.0,146.4" fill="#1D242B"/><polygon points="26,120 62,120 35.6,143.3" fill="#1D242B"/><polygon points="62,120 67.1,146.6 35.6,143.3" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-7.7s" points="62,120 98,120 67.1,146.6" fill="#1D242B"/><polygon points="98,120 105.9,135.6 67.1,146.6" fill="#1D242B"/><polygon points="98,120 134,120 105.9,135.6" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-4.6s" points="134,120 126.7,151.0 105.9,135.6" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-12.1s" points="134,120 170,120 126.7,151.0" fill="#1D242B"/><polygon points="170,120 175.4,139.2 126.7,151.0" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-14.7s" points="170,120 206,120 175.4,139.2" fill="#1D242B"/><polygon points="206,120 211.3,137.7 175.4,139.2" fill="#1D242B"/><polygon points="206,120 242,120 211.3,137.7" fill="#1D242B"/><polygon points="242,120 238.9,142.1 211.3,137.7" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-0.2s" points="242,120 278,120 238.9,142.1" fill="#1D242B"/><polygon points="278,120 272.0,137.2 238.9,142.1" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-2.9s" points="278,120 314,120 272.0,137.2" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-0.5s" points="314,120 314.2,145.4 272.0,137.2" fill="#1D242B"/><polygon points="314,120 350,120 314.2,145.4" fill="#1D242B"/><polygon points="350,120 346.0,145.6 314.2,145.4" fill="#1D242B"/><polygon points="350,120 386,120 346.0,145.6" fill="#1D242B"/><polygon points="386,120 396.6,135.9 346.0,145.6" fill="#1D242B"/><polygon points="386,120 422,120 396.6,135.9" fill="#1D242B"/><polygon points="422,120 417.1,136.4 396.6,135.9" fill="#1D242B"/><polygon points="422,120 458,120 417.1,136.4" fill="#1D242B"/><polygon points="458,120 461.9,141.6 417.1,136.4" fill="#1D242B"/><polygon points="458,120 494,120 461.9,141.6" fill="#1D242B"/><polygon points="494,120 492.7,139.0 461.9,141.6" fill="#1D242B"/><polygon points="494,120 530,120 492.7,139.0" fill="#1D242B"/><polygon points="530,120 536.1,147.1 492.7,139.0" fill="#1D242B"/><polygon points="530,120 566,120 536.1,147.1" fill="#1D242B"/><polygon points="566,120 564.8,148.2 536.1,147.1" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-4.3s" points="566,120 602,120 564.8,148.2" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-11.5s" points="602,120 596.1,140.5 564.8,148.2" fill="#1D242B"/><polygon points="602,120 638,120 596.1,140.5" fill="#1D242B"/><polygon points="638,120 648.1,138.6 596.1,140.5" fill="#1D242B"/><polygon points="638,120 674,120 648.1,138.6" fill="#1D242B"/><polygon points="674,120 666.2,135.5 648.1,138.6" fill="#1D242B"/><polygon points="674,120 710,120 666.2,135.5" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-3.1s" points="710,120 713.8,148.1 666.2,135.5" fill="#1D242B"/><polygon points="710,120 746,120 713.8,148.1" fill="#1D242B"/><polygon points="746,120 736.1,142.7 713.8,148.1" fill="#1D242B"/><polygon points="746,120 782,120 736.1,142.7" fill="#1D242B"/><polygon points="782,120 779.7,140.2 736.1,142.7" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-9.4s" points="782,120 818,120 779.7,140.2" fill="#1D242B"/><polygon points="818,120 812.2,141.1 779.7,140.2" fill="#1D242B"/><polygon points="818,120 854,120 812.2,141.1" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-5.0s" points="854,120 846.1,149.7 812.2,141.1" fill="#1D242B"/><polygon points="854,120 890,120 846.1,149.7" fill="#1D242B"/><polygon points="890,120 883.4,143.6 846.1,149.7" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-3.7s" points="890,120 926,120 883.4,143.6" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-0.9s" points="926,120 929.1,145.5 883.4,143.6" fill="#1D242B"/><polygon points="926,120 962,120 929.1,145.5" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-8.4s" points="962,120 961.4,143.4 929.1,145.5" fill="#1D242B"/><polygon points="962,120 998,120 961.4,143.4" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-11.0s" points="998,120 1007.6,137.8 961.4,143.4" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-9.7s" points="998,120 1034,120 1007.6,137.8" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-6.3s" points="1034,120 1027.4,139.8 1007.6,137.8" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-4.0s" points="1034,120 1070,120 1027.4,139.8" fill="#1D242B"/><polygon points="1070,120 1075.3,141.8 1027.4,139.8" fill="#1D242B"/><polygon points="1070,120 1106,120 1075.3,141.8" fill="#1D242B"/><polygon points="1106,120 1103.6,136.2 1075.3,141.8" fill="#1D242B"/><polygon points="1106,120 1142,120 1103.6,136.2" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-5.9s" points="1142,120 1133.8,145.4 1103.6,136.2" fill="#1D242B"/><polygon points="1142,120 1178,120 1133.8,145.4" fill="#1D242B"/><polygon points="1178,120 1172.0,142.4 1133.8,145.4" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-14.8s" points="1178,120 1214,120 1172.0,142.4" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-3.9s" points="1214,120 1208.2,140.0 1172.0,142.4" fill="#1D242B"/><polygon points="1214,120 1250,120 1208.2,140.0" fill="#1D242B"/><polygon points="1250,120 1243.2,149.5 1208.2,140.0" fill="#1D242B"/><polygon points="1250,120 1286,120 1243.2,149.5" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-1.4s" points="1286,120 1288.7,142.8 1243.2,149.5" fill="#1D242B"/><polygon points="1286,120 1322,120 1288.7,142.8" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-9.0s" points="1322,120 1316.0,148.4 1288.7,142.8" fill="#1D242B"/><polygon points="1322,120 1358,120 1316.0,148.4" fill="#1D242B"/><polygon points="1358,120 1359.4,137.1 1316.0,148.4" fill="#1D242B"/><polygon points="1358,120 1394,120 1359.4,137.1" fill="#1D242B"/><polygon points="1394,120 1387.0,150.2 1359.4,137.1" fill="#1D242B"/><polygon points="1394,120 1430,120 1387.0,150.2" fill="#1D242B"/><polygon points="1430,120 1426.1,141.6 1387.0,150.2" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-2.3s" points="1430,120 1466,120 1426.1,141.6" fill="#1D242B"/><polygon points="1466,120 1457.1,149.0 1426.1,141.6" fill="#1D242B"/><polygon points="-43.4,149.2 -11.0,146.4 -51.6,170.0" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-2.8s" points="-11.0,146.4 -5.1,169.6 -51.6,170.0" fill="#1D242B"/><polygon points="-11.0,146.4 35.6,143.3 -5.1,169.6" fill="#1D242B"/><polygon points="35.6,143.3 23.3,165.2 -5.1,169.6" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-14.3s" points="35.6,143.3 67.1,146.6 23.3,165.2" fill="#1D242B"/><polygon points="67.1,146.6 66.3,165.1 23.3,165.2" fill="#1D242B"/><polygon points="67.1,146.6 105.9,135.6 66.3,165.1" fill="#1D242B"/><polygon points="105.9,135.6 100.6,176.3 66.3,165.1" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-0.6s" points="105.9,135.6 126.7,151.0 100.6,176.3" fill="#1D242B"/><polygon points="126.7,151.0 143.3,171.7 100.6,176.3" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-10.6s" points="126.7,151.0 175.4,139.2 143.3,171.7" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-12.4s" points="175.4,139.2 172.1,163.5 143.3,171.7" fill="#1D242B"/><polygon points="175.4,139.2 211.3,137.7 172.1,163.5" fill="#1D242B"/><polygon points="211.3,137.7 212.9,175.6 172.1,163.5" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-10.8s" points="211.3,137.7 238.9,142.1 212.9,175.6" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-3.4s" points="238.9,142.1 238.6,162.0 212.9,175.6" fill="#1D242B"/><polygon points="238.9,142.1 272.0,137.2 238.6,162.0" fill="#1D242B"/><polygon points="272.0,137.2 278.7,167.9 238.6,162.0" fill="#1D242B"/><polygon points="272.0,137.2 314.2,145.4 278.7,167.9" fill="#1D242B"/><polygon points="314.2,145.4 321.7,173.1 278.7,167.9" fill="#1D242B"/><polygon points="314.2,145.4 346.0,145.6 321.7,173.1" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-0.2s" points="346.0,145.6 348.5,169.5 321.7,173.1" fill="#1D242B"/><polygon points="346.0,145.6 396.6,135.9 348.5,169.5" fill="#1D242B"/><polygon points="396.6,135.9 385.6,171.6 348.5,169.5" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-2.6s" points="396.6,135.9 417.1,136.4 385.6,171.6" fill="#1D242B"/><polygon points="417.1,136.4 425.1,171.6 385.6,171.6" fill="#1D242B"/><polygon points="417.1,136.4 461.9,141.6 425.1,171.6" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-5.4s" points="461.9,141.6 451.8,173.9 425.1,171.6" fill="#1D242B"/><polygon points="461.9,141.6 492.7,139.0 451.8,173.9" fill="#1D242B"/><polygon points="492.7,139.0 484.2,165.2 451.8,173.9" fill="#1D242B"/><polygon points="492.7,139.0 536.1,147.1 484.2,165.2" fill="#1D242B"/><polygon points="536.1,147.1 531.2,161.4 484.2,165.2" fill="#1D242B"/><polygon points="536.1,147.1 564.8,148.2 531.2,161.4" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-0.5s" points="564.8,148.2 568.3,166.1 531.2,161.4" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-13.7s" points="564.8,148.2 596.1,140.5 568.3,166.1" fill="#1D242B"/><polygon points="596.1,140.5 598.4,162.3 568.3,166.1" fill="#1D242B"/><polygon points="596.1,140.5 648.1,138.6 598.4,162.3" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-9.5s" points="648.1,138.6 635.4,170.2 598.4,162.3" fill="#1D242B"/><polygon points="648.1,138.6 666.2,135.5 635.4,170.2" fill="#1D242B"/><polygon points="666.2,135.5 664.1,174.4 635.4,170.2" fill="#1D242B"/><polygon points="666.2,135.5 713.8,148.1 664.1,174.4" fill="#1D242B"/><polygon points="713.8,148.1 720.6,169.3 664.1,174.4" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-8.2s" points="713.8,148.1 736.1,142.7 720.6,169.3" fill="#1D242B"/><polygon points="736.1,142.7 747.1,174.1 720.6,169.3" fill="#1D242B"/><polygon points="736.1,142.7 779.7,140.2 747.1,174.1" fill="#1D242B"/><polygon points="779.7,140.2 785.4,171.7 747.1,174.1" fill="#1D242B"/><polygon points="779.7,140.2 812.2,141.1 785.4,171.7" fill="#1D242B"/><polygon points="812.2,141.1 817.5,169.3 785.4,171.7" fill="#1D242B"/><polygon points="812.2,141.1 846.1,149.7 817.5,169.3" fill="#1D242B"/><polygon points="846.1,149.7 851.0,162.7 817.5,169.3" fill="#1D242B"/><polygon points="846.1,149.7 883.4,143.6 851.0,162.7" fill="#1D242B"/><polygon points="883.4,143.6 896.1,171.7 851.0,162.7" fill="#1D242B"/><polygon points="883.4,143.6 929.1,145.5 896.1,171.7" fill="#1D242B"/><polygon points="929.1,145.5 915.1,173.5 896.1,171.7" fill="#1D242B"/><polygon points="929.1,145.5 961.4,143.4 915.1,173.5" fill="#1D242B"/><polygon points="961.4,143.4 972.7,167.6 915.1,173.5" fill="#1D242B"/><polygon points="961.4,143.4 1007.6,137.8 972.7,167.6" fill="#1D242B"/><polygon points="1007.6,137.8 1007.2,164.5 972.7,167.6" fill="#1D242B"/><polygon points="1007.6,137.8 1027.4,139.8 1007.2,164.5" fill="#1D242B"/><polygon points="1027.4,139.8 1036.9,173.8 1007.2,164.5" fill="#1D242B"/><polygon points="1027.4,139.8 1075.3,141.8 1036.9,173.8" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-9.6s" points="1075.3,141.8 1067.9,165.6 1036.9,173.8" fill="#1D242B"/><polygon points="1075.3,141.8 1103.6,136.2 1067.9,165.6" fill="#1D242B"/><polygon points="1103.6,136.2 1098.0,169.7 1067.9,165.6" fill="#1D242B"/><polygon points="1103.6,136.2 1133.8,145.4 1098.0,169.7" fill="#1D242B"/><polygon points="1133.8,145.4 1137.7,168.6 1098.0,169.7" fill="#1D242B"/><polygon points="1133.8,145.4 1172.0,142.4 1137.7,168.6" fill="#1D242B"/><polygon points="1172.0,142.4 1180.5,164.7 1137.7,168.6" fill="#1D242B"/><polygon points="1172.0,142.4 1208.2,140.0 1180.5,164.7" fill="#1D242B"/><polygon points="1208.2,140.0 1211.9,161.7 1180.5,164.7" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-11.3s" points="1208.2,140.0 1243.2,149.5 1211.9,161.7" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-9.0s" points="1243.2,149.5 1253.6,172.7 1211.9,161.7" fill="#1D242B"/><polygon points="1243.2,149.5 1288.7,142.8 1253.6,172.7" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-10.5s" points="1288.7,142.8 1281.5,164.4 1253.6,172.7" fill="#1D242B"/><polygon points="1288.7,142.8 1316.0,148.4 1281.5,164.4" fill="#1D242B"/><polygon points="1316.0,148.4 1325.0,168.3 1281.5,164.4" fill="#1D242B"/><polygon points="1316.0,148.4 1359.4,137.1 1325.0,168.3" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-0.2s" points="1359.4,137.1 1365.0,173.0 1325.0,168.3" fill="#1D242B"/><polygon points="1359.4,137.1 1387.0,150.2 1365.0,173.0" fill="#1D242B"/><polygon points="1387.0,150.2 1392.9,167.8 1365.0,173.0" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-2.5s" points="1387.0,150.2 1426.1,141.6 1392.9,167.8" fill="#1D242B"/><polygon points="1426.1,141.6 1431.8,170.6 1392.9,167.8" fill="#1D242B"/><polygon points="1426.1,141.6 1457.1,149.0 1431.8,170.6" fill="#1D242B"/><polygon points="1457.1,149.0 1465.5,169.7 1431.8,170.6" fill="#1D242B"/><polygon points="-51.6,170.0 -5.1,169.6 -48.8,201.1" fill="#1D242B"/><polygon points="-5.1,169.6 -10.3,192.1 -48.8,201.1" fill="#20272F"/><polygon points="-5.1,169.6 23.3,165.2 -10.3,192.1" fill="#1D242B"/><polygon class="gl dB" style="animation-delay:-6.5s" points="23.3,165.2 28.9,195.2 -10.3,192.1" fill="#20272F"/><polygon points="23.3,165.2 66.3,165.1 28.9,195.2" fill="#1D242B"/><polygon points="66.3,165.1 58.5,199.3 28.9,195.2" fill="#20272F"/><polygon points="66.3,165.1 100.6,176.3 58.5,199.3" fill="#1D242B"/><polygon points="100.6,176.3 106.2,196.4 58.5,199.3" fill="#20272F"/><polygon points="100.6,176.3 143.3,171.7 106.2,196.4" fill="#1D242B"/><polygon points="143.3,171.7 131.8,200.2 106.2,196.4" fill="#20272F"/><polygon class="gl dA" style="animation-delay:-7.4s" points="143.3,171.7 172.1,163.5 131.8,200.2" fill="#1D242B"/><polygon points="172.1,163.5 177.7,202.8 131.8,200.2" fill="#20272F"/><polygon points="172.1,163.5 212.9,175.6 177.7,202.8" fill="#1D242B"/><polygon points="212.9,175.6 216.7,191.0 177.7,202.8" fill="#20272F"/><polygon points="212.9,175.6 238.6,162.0 216.7,191.0" fill="#1D242B"/><polygon points="238.6,162.0 242.7,195.8 216.7,191.0" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-6.8s" points="238.6,162.0 278.7,167.9 242.7,195.8" fill="#1D242B"/><polygon points="278.7,167.9 275.0,195.0 242.7,195.8" fill="#20272F"/><polygon class="gl dA" style="animation-delay:-6.2s" points="278.7,167.9 321.7,173.1 275.0,195.0" fill="#1D242B"/><polygon points="321.7,173.1 316.0,202.1 275.0,195.0" fill="#20272F"/><polygon points="321.7,173.1 348.5,169.5 316.0,202.1" fill="#1D242B"/><polygon points="348.5,169.5 353.4,191.1 316.0,202.1" fill="#20272F"/><polygon points="348.5,169.5 385.6,171.6 353.4,191.1" fill="#1D242B"/><polygon points="385.6,171.6 385.3,203.2 353.4,191.1" fill="#20272F"/><polygon points="385.6,171.6 425.1,171.6 385.3,203.2" fill="#1D242B"/><polygon class="gl dB" style="animation-delay:-0.5s" points="425.1,171.6 419.5,194.4 385.3,203.2" fill="#20272F"/><polygon points="425.1,171.6 451.8,173.9 419.5,194.4" fill="#1D242B"/><polygon class="gl dB" style="animation-delay:-10.6s" points="451.8,173.9 454.9,199.8 419.5,194.4" fill="#20272F"/><polygon points="451.8,173.9 484.2,165.2 454.9,199.8" fill="#1D242B"/><polygon points="484.2,165.2 489.7,192.8 454.9,199.8" fill="#20272F"/><polygon points="484.2,165.2 531.2,161.4 489.7,192.8" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-2.0s" points="531.2,161.4 519.3,192.1 489.7,192.8" fill="#1D242B"/><polygon points="531.2,161.4 568.3,166.1 519.3,192.1" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-12.4s" points="568.3,166.1 570.0,191.1 519.3,192.1" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-2.1s" points="568.3,166.1 598.4,162.3 570.0,191.1" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-9.4s" points="598.4,162.3 598.2,194.4 570.0,191.1" fill="#1D242B"/><polygon points="598.4,162.3 635.4,170.2 598.2,194.4" fill="#1D242B"/><polygon points="635.4,170.2 644.9,203.3 598.2,194.4" fill="#20272F"/><polygon points="635.4,170.2 664.1,174.4 644.9,203.3" fill="#20272F"/><polygon points="664.1,174.4 663.9,192.2 644.9,203.3" fill="#20272F"/><polygon points="664.1,174.4 720.6,169.3 663.9,192.2" fill="#20272F"/><polygon points="720.6,169.3 704.6,192.5 663.9,192.2" fill="#20272F"/><polygon class="gl dA" style="animation-delay:-7.1s" points="720.6,169.3 747.1,174.1 704.6,192.5" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-0.2s" points="747.1,174.1 745.5,205.1 704.6,192.5" fill="#1D242B"/><polygon points="747.1,174.1 785.4,171.7 745.5,205.1" fill="#1D242B"/><polygon points="785.4,171.7 779.8,200.9 745.5,205.1" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-4.1s" points="785.4,171.7 817.5,169.3 779.8,200.9" fill="#1D242B"/><polygon points="817.5,169.3 818.2,204.8 779.8,200.9" fill="#1D242B"/><polygon points="817.5,169.3 851.0,162.7 818.2,204.8" fill="#1D242B"/><polygon points="851.0,162.7 851.6,200.6 818.2,204.8" fill="#20272F"/><polygon points="851.0,162.7 896.1,171.7 851.6,200.6" fill="#1D242B"/><polygon points="896.1,171.7 881.6,196.0 851.6,200.6" fill="#20272F"/><polygon points="896.1,171.7 915.1,173.5 881.6,196.0" fill="#1D242B"/><polygon points="915.1,173.5 915.8,198.2 881.6,196.0" fill="#20272F"/><polygon points="915.1,173.5 972.7,167.6 915.8,198.2" fill="#1D242B"/><polygon class="gl dB" style="animation-delay:-14.0s" points="972.7,167.6 965.0,193.1 915.8,198.2" fill="#20272F"/><polygon points="972.7,167.6 1007.2,164.5 965.0,193.1" fill="#1D242B"/><polygon class="gl dB" style="animation-delay:-6.8s" points="1007.2,164.5 997.6,200.9 965.0,193.1" fill="#20272F"/><polygon points="1007.2,164.5 1036.9,173.8 997.6,200.9" fill="#1D242B"/><polygon points="1036.9,173.8 1030.1,204.9 997.6,200.9" fill="#20272F"/><polygon points="1036.9,173.8 1067.9,165.6 1030.1,204.9" fill="#1D242B"/><polygon points="1067.9,165.6 1060.7,195.7 1030.1,204.9" fill="#20272F"/><polygon points="1067.9,165.6 1098.0,169.7 1060.7,195.7" fill="#1D242B"/><polygon points="1098.0,169.7 1116.5,205.5 1060.7,195.7" fill="#20272F"/><polygon points="1098.0,169.7 1137.7,168.6 1116.5,205.5" fill="#1D242B"/><polygon points="1137.7,168.6 1141.9,192.8 1116.5,205.5" fill="#20272F"/><polygon points="1137.7,168.6 1180.5,164.7 1141.9,192.8" fill="#1D242B"/><polygon class="gl dB" style="animation-delay:-10.8s" points="1180.5,164.7 1174.3,196.5 1141.9,192.8" fill="#20272F"/><polygon points="1180.5,164.7 1211.9,161.7 1174.3,196.5" fill="#1D242B"/><polygon points="1211.9,161.7 1210.9,196.9 1174.3,196.5" fill="#20272F"/><polygon points="1211.9,161.7 1253.6,172.7 1210.9,196.9" fill="#1D242B"/><polygon class="gl dB" style="animation-delay:-13.5s" points="1253.6,172.7 1246.9,204.2 1210.9,196.9" fill="#20272F"/><polygon points="1253.6,172.7 1281.5,164.4 1246.9,204.2" fill="#1D242B"/><polygon points="1281.5,164.4 1275.8,203.6 1246.9,204.2" fill="#20272F"/><polygon points="1281.5,164.4 1325.0,168.3 1275.8,203.6" fill="#1D242B"/><polygon points="1325.0,168.3 1319.3,205.7 1275.8,203.6" fill="#20272F"/><polygon points="1325.0,168.3 1365.0,173.0 1319.3,205.7" fill="#1D242B"/><polygon points="1365.0,173.0 1366.8,204.6 1319.3,205.7" fill="#20272F"/><polygon points="1365.0,173.0 1392.9,167.8 1366.8,204.6" fill="#1D242B"/><polygon points="1392.9,167.8 1394.6,203.7 1366.8,204.6" fill="#20272F"/><polygon class="gl dA" style="animation-delay:-6.6s" points="1392.9,167.8 1431.8,170.6 1394.6,203.7" fill="#1D242B"/><polygon points="1431.8,170.6 1422.0,195.3 1394.6,203.7" fill="#20272F"/><polygon points="1431.8,170.6 1465.5,169.7 1422.0,195.3" fill="#1D242B"/><polygon points="1465.5,169.7 1457.9,190.7 1422.0,195.3" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-12.1s" points="-48.8,201.1 -10.3,192.1 -36.7,228.0" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-12.0s" points="-10.3,192.1 -16.1,236.3 -36.7,228.0" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-5.0s" points="-10.3,192.1 28.9,195.2 -16.1,236.3" fill="#20272F"/><polygon points="28.9,195.2 32.8,231.8 -16.1,236.3" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-2.2s" points="28.9,195.2 58.5,199.3 32.8,231.8" fill="#20272F"/><polygon points="58.5,199.3 57.5,223.8 32.8,231.8" fill="#20272F"/><polygon points="58.5,199.3 106.2,196.4 57.5,223.8" fill="#20272F"/><polygon points="106.2,196.4 89.8,231.8 57.5,223.8" fill="#20272F"/><polygon points="106.2,196.4 131.8,200.2 89.8,231.8" fill="#20272F"/><polygon points="131.8,200.2 143.1,232.2 89.8,231.8" fill="#20272F"/><polygon points="131.8,200.2 177.7,202.8 143.1,232.2" fill="#20272F"/><polygon points="177.7,202.8 164.6,224.6 143.1,232.2" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-3.3s" points="177.7,202.8 216.7,191.0 164.6,224.6" fill="#20272F"/><polygon points="216.7,191.0 213.4,234.2 164.6,224.6" fill="#20272F"/><polygon points="216.7,191.0 242.7,195.8 213.4,234.2" fill="#20272F"/><polygon points="242.7,195.8 241.8,231.4 213.4,234.2" fill="#20272F"/><polygon points="242.7,195.8 275.0,195.0 241.8,231.4" fill="#20272F"/><polygon points="275.0,195.0 268.2,224.2 241.8,231.4" fill="#20272F"/><polygon points="275.0,195.0 316.0,202.1 268.2,224.2" fill="#20272F"/><polygon points="316.0,202.1 324.4,222.5 268.2,224.2" fill="#20272F"/><polygon points="316.0,202.1 353.4,191.1 324.4,222.5" fill="#20272F"/><polygon points="353.4,191.1 356.7,224.7 324.4,222.5" fill="#20272F"/><polygon points="353.4,191.1 385.3,203.2 356.7,224.7" fill="#20272F"/><polygon points="385.3,203.2 391.2,224.4 356.7,224.7" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-12.8s" points="385.3,203.2 419.5,194.4 391.2,224.4" fill="#20272F"/><polygon points="419.5,194.4 413.2,232.7 391.2,224.4" fill="#20272F"/><polygon points="419.5,194.4 454.9,199.8 413.2,232.7" fill="#20272F"/><polygon points="454.9,199.8 467.6,230.2 413.2,232.7" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-8.0s" points="454.9,199.8 489.7,192.8 467.6,230.2" fill="#20272F"/><polygon points="489.7,192.8 502.9,232.8 467.6,230.2" fill="#20272F"/><polygon points="489.7,192.8 519.3,192.1 502.9,232.8" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-14.5s" points="519.3,192.1 537.9,231.0 502.9,232.8" fill="#20272F"/><polygon points="519.3,192.1 570.0,191.1 537.9,231.0" fill="#20272F"/><polygon points="570.0,191.1 574.5,232.8 537.9,231.0" fill="#20272F"/><polygon points="570.0,191.1 598.2,194.4 574.5,232.8" fill="#20272F"/><polygon points="598.2,194.4 599.9,228.5 574.5,232.8" fill="#20272F"/><polygon points="598.2,194.4 644.9,203.3 599.9,228.5" fill="#20272F"/><polygon points="644.9,203.3 645.4,223.0 599.9,228.5" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-8.1s" points="644.9,203.3 663.9,192.2 645.4,223.0" fill="#20272F"/><polygon points="663.9,192.2 673.5,223.7 645.4,223.0" fill="#20272F"/><polygon points="663.9,192.2 704.6,192.5 673.5,223.7" fill="#20272F"/><polygon points="704.6,192.5 717.5,230.8 673.5,223.7" fill="#20272F"/><polygon points="704.6,192.5 745.5,205.1 717.5,230.8" fill="#1D242B"/><polygon points="745.5,205.1 753.2,228.2 717.5,230.8" fill="#1D242B"/><polygon class="gl dA" style="animation-delay:-6.5s" points="745.5,205.1 779.8,200.9 753.2,228.2" fill="#1D242B"/><polygon points="779.8,200.9 780.7,230.7 753.2,228.2" fill="#20272F"/><polygon points="779.8,200.9 818.2,204.8 780.7,230.7" fill="#20272F"/><polygon points="818.2,204.8 820.4,225.7 780.7,230.7" fill="#20272F"/><polygon points="818.2,204.8 851.6,200.6 820.4,225.7" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-9.3s" points="851.6,200.6 844.2,230.0 820.4,225.7" fill="#20272F"/><polygon points="851.6,200.6 881.6,196.0 844.2,230.0" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-11.7s" points="881.6,196.0 881.3,230.0 844.2,230.0" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-2.9s" points="881.6,196.0 915.8,198.2 881.3,230.0" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-10.3s" points="915.8,198.2 918.0,231.8 881.3,230.0" fill="#20272F"/><polygon points="915.8,198.2 965.0,193.1 918.0,231.8" fill="#20272F"/><polygon points="965.0,193.1 962.8,224.6 918.0,231.8" fill="#20272F"/><polygon points="965.0,193.1 997.6,200.9 962.8,224.6" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-11.0s" points="997.6,200.9 1004.7,229.6 962.8,224.6" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-7.7s" points="997.6,200.9 1030.1,204.9 1004.7,229.6" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-3.0s" points="1030.1,204.9 1043.5,226.9 1004.7,229.6" fill="#20272F"/><polygon points="1030.1,204.9 1060.7,195.7 1043.5,226.9" fill="#20272F"/><polygon points="1060.7,195.7 1069.9,228.3 1043.5,226.9" fill="#20272F"/><polygon points="1060.7,195.7 1116.5,205.5 1069.9,228.3" fill="#20272F"/><polygon points="1116.5,205.5 1110.5,227.5 1069.9,228.3" fill="#20272F"/><polygon points="1116.5,205.5 1141.9,192.8 1110.5,227.5" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-3.1s" points="1141.9,192.8 1143.6,229.5 1110.5,227.5" fill="#20272F"/><polygon points="1141.9,192.8 1174.3,196.5 1143.6,229.5" fill="#20272F"/><polygon points="1174.3,196.5 1171.5,237.4 1143.6,229.5" fill="#20272F"/><polygon points="1174.3,196.5 1210.9,196.9 1171.5,237.4" fill="#20272F"/><polygon points="1210.9,196.9 1210.0,236.3 1171.5,237.4" fill="#20272F"/><polygon points="1210.9,196.9 1246.9,204.2 1210.0,236.3" fill="#20272F"/><polygon points="1246.9,204.2 1252.1,228.9 1210.0,236.3" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-11.1s" points="1246.9,204.2 1275.8,203.6 1252.1,228.9" fill="#20272F"/><polygon points="1275.8,203.6 1283.4,226.0 1252.1,228.9" fill="#20272F"/><polygon points="1275.8,203.6 1319.3,205.7 1283.4,226.0" fill="#20272F"/><polygon points="1319.3,205.7 1313.8,226.9 1283.4,226.0" fill="#20272F"/><polygon points="1319.3,205.7 1366.8,204.6 1313.8,226.9" fill="#20272F"/><polygon points="1366.8,204.6 1367.7,224.6 1313.8,226.9" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-15.0s" points="1366.8,204.6 1394.6,203.7 1367.7,224.6" fill="#20272F"/><polygon points="1394.6,203.7 1393.9,229.5 1367.7,224.6" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-3.6s" points="1394.6,203.7 1422.0,195.3 1393.9,229.5" fill="#20272F"/><polygon points="1422.0,195.3 1426.2,222.4 1393.9,229.5" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-1.5s" points="1422.0,195.3 1457.9,190.7 1426.2,222.4" fill="#20272F"/><polygon points="1457.9,190.7 1471.4,230.3 1426.2,222.4" fill="#20272F"/><polygon points="-36.7,228.0 -16.1,236.3 -43.8,265.2" fill="#20272F"/><polygon points="-16.1,236.3 -1.1,266.4 -43.8,265.2" fill="#232B33"/><polygon class="gl dB" style="animation-delay:-6.0s" points="-16.1,236.3 32.8,231.8 -1.1,266.4" fill="#20272F"/><polygon points="32.8,231.8 30.1,261.6 -1.1,266.4" fill="#232B33"/><polygon class="gl dB" style="animation-delay:-3.0s" points="32.8,231.8 57.5,223.8 30.1,261.6" fill="#20272F"/><polygon points="57.5,223.8 60.0,267.9 30.1,261.6" fill="#232B33"/><polygon points="57.5,223.8 89.8,231.8 60.0,267.9" fill="#20272F"/><polygon points="89.8,231.8 107.3,270.3 60.0,267.9" fill="#232B33"/><polygon class="gl dB" style="animation-delay:-7.6s" points="89.8,231.8 143.1,232.2 107.3,270.3" fill="#20272F"/><polygon points="143.1,232.2 141.1,265.6 107.3,270.3" fill="#232B33"/><polygon points="143.1,232.2 164.6,224.6 141.1,265.6" fill="#20272F"/><polygon points="164.6,224.6 175.8,270.8 141.1,265.6" fill="#232B33"/><polygon class="gl dB" style="animation-delay:-1.1s" points="164.6,224.6 213.4,234.2 175.8,270.8" fill="#20272F"/><polygon class="gl dC" style="animation-delay:-0.6s" points="213.4,234.2 212.4,260.4 175.8,270.8" fill="#232B33"/><polygon points="213.4,234.2 241.8,231.4 212.4,260.4" fill="#20272F"/><polygon points="241.8,231.4 247.6,273.4 212.4,260.4" fill="#232B33"/><polygon points="241.8,231.4 268.2,224.2 247.6,273.4" fill="#20272F"/><polygon class="gl dC" style="animation-delay:-2.8s" points="268.2,224.2 284.2,268.7 247.6,273.4" fill="#232B33"/><polygon class="gl dB" style="animation-delay:-12.6s" points="268.2,224.2 324.4,222.5 284.2,268.7" fill="#20272F"/><polygon points="324.4,222.5 303.3,263.5 284.2,268.7" fill="#232B33"/><polygon points="324.4,222.5 356.7,224.7 303.3,263.5" fill="#20272F"/><polygon class="gl dC" style="animation-delay:-0.9s" points="356.7,224.7 340.1,269.2 303.3,263.5" fill="#232B33"/><polygon points="356.7,224.7 391.2,224.4 340.1,269.2" fill="#20272F"/><polygon points="391.2,224.4 388.5,272.8 340.1,269.2" fill="#232B33"/><polygon points="391.2,224.4 413.2,232.7 388.5,272.8" fill="#20272F"/><polygon points="413.2,232.7 413.1,266.4 388.5,272.8" fill="#232B33"/><polygon points="413.2,232.7 467.6,230.2 413.1,266.4" fill="#20272F"/><polygon points="467.6,230.2 468.5,271.8 413.1,266.4" fill="#232B33"/><polygon points="467.6,230.2 502.9,232.8 468.5,271.8" fill="#20272F"/><polygon points="502.9,232.8 485.7,264.4 468.5,271.8" fill="#232B33"/><polygon class="gl dB" style="animation-delay:-10.5s" points="502.9,232.8 537.9,231.0 485.7,264.4" fill="#20272F"/><polygon points="537.9,231.0 540.8,263.4 485.7,264.4" fill="#232B33"/><polygon class="gl dB" style="animation-delay:-6.8s" points="537.9,231.0 574.5,232.8 540.8,263.4" fill="#20272F"/><polygon points="574.5,232.8 567.0,260.0 540.8,263.4" fill="#232B33"/><polygon points="574.5,232.8 599.9,228.5 567.0,260.0" fill="#20272F"/><polygon class="gl dC" style="animation-delay:-2.5s" points="599.9,228.5 611.0,272.7 567.0,260.0" fill="#232B33"/><polygon points="599.9,228.5 645.4,223.0 611.0,272.7" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-13.4s" points="645.4,223.0 636.3,259.7 611.0,272.7" fill="#20272F"/><polygon points="645.4,223.0 673.5,223.7 636.3,259.7" fill="#20272F"/><polygon points="673.5,223.7 670.9,268.3 636.3,259.7" fill="#20272F"/><polygon points="673.5,223.7 717.5,230.8 670.9,268.3" fill="#20272F"/><polygon points="717.5,230.8 719.1,266.1 670.9,268.3" fill="#20272F"/><polygon points="717.5,230.8 753.2,228.2 719.1,266.1" fill="#20272F"/><polygon points="753.2,228.2 743.9,260.6 719.1,266.1" fill="#20272F"/><polygon points="753.2,228.2 780.7,230.7 743.9,260.6" fill="#20272F"/><polygon points="780.7,230.7 778.4,263.3 743.9,260.6" fill="#20272F"/><polygon points="780.7,230.7 820.4,225.7 778.4,263.3" fill="#20272F"/><polygon class="gl dB" style="animation-delay:-13.7s" points="820.4,225.7 825.1,265.1 778.4,263.3" fill="#20272F"/><polygon points="820.4,225.7 844.2,230.0 825.1,265.1" fill="#20272F"/><polygon points="844.2,230.0 860.0,260.8 825.1,265.1" fill="#232B33"/><polygon points="844.2,230.0 881.3,230.0 860.0,260.8" fill="#20272F"/><polygon points="881.3,230.0 880.5,260.6 860.0,260.8" fill="#232B33"/><polygon points="881.3,230.0 918.0,231.8 880.5,260.6" fill="#20272F"/><polygon points="918.0,231.8 918.4,273.1 880.5,260.6" fill="#232B33"/><polygon points="918.0,231.8 962.8,224.6 918.4,273.1" fill="#20272F"/><polygon points="962.8,224.6 961.4,263.1 918.4,273.1" fill="#232B33"/><polygon points="962.8,224.6 1004.7,229.6 961.4,263.1" fill="#20272F"/><polygon points="1004.7,229.6 988.5,261.9 961.4,263.1" fill="#232B33"/><polygon points="1004.7,229.6 1043.5,226.9 988.5,261.9" fill="#20272F"/><polygon class="gl dC" style="animation-delay:-5.1s" points="1043.5,226.9 1038.4,269.1 988.5,261.9" fill="#232B33"/><polygon points="1043.5,226.9 1069.9,228.3 1038.4,269.1" fill="#20272F"/><polygon class="gl dC" style="animation-delay:-5.3s" points="1069.9,228.3 1071.3,263.0 1038.4,269.1" fill="#232B33"/><polygon points="1069.9,228.3 1110.5,227.5 1071.3,263.0" fill="#20272F"/><polygon points="1110.5,227.5 1113.2,263.6 1071.3,263.0" fill="#232B33"/><polygon class="gl dB" style="animation-delay:-14.2s" points="1110.5,227.5 1143.6,229.5 1113.2,263.6" fill="#20272F"/><polygon points="1143.6,229.5 1148.8,258.2 1113.2,263.6" fill="#232B33"/><polygon points="1143.6,229.5 1171.5,237.4 1148.8,258.2" fill="#20272F"/><polygon points="1171.5,237.4 1187.6,266.3 1148.8,258.2" fill="#232B33"/><polygon points="1171.5,237.4 1210.0,236.3 1187.6,266.3" fill="#20272F"/><polygon points="1210.0,236.3 1221.9,273.5 1187.6,266.3" fill="#232B33"/><polygon points="1210.0,236.3 1252.1,228.9 1221.9,273.5" fill="#20272F"/><polygon points="1252.1,228.9 1241.6,258.5 1221.9,273.5" fill="#232B33"/><polygon points="1252.1,228.9 1283.4,226.0 1241.6,258.5" fill="#20272F"/><polygon points="1283.4,226.0 1280.8,260.9 1241.6,258.5" fill="#232B33"/><polygon points="1283.4,226.0 1313.8,226.9 1280.8,260.9" fill="#20272F"/><polygon points="1313.8,226.9 1326.6,266.7 1280.8,260.9" fill="#232B33"/><polygon class="gl dB" style="animation-delay:-9.2s" points="1313.8,226.9 1367.7,224.6 1326.6,266.7" fill="#20272F"/><polygon points="1367.7,224.6 1360.0,273.1 1326.6,266.7" fill="#232B33"/><polygon class="gl dB" style="animation-delay:-6.0s" points="1367.7,224.6 1393.9,229.5 1360.0,273.1" fill="#20272F"/><polygon class="gl dC" style="animation-delay:-2.9s" points="1393.9,229.5 1389.9,268.3 1360.0,273.1" fill="#232B33"/><polygon points="1393.9,229.5 1426.2,222.4 1389.9,268.3" fill="#20272F"/><polygon class="gl dC" style="animation-delay:-3.8s" points="1426.2,222.4 1424.5,267.7 1389.9,268.3" fill="#232B33"/><polygon points="1426.2,222.4 1471.4,230.3 1424.5,267.7" fill="#20272F"/><polygon points="1471.4,230.3 1476.9,259.3 1424.5,267.7" fill="#232B33"/><polygon points="-43.8,265.2 -1.1,266.4 -43.4,315.3" fill="#232B33"/><polygon points="-1.1,266.4 -2.8,303.7 -43.4,315.3" fill="#232B33"/><polygon points="-1.1,266.4 30.1,261.6 -2.8,303.7" fill="#232B33"/><polygon points="30.1,261.6 30.7,305.7 -2.8,303.7" fill="#232B33"/><polygon points="30.1,261.6 60.0,267.9 30.7,305.7" fill="#232B33"/><polygon points="60.0,267.9 62.3,300.3 30.7,305.7" fill="#232B33"/><polygon class="gl dC" style="animation-delay:-9.0s" points="60.0,267.9 107.3,270.3 62.3,300.3" fill="#232B33"/><polygon points="107.3,270.3 101.8,308.6 62.3,300.3" fill="#232B33"/><polygon class="gl dC" style="animation-delay:-14.0s" points="107.3,270.3 141.1,265.6 101.8,308.6" fill="#232B33"/><polygon class="gl dC" style="animation-delay:-7.1s" points="141.1,265.6 128.7,303.4 101.8,308.6" fill="#232B33"/><polygon class="gl dC" style="animation-delay:-7.4s" points="141.1,265.6 175.8,270.8 128.7,303.4" fill="#232B33"/><polygon points="175.8,270.8 160.7,313.3 128.7,303.4" fill="#232B33"/><polygon class="gl dC" style="animation-delay:-14.2s" points="175.8,270.8 212.4,260.4 160.7,313.3" fill="#232B33"/><polygon points="212.4,260.4 203.8,304.0 160.7,313.3" fill="#232B33"/><polygon points="212.4,260.4 247.6,273.4 203.8,304.0" fill="#232B33"/><polygon points="247.6,273.4 252.3,302.6 203.8,304.0" fill="#232B33"/><polygon points="247.6,273.4 284.2,268.7 252.3,302.6" fill="#232B33"/><polygon points="284.2,268.7 275.3,300.9 252.3,302.6" fill="#232B33"/><polygon points="284.2,268.7 303.3,263.5 275.3,300.9" fill="#232B33"/><polygon points="303.3,263.5 307.2,307.3 275.3,300.9" fill="#232B33"/><polygon points="303.3,263.5 340.1,269.2 307.2,307.3" fill="#232B33"/><polygon points="340.1,269.2 343.6,314.1 307.2,307.3" fill="#232B33"/><polygon points="340.1,269.2 388.5,272.8 343.6,314.1" fill="#232B33"/><polygon class="gl dC" style="animation-delay:-3.7s" points="388.5,272.8 379.7,312.8 343.6,314.1" fill="#232B33"/><polygon class="gl dC" style="animation-delay:-2.3s" points="388.5,272.8 413.1,266.4 379.7,312.8" fill="#232B33"/><polygon points="413.1,266.4 421.7,311.6 379.7,312.8" fill="#232B33"/><polygon points="413.1,266.4 468.5,271.8 421.7,311.6" fill="#232B33"/><polygon points="468.5,271.8 465.0,314.3 421.7,311.6" fill="#232B33"/><polygon points="468.5,271.8 485.7,264.4 465.0,314.3" fill="#232B33"/><polygon class="gl dC" style="animation-delay:-14.8s" points="485.7,264.4 502.8,311.2 465.0,314.3" fill="#232B33"/><polygon points="485.7,264.4 540.8,263.4 502.8,311.2" fill="#232B33"/><polygon class="gl dC" style="animation-delay:-13.6s" points="540.8,263.4 521.6,304.5 502.8,311.2" fill="#232B33"/><polygon points="540.8,263.4 567.0,260.0 521.6,304.5" fill="#232B33"/><polygon points="567.0,260.0 564.7,315.4 521.6,304.5" fill="#232B33"/><polygon points="567.0,260.0 611.0,272.7 564.7,315.4" fill="#232B33"/><polygon class="gl dC" style="animation-delay:-7.9s" points="611.0,272.7 604.9,314.1 564.7,315.4" fill="#232B33"/><polygon points="611.0,272.7 636.3,259.7 604.9,314.1" fill="#232B33"/><polygon points="636.3,259.7 628.5,315.8 604.9,314.1" fill="#232B33"/><polygon points="636.3,259.7 670.9,268.3 628.5,315.8" fill="#20272F"/><polygon points="670.9,268.3 683.2,314.3 628.5,315.8" fill="#151B21"/><polygon points="670.9,268.3 719.1,266.1 683.2,314.3" fill="#20272F"/><polygon points="719.1,266.1 707.1,305.3 683.2,314.3" fill="#151B21"/><polygon class="gl dB" style="animation-delay:-9.4s" points="719.1,266.1 743.9,260.6 707.1,305.3" fill="#20272F"/><polygon points="743.9,260.6 747.1,312.1 707.1,305.3" fill="#232B33"/><polygon class="gl dC" style="animation-delay:-0.8s" points="743.9,260.6 778.4,263.3 747.1,312.1" fill="#232B33"/><polygon points="778.4,263.3 771.0,308.6 747.1,312.1" fill="#232B33"/><polygon class="gl dC" style="animation-delay:-6.6s" points="778.4,263.3 825.1,265.1 771.0,308.6" fill="#232B33"/><polygon points="825.1,265.1 826.3,315.2 771.0,308.6" fill="#232B33"/><polygon points="825.1,265.1 860.0,260.8 826.3,315.2" fill="#232B33"/><polygon points="860.0,260.8 853.6,300.3 826.3,315.2" fill="#232B33"/><polygon points="860.0,260.8 880.5,260.6 853.6,300.3" fill="#232B33"/><polygon points="880.5,260.6 896.6,308.7 853.6,300.3" fill="#232B33"/><polygon points="880.5,260.6 918.4,273.1 896.6,308.7" fill="#232B33"/><polygon points="918.4,273.1 928.3,304.3 896.6,308.7" fill="#232B33"/><polygon points="918.4,273.1 961.4,263.1 928.3,304.3" fill="#232B33"/><polygon points="961.4,263.1 967.1,310.0 928.3,304.3" fill="#232B33"/><polygon points="961.4,263.1 988.5,261.9 967.1,310.0" fill="#232B33"/><polygon class="gl dC" style="animation-delay:-1.7s" points="988.5,261.9 987.8,311.5 967.1,310.0" fill="#232B33"/><polygon points="988.5,261.9 1038.4,269.1 987.8,311.5" fill="#232B33"/><polygon points="1038.4,269.1 1044.4,306.1 987.8,311.5" fill="#232B33"/><polygon points="1038.4,269.1 1071.3,263.0 1044.4,306.1" fill="#232B33"/><polygon points="1071.3,263.0 1070.4,304.4 1044.4,306.1" fill="#232B33"/><polygon points="1071.3,263.0 1113.2,263.6 1070.4,304.4" fill="#232B33"/><polygon points="1113.2,263.6 1096.6,315.1 1070.4,304.4" fill="#232B33"/><polygon points="1113.2,263.6 1148.8,258.2 1096.6,315.1" fill="#232B33"/><polygon points="1148.8,258.2 1147.1,302.9 1096.6,315.1" fill="#232B33"/><polygon points="1148.8,258.2 1187.6,266.3 1147.1,302.9" fill="#232B33"/><polygon points="1187.6,266.3 1188.6,310.2 1147.1,302.9" fill="#232B33"/><polygon class="gl dC" style="animation-delay:-3.7s" points="1187.6,266.3 1221.9,273.5 1188.6,310.2" fill="#232B33"/><polygon points="1221.9,273.5 1219.5,306.1 1188.6,310.2" fill="#232B33"/><polygon points="1221.9,273.5 1241.6,258.5 1219.5,306.1" fill="#232B33"/><polygon points="1241.6,258.5 1247.4,303.5 1219.5,306.1" fill="#232B33"/><polygon class="gl dC" style="animation-delay:-0.9s" points="1241.6,258.5 1280.8,260.9 1247.4,303.5" fill="#232B33"/><polygon points="1280.8,260.9 1283.8,312.3 1247.4,303.5" fill="#232B33"/><polygon points="1280.8,260.9 1326.6,266.7 1283.8,312.3" fill="#232B33"/><polygon points="1326.6,266.7 1314.1,301.3 1283.8,312.3" fill="#232B33"/><polygon class="gl dC" style="animation-delay:-8.1s" points="1326.6,266.7 1360.0,273.1 1314.1,301.3" fill="#232B33"/><polygon class="gl dC" style="animation-delay:-1.3s" points="1360.0,273.1 1352.7,305.0 1314.1,301.3" fill="#232B33"/><polygon points="1360.0,273.1 1389.9,268.3 1352.7,305.0" fill="#232B33"/><polygon points="1389.9,268.3 1402.9,315.3 1352.7,305.0" fill="#232B33"/><polygon points="1389.9,268.3 1424.5,267.7 1402.9,315.3" fill="#232B33"/><polygon points="1424.5,267.7 1436.8,304.5 1402.9,315.3" fill="#232B33"/><polygon points="1424.5,267.7 1476.9,259.3 1436.8,304.5" fill="#232B33"/><polygon class="gl dC" style="animation-delay:-5.2s" points="1476.9,259.3 1456.0,315.3 1436.8,304.5" fill="#232B33"/><polygon points="-43.4,315.3 -2.8,303.7 -43.7,360" fill="#151B21"/><polygon points="-2.8,303.7 0.4,360 -43.7,360" fill="#151B21"/><polygon class="gl dD" style="animation-delay:-1.8s" points="-2.8,303.7 30.7,305.7 0.4,360" fill="#151B21"/><polygon points="30.7,305.7 31.9,360 0.4,360" fill="#151B21"/><polygon points="30.7,305.7 62.3,300.3 31.9,360" fill="#151B21"/><polygon points="62.3,300.3 52.4,360 31.9,360" fill="#151B21"/><polygon class="gl dD" style="animation-delay:-6.4s" points="62.3,300.3 101.8,308.6 52.4,360" fill="#151B21"/><polygon class="gl dD" style="animation-delay:-12.1s" points="101.8,308.6 101.3,360 52.4,360" fill="#151B21"/><polygon points="101.8,308.6 128.7,303.4 101.3,360" fill="#151B21"/><polygon points="128.7,303.4 124.7,360 101.3,360" fill="#151B21"/><polygon points="128.7,303.4 160.7,313.3 124.7,360" fill="#151B21"/><polygon points="160.7,313.3 160.7,360 124.7,360" fill="#151B21"/><polygon points="160.7,313.3 203.8,304.0 160.7,360" fill="#151B21"/><polygon points="203.8,304.0 206.9,360 160.7,360" fill="#151B21"/><polygon points="203.8,304.0 252.3,302.6 206.9,360" fill="#151B21"/><polygon points="252.3,302.6 246.3,360 206.9,360" fill="#151B21"/><polygon points="252.3,302.6 275.3,300.9 246.3,360" fill="#151B21"/><polygon class="gl dD" style="animation-delay:-13.1s" points="275.3,300.9 276.3,360 246.3,360" fill="#151B21"/><polygon class="gl dD" style="animation-delay:-1.2s" points="275.3,300.9 307.2,307.3 276.3,360" fill="#151B21"/><polygon points="307.2,307.3 322.3,360 276.3,360" fill="#151B21"/><polygon points="307.2,307.3 343.6,314.1 322.3,360" fill="#151B21"/><polygon points="343.6,314.1 351.6,360 322.3,360" fill="#151B21"/><polygon points="343.6,314.1 379.7,312.8 351.6,360" fill="#151B21"/><polygon points="379.7,312.8 377.5,360 351.6,360" fill="#151B21"/><polygon class="gl dD" style="animation-delay:-3.2s" points="379.7,312.8 421.7,311.6 377.5,360" fill="#151B21"/><polygon points="421.7,311.6 411.8,360 377.5,360" fill="#151B21"/><polygon class="gl dD" style="animation-delay:-4.6s" points="421.7,311.6 465.0,314.3 411.8,360" fill="#151B21"/><polygon points="465.0,314.3 467.0,360 411.8,360" fill="#151B21"/><polygon points="465.0,314.3 502.8,311.2 467.0,360" fill="#151B21"/><polygon points="502.8,311.2 497.7,360 467.0,360" fill="#151B21"/><polygon class="gl dD" style="animation-delay:-5.4s" points="502.8,311.2 521.6,304.5 497.7,360" fill="#151B21"/><polygon points="521.6,304.5 537.1,360 497.7,360" fill="#151B21"/><polygon points="521.6,304.5 564.7,315.4 537.1,360" fill="#151B21"/><polygon class="gl dD" style="animation-delay:-10.6s" points="564.7,315.4 562.7,360 537.1,360" fill="#151B21"/><polygon points="564.7,315.4 604.9,314.1 562.7,360" fill="#151B21"/><polygon points="604.9,314.1 602.2,360 562.7,360" fill="#151B21"/><polygon points="604.9,314.1 628.5,315.8 602.2,360" fill="#151B21"/><polygon points="628.5,315.8 637.5,360 602.2,360" fill="#151B21"/><polygon points="628.5,315.8 683.2,314.3 637.5,360" fill="#151B21"/><polygon points="683.2,314.3 684.5,360 637.5,360" fill="#151B21"/><polygon points="683.2,314.3 707.1,305.3 684.5,360" fill="#151B21"/><polygon points="707.1,305.3 704.4,360 684.5,360" fill="#151B21"/><polygon points="707.1,305.3 747.1,312.1 704.4,360" fill="#151B21"/><polygon points="747.1,312.1 737.7,360 704.4,360" fill="#151B21"/><polygon points="747.1,312.1 771.0,308.6 737.7,360" fill="#151B21"/><polygon class="gl dD" style="animation-delay:-5.4s" points="771.0,308.6 775.4,360 737.7,360" fill="#151B21"/><polygon points="771.0,308.6 826.3,315.2 775.4,360" fill="#151B21"/><polygon points="826.3,315.2 816.5,360 775.4,360" fill="#151B21"/><polygon points="826.3,315.2 853.6,300.3 816.5,360" fill="#151B21"/><polygon points="853.6,300.3 861.6,360 816.5,360" fill="#151B21"/><polygon class="gl dD" style="animation-delay:-8.5s" points="853.6,300.3 896.6,308.7 861.6,360" fill="#151B21"/><polygon points="896.6,308.7 890.4,360 861.6,360" fill="#151B21"/><polygon points="896.6,308.7 928.3,304.3 890.4,360" fill="#151B21"/><polygon points="928.3,304.3 928.7,360 890.4,360" fill="#151B21"/><polygon points="928.3,304.3 967.1,310.0 928.7,360" fill="#151B21"/><polygon class="gl dD" style="animation-delay:-11.4s" points="967.1,310.0 953.5,360 928.7,360" fill="#151B21"/><polygon points="967.1,310.0 987.8,311.5 953.5,360" fill="#151B21"/><polygon points="987.8,311.5 1005.8,360 953.5,360" fill="#151B21"/><polygon class="gl dD" style="animation-delay:-7.7s" points="987.8,311.5 1044.4,306.1 1005.8,360" fill="#151B21"/><polygon points="1044.4,306.1 1040.4,360 1005.8,360" fill="#151B21"/><polygon points="1044.4,306.1 1070.4,304.4 1040.4,360" fill="#151B21"/><polygon points="1070.4,304.4 1066.6,360 1040.4,360" fill="#151B21"/><polygon points="1070.4,304.4 1096.6,315.1 1066.6,360" fill="#151B21"/><polygon points="1096.6,315.1 1109.3,360 1066.6,360" fill="#151B21"/><polygon class="gl dD" style="animation-delay:-8.2s" points="1096.6,315.1 1147.1,302.9 1109.3,360" fill="#151B21"/><polygon points="1147.1,302.9 1145.5,360 1109.3,360" fill="#151B21"/><polygon class="gl dD" style="animation-delay:-1.2s" points="1147.1,302.9 1188.6,310.2 1145.5,360" fill="#151B21"/><polygon points="1188.6,310.2 1169.1,360 1145.5,360" fill="#151B21"/><polygon points="1188.6,310.2 1219.5,306.1 1169.1,360" fill="#151B21"/><polygon class="gl dD" style="animation-delay:-9.5s" points="1219.5,306.1 1222.3,360 1169.1,360" fill="#151B21"/><polygon class="gl dD" style="animation-delay:-11.2s" points="1219.5,306.1 1247.4,303.5 1222.3,360" fill="#151B21"/><polygon points="1247.4,303.5 1254.8,360 1222.3,360" fill="#151B21"/><polygon class="gl dD" style="animation-delay:-3.3s" points="1247.4,303.5 1283.8,312.3 1254.8,360" fill="#151B21"/><polygon points="1283.8,312.3 1275.7,360 1254.8,360" fill="#151B21"/><polygon points="1283.8,312.3 1314.1,301.3 1275.7,360" fill="#151B21"/><polygon points="1314.1,301.3 1322.4,360 1275.7,360" fill="#151B21"/><polygon points="1314.1,301.3 1352.7,305.0 1322.4,360" fill="#151B21"/><polygon points="1352.7,305.0 1359.9,360 1322.4,360" fill="#151B21"/><polygon points="1352.7,305.0 1402.9,315.3 1359.9,360" fill="#151B21"/><polygon points="1402.9,315.3 1400.0,360 1359.9,360" fill="#151B21"/><polygon points="1402.9,315.3 1436.8,304.5 1400.0,360" fill="#151B21"/><polygon points="1436.8,304.5 1436.4,360 1400.0,360" fill="#151B21"/><polygon points="1436.8,304.5 1456.0,315.3 1436.4,360" fill="#151B21"/><polygon points="1456.0,315.3 1461.1,360 1436.4,360" fill="#151B21"/></svg><span class="h-line"></span></div>
+</header>
+
+<main>
+<!-- ================= BUSSOLA ================= -->
+<section class="bussola" id="bussola">
+  <div class="wrap reveal">
+    <span class="eyebrow" data-i18n="bussola_eyebrow">La bussola</span>
+    <p class="b-lead" data-i18n="bussola_lead">Piccole app che risolvono problemi reali. Una alla volta, senza rumore.</p>
+    <div class="b-grid">
+      <article class="b-card">
+        <svg viewBox="0 0 32 32" fill="none" stroke="#DD7A3B" stroke-width="1.8" aria-hidden="true"><circle cx="16" cy="16" r="12.5"/><path d="M20 12 L17.5 17.5 L12 20 L14.5 14.5 Z" fill="#DD7A3B" stroke="none"/></svg>
+        <h3 data-i18n="b1_t">Semplice per scelta</h3>
+        <p data-i18n="b1_d">Ogni app fa una cosa sola, senza frizioni e senza funzioni superflue.</p>
+      </article>
+      <article class="b-card">
+        <svg viewBox="0 0 32 32" fill="none" stroke="#DD7A3B" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 20 q4 -5 8 0 t8 0 t8 0"/><path d="M4 26 q4 -5 8 0 t8 0 t8 0" opacity=".45"/></svg>
+        <h3 data-i18n="b2_t">Calma per design</h3>
+        <p data-i18n="b2_d">Interfacce quiete: barre e parole al posto di numeri che urlano.</p>
+      </article>
+      <article class="b-card">
+        <svg viewBox="0 0 32 32" fill="none" stroke="#DD7A3B" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="7" r="3"/><path d="M16 10 v16 M8 18 q0 8 8 8 t8 -8 M10 14 h12"/></svg>
+        <h3 data-i18n="b3_t">Utile davvero</h3>
+        <p data-i18n="b3_d">Ogni progetto nasce da un problema incontrato per davvero.</p>
+      </article>
+    </div>
+    <a class="b-nl" href="#news" data-i18n="bussola_nl">Vuoi restare aggiornato? Segui la rotta →</a>
+  </div>
+</section>
+
+<!-- ================= SERO ================= -->
+<section class="sero" id="sero">
+  <div class="wrap reveal">
+    <span class="eyebrow" data-i18n="sero_eyebrow">Primo approdo</span>
+    <div class="sero-grid">
+      <div class="phone-wrap" aria-hidden="true">
+        <div class="phone">
+          <div class="ph-notch"></div>
+          <div class="ph-trip"><span class="emo">✈️</span><span data-i18n="mock_trip">Weekend a Lisbona</span></div>
+          <p class="ph-cat" data-i18n="mock_cat">Essenziali</p>
+          <div class="ph-item"><span class="ph-check"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5 L4.8 9 L10 3"/></svg></span><span data-i18n="mock_i1">Passaporto</span></div>
+          <div class="ph-item"><span class="ph-check"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5 L4.8 9 L10 3"/></svg></span><span data-i18n="mock_i2">Caricatore</span></div>
+          <div class="ph-item"><span class="ph-check"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5 L4.8 9 L10 3"/></svg></span><span data-i18n="mock_i3">Felpa comprimibile</span></div>
+          <div class="ph-verdict">
+            <p class="lbl" data-i18n="mock_lbl">Verdetto</p>
+            <div class="ph-bar"><span class="ph-seg on"></span><span class="ph-seg on"></span><span class="ph-seg on"></span><span class="ph-seg on"></span><span class="ph-seg"></span></div>
+            <p class="ph-word" data-i18n="mock_verdict">Ci sta ✓</p>
+          </div>
+        </div>
+      </div>
+      <div class="sero-brand">
+        <div class="sero-head">
+          <svg class="sero-logo" viewBox="0 0 64 64" role="img" aria-label="Logo Sero" xmlns="http://www.w3.org/2000/svg">
+            <rect x="23" y="6" width="18" height="12" rx="5" fill="none" stroke="#2B3036" stroke-width="4"/>
+            <rect x="8" y="14" width="48" height="42" rx="10" fill="#2B3036"/>
+            <path d="M21 36 l8 8 l15 -17" fill="none" stroke="#DD7A3B" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h2 class="sero-name">sero</h2>
+        </div>
+        <div class="sero-content">
+          <p class="sero-tag" data-i18n="sero_tag">Il packing assistant calmo.</p>
+          <p class="sero-desc" data-i18n="sero_desc">Ti dice se il bagaglio ci sta, prima di partire. Verdetto chiaro, zero ansia da bilancia.</p>
+          <div class="chips">
+            <span class="chip" data-i18n="chip1">Verdetto immediato</span>
+            <span class="chip" data-i18n="chip2">11 preset di viaggio</span>
+            <span class="chip" data-i18n="chip3">Pronto a partire</span>
+          </div>
+          <div class="cta-row">
+            <a class="store-btn" id="cta-play" href="#" aria-disabled="true" tabindex="-1" aria-label="Google Play">
+              <span class="store-icon"><svg viewBox="0 0 24 26" aria-hidden="true"><path d="M2.5 1.2 14.8 13 2.5 24.8c-.5-.3-.8-.9-.8-1.6V2.8c0-.7.3-1.3.8-1.6Z" fill="#E8A867"/><path d="M2.5 1.2c.5-.3 1.1-.3 1.7.1l12.9 7.4-3.3 3.1L2.5 1.2Z" fill="#5BC8AC"/><path d="m17.1 8.7 3.6 2.1c1 .6 1 1.9 0 2.5l-3.7 2.1-3.3-3.1 3.4-3.6Z" fill="#F6C34D"/><path d="M2.5 24.8 13.8 13.3l3.3 3.1L5.1 24c-.9.5-1.9.5-2.6.8Z" fill="#E1604C"/></svg></span>
+              <span class="store-tx"><span class="store-top" data-i18n="soon">presto</span><span class="store-name">Google Play</span></span>
+            </a>
+            <a class="store-btn" id="cta-web" href="#" aria-disabled="true" tabindex="-1" aria-label="Web app">
+              <span class="store-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#E8A867" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><ellipse cx="12" cy="12" rx="4" ry="9.5"/><path d="M2.8 9h18.4M2.8 15h18.4"/></svg></span>
+              <span class="store-tx"><span class="store-top" data-i18n="soon">presto</span><span class="store-name" data-i18n="store_web">Web app</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= ROTTA ================= -->
+<section class="rotta" id="rotta">
+  <svg class="compass" viewBox="0 0 200 200" aria-hidden="true" fill="none" stroke="#F4EFE8" stroke-width="1">
+    <circle cx="100" cy="100" r="96"/><circle cx="100" cy="100" r="70"/>
+    <path d="M100 8 L108 92 L100 100 L92 92 Z M100 192 L108 108 L100 100 L92 108 Z M8 100 L92 92 L100 100 L92 108 Z M192 100 L108 92 L100 100 L108 108 Z" fill="#F4EFE8" stroke="none"/>
+    <path d="M35 35 L96 96 M165 35 L104 96 M35 165 L96 104 M165 165 L104 104"/>
+  </svg>
+  <div class="wrap reveal">
+    <span class="eyebrow" data-i18n="rotta_eyebrow">La rotta</span>
+    <h2 class="title" data-i18n="rotta_title">Dove stiamo andando</h2>
+    <div class="route-wrap">
+      <svg class="route-svg" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M40,70 C220,20 340,110 600,60 S 960,30 1160,75"/>
+      </svg>
+      <div class="wp-grid">
+        <article class="wp">
+          <span class="wp-code">WP·01</span>
+          <div class="wp-dia" aria-hidden="true"></div>
+          <h3>sero</h3>
+          <span class="wp-pill pill-sail" data-i18n="wp1_pill">In navigazione</span>
+          <p data-i18n="wp1_d">Il packing assistant calmo, in arrivo su Google Play e come web app.</p>
+        </article>
+        <article class="wp">
+          <span class="wp-code">WP·02</span>
+          <div class="wp-dia" aria-hidden="true"></div>
+          <h3>sestante</h3>
+          <span class="wp-pill pill-chart" data-i18n="wp2_pill">In cantiere</span>
+          <p data-i18n="wp2_d">Il quaderno di bordo delle finanze personali: budget mensili chiari, tutto sul tuo dispositivo.</p>
+        </article>
+        <article class="wp ghost">
+          <span class="wp-code">WP·03</span>
+          <div class="wp-dia" aria-hidden="true"></div>
+          <h3 data-i18n="wp3_t">La prossima idea</h3>
+          <span class="wp-pill pill-open" data-i18n="wp3_pill">Approdo aperto</span>
+          <p data-i18n="wp3_d">Nasce sempre da un problema reale. Se ne hai uno che merita, raccontacelo.</p>
+          <a class="wp-cta open-contact" href="#contatto"><span data-i18n="wp3_cta">Scrivici</span> →</a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= A BORDO ================= -->
+<section class="bordo" id="bordo">
+  <div class="wrap reveal">
+    <div class="log">
+      <span class="log-label" data-i18n="bordo_log">Giornale di bordo · 2026</span>
+      <blockquote data-i18n-html="bordo_quote">«<b class="nm">nautargo</b> è un cantiere di una persona: idee semplici, costruite con cura e con l'aiuto dell'AI dove serve. Niente dark pattern, niente rumore: solo strumenti che fanno una cosa e la fanno bene.»</blockquote>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= NEWS ================= -->
+<section class="news" id="news">
+  <div class="wrap reveal">
+    <span class="eyebrow" data-i18n="news_eyebrow">Diario di rotta</span>
+    <h2 class="title" data-i18n="news_title">Segui la rotta</h2>
+    <p class="lead" data-i18n-html="news_desc">Aggiornamenti occasionali su <b class="nm">nautargo</b> e sulle prossime app. Niente rumore, promesso.</p>
+
+    <form id="news-form" class="news-form" novalidate>
+      <div class="row">
+        <input type="email" id="nl-email" name="EMAIL" required autocomplete="email" inputmode="email" data-i18n-ph="nl_placeholder" placeholder="nome@esempio.com" aria-label="Email">
+        <button type="submit" class="btn-sunset" style="margin-top:0" data-i18n="nl_cta" disabled>Iscrivimi</button>
+      </div>
+      <label class="consent">
+        <input type="checkbox" id="nl-consent" required>
+        <span><span data-i18n-html="nl_consent">Acconsento alla gestione della mia email da parte di <b class="nm">nautargo</b> per ricevere aggiornamenti sulle sue app.</span>
+        <a href="#" class="open-privacy" data-i18n="nl_privacy_link">Informativa privacy</a></span>
+      </label>
+      <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+    </form>
+
+    <div id="news-instagram" class="news-ig">
+      <span class="ig-or" data-i18n="ig_or">oppure</span>
+      <a class="ig-follow" id="ig-link" href="https://instagram.com/nautargo.dev" target="_blank" rel="noopener">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.6" cy="6.4" r="1" fill="currentColor" stroke="none"/></svg>
+        <span data-i18n="ig_cta">Segui su Instagram</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TIPS ================= -->
+<section class="tips" id="tips">
+  <div class="wrap reveal">
+    <div class="tips-card">
+      <svg class="tips-ico" viewBox="0 0 48 48" fill="none" stroke="#DD7A3B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M24 6 v10 M24 42 v-4"/><path d="M12 16 h24 l-2 20 a6 6 0 0 1-6 5 h-8 a6 6 0 0 1-6-5 z"/><path d="M36 20 h4 a4 4 0 0 1 0 8 h-4"/>
+      </svg>
+      <div class="tips-body">
+        <span class="eyebrow" data-i18n="tips_eyebrow">La cambusa</span>
+        <h2 class="title" data-i18n="tips_title">Sostieni il cantiere</h2>
+        <p data-i18n-html="tips_desc">Le app di <b class="nm">nautargo</b> restano semplici e leggere. Se una ti è stata utile, puoi lasciare una piccola tip: aiuta a tenere il cantiere a galla.</p>
+        <a class="btn-tip" id="tip-btn" href="#" aria-disabled="true" tabindex="-1">
+          <span class="store-top" data-i18n="soon">presto</span>
+          <span data-i18n="tips_cta">Lascia una tip</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================================================
+     AD SLOT (disattivato di proposito)
+     Un banner qui indebolirebbe il posizionamento "niente rumore"
+     della landing. Se in futuro servisse, inserire il markup ad
+     network in questo punto, sopra il footer, max-height 90px,
+     con sfondo var(--sabbia) per continuita' visiva.
+     ============================================================ -->
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot-row">
+    <div class="foot-brand">
+      <svg viewBox="300 85 220 335" aria-hidden="true"><path d="M475.937 98.7457L452.965 215.21L351.835 240.434Z" fill="#5A646E"/><path d="M452.945 215.214L351.845 240.423L408.472 267.511Z" fill="#4C565F"/><path d="M351.84 240.421L407.127 266.797L335.389 347.492Z" fill="#5A646E"/><path d="M438.972 261.011L452.957 215.21L491.352 298.816Z" fill="#525C66"/><path d="M335.397 347.455L377.479 344.597L459.711 301.475L438.972 261.011L335.397 347.455Z" fill="#48525B"/><path d="M335.386 347.489L438.972 261.011L452.961 215.198Z" fill="#6A747E"/><path d="M459.695 301.468L491.357 298.844L438.98 261.015Z" fill="#6A747E"/><path d="M311.404 363.14L392.687 408.599L381.125 357.818Z" fill="#CB763F"/><path d="M392.678 408.589L418.308 408.507L503.519 311.874L463.239 314.994L381.119 357.813L392.678 408.589Z" fill="#D07C49"/><path d="M507.958 359.386L503.521 311.871L418.301 408.507Z" fill="#C06A37"/></svg>
+      <b class="nm">nautargo</b>
+    </div>
+    <div class="foot-links">
+      <a class="open-contact" href="#contatto" data-i18n="contact_cta">Scrivici</a>
+      <a href="#" class="open-privacy" data-i18n="footer_privacy">Privacy</a>
+    </div>
+    <nav class="langs" aria-label="Lingua">
+      <button type="button" class="lang" data-lang="it">IT</button>
+      <button type="button" class="lang" data-lang="en">EN</button>
+      <button type="button" class="lang" data-lang="es">ES</button>
+    </nav>
+    <span class="copy">© <span id="year">2026</span> nautargo · <span data-i18n="foot_nocookie">niente cookie di tracciamento</span></span>
+  </div>
+</footer>
+
+<!-- ================= OVERLAY PRIVACY ================= -->
+<div class="overlay" id="privacy-overlay" role="dialog" aria-modal="true" aria-labelledby="privacy-title" hidden>
+  <div class="overlay-panel">
+    <button type="button" class="overlay-close" id="privacy-close" aria-label="Chiudi">×</button>
+    <h3 id="privacy-title" data-i18n="pv_title">Privacy</h3>
+    <p data-i18n="pv_site">nautargo.com è una pagina statica: non usa cookie di profilazione e non raccoglie dati di navigazione.</p>
+    <p data-i18n="pv_analytics">Statistiche: la pagina usa GoatCounter, uno strumento di analytics senza cookie e senza tracciamento personale. Nessun dato identificativo viene raccolto.</p>
+    <div id="pv-newsletter" hidden>
+      <h4 data-i18n="pv_nl_title">Informativa newsletter (art. 13 GDPR)</h4>
+      <ul>
+        <li><span data-i18n="pv_owner">Titolare del trattamento:</span> <span data-i18n-html="pv_owner2"><b class="nm">nautargo</b> (studio indipendente, sito nautargo.com).</span></li>
+        <li data-i18n="pv_data">Dati raccolti: solo l'indirizzo email.</li>
+        <li data-i18n-html="pv_purpose">Finalità: invio di aggiornamenti su <b class="nm">nautargo</b> e sulle sue app; risposta ai messaggi inviati dal form di contatto.</li>
+        <li data-i18n="pv_basis">Base giuridica: consenso esplicito (art. 6.1.a GDPR), revocabile in ogni momento.</li>
+        <li data-i18n="pv_recipients">Responsabile del trattamento: Brevo (Sendinblue SAS, Francia), server nell'UE, per newsletter e messaggi di contatto. Trasferimenti extra UE non previsti.</li>
+        <li data-i18n="pv_retention">Conservazione: fino alla revoca del consenso o alla disiscrizione.</li>
+        <li data-i18n="pv_rights">Diritti: accesso, rettifica, cancellazione, limitazione, opposizione, portabilità (artt. 15-22 GDPR).</li>
+        <li data-i18n="pv_withdraw">Revoca: link "disiscriviti" presente in ogni email.</li>
+        <li data-i18n="pv_complaint">Reclamo: Garante per la protezione dei dati personali.</li>
+        <li data-i18n="pv_optional">Il conferimento dell'email è facoltativo: senza, semplicemente non riceverai aggiornamenti.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ================= OVERLAY CONTATTO ================= -->
+<div class="overlay" id="contact-overlay" role="dialog" aria-modal="true" aria-labelledby="contact-title" hidden>
+  <div class="overlay-panel">
+    <button type="button" class="overlay-close" id="contact-close" aria-label="Chiudi">×</button>
+    <h3 id="contact-title" data-i18n="ct_title">Scrivici</h3>
+    <p data-i18n="ct_desc">Un problema reale che merita un'app? Un pensiero su Sero? Il messaggio arriva dritto in cabina.</p>
+    <form id="contact-form" class="contact-form" novalidate>
+      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="email" id="ct-email" name="EMAIL" required autocomplete="email" inputmode="email" data-i18n-ph="ct_email_ph" placeholder="La tua email" aria-label="Email">
+      <textarea id="ct-msg" name="MESSAGE" rows="5" required data-i18n-ph="ct_msg_ph" placeholder="Il tuo messaggio" aria-label="Messaggio"></textarea>
+      <p class="ct-note"><span data-i18n="ct_note">L'invio comporta la gestione dell'email da parte di nautargo al solo scopo di risponderti.</span> <a href="#" class="open-privacy" data-i18n="nl_privacy_link">Informativa privacy</a></p>
+      <button type="submit" class="btn-sunset" data-i18n="ct_send">Invia</button>
+      <p class="form-msg" id="ct-form-msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+
+<script>
+const CONFIG = {
+  newsChannel: 'form',                 // 'form' mostra l'iscrizione + il link Instagram
+  instagramUrl: 'https://instagram.com/nautargo.dev',
+  brevoFormAction: '',                 // Brevo: incolla qui l'URL d'azione del form (https://sibforms.com/serve/...). Le email arrivano alla tua lista, visibili solo a te.
+  playStoreUrl: '',
+  seroWebAppUrl: '',
+  stripeTipUrl: '',                    // <-- link Stripe per le tips
+  contactFormAction: '',               // Brevo: URL d'azione del form di contatto (nessuna email esposta in pagina)
+  goatCounterCode: ''                  // GoatCounter: il codice sito (es. 'nautargo' per nautargo.goatcounter.com)
+};
+
+const I18N = {
+  it: {
+    title: 'nautargo — il quotidiano, navigato con calma',
+    meta_desc: 'nautargo è uno studio indipendente che costruisce piccole app calme per problemi reali. Prima nave: Sero, il packing assistant.',
+    ct_title: 'Scrivici', ct_desc: "Un problema reale che merita un'app? Un pensiero su Sero? Il messaggio arriva dritto in cabina.",
+    ct_email_ph: 'La tua email', ct_msg_ph: 'Il tuo messaggio',
+    ct_send: 'Invia', ct_sending: 'Invio in corso…',
+    ct_ok: 'Messaggio inviato. Ti risponderemo appena possibile.',
+    ct_err_email: 'Inserisci un indirizzo email valido.',
+    ct_err_msg: 'Scrivi un messaggio prima di inviare.',
+    ct_err_config: 'Form non ancora attivo: manca la configurazione Brevo.',
+    ct_err_generic: 'Qualcosa è andato storto. Riprova tra poco.',
+    ct_note: "L'invio comporta la gestione dell'email da parte di nautargo al solo scopo di risponderti.",
+    foot_nocookie: 'niente cookie di tracciamento',
+    pv_analytics: 'Statistiche: la pagina usa GoatCounter, uno strumento di analytics senza cookie e senza tracciamento personale. Nessun dato identificativo viene raccolto.',
+    hero_eyebrow: 'Studio indipendente',
+    hero_cta: 'Scopri la rotta',
+    bussola_nl: 'Vuoi restare aggiornato? Segui la rotta →',
+    hero_head: 'Il quotidiano, navigato <em>con calma</em>.',
+    bussola_eyebrow: 'La bussola',
+    bussola_lead: 'Piccole app che risolvono problemi reali. Una alla volta, senza rumore.',
+    b1_t: 'Semplice per scelta', b1_d: 'Ogni app fa una cosa sola, senza frizioni e senza funzioni superflue.',
+    b2_t: 'Calma per design', b2_d: 'Interfacce quiete: barre e parole al posto di numeri che urlano.',
+    b3_t: 'Utile davvero', b3_d: 'Ogni progetto nasce da un problema incontrato per davvero.',
+    sero_eyebrow: 'Primo approdo',
+    sero_tag: 'Il packing assistant calmo.',
+    sero_desc: 'Ti dice se il bagaglio ci sta, prima di partire. Verdetto chiaro, zero ansia da bilancia.',
+    chip1: 'Verdetto immediato', chip2: '11 preset di viaggio', chip3: 'Pronto a partire',
+    mock_trip: 'Weekend a Lisbona', mock_cat: 'Essenziali',
+    mock_i1: 'Passaporto', mock_i2: 'Caricatore', mock_i3: 'Felpa comprimibile',
+    mock_lbl: 'Verdetto', mock_verdict: 'Ci sta ✓',
+    soon: 'presto', store_get: 'Scarica su', store_open: 'Apri', store_web: 'Web app',
+    rotta_eyebrow: 'La rotta', rotta_title: 'Dove stiamo andando',
+    wp1_pill: 'In navigazione', wp1_d: 'Il packing assistant calmo, in arrivo su Google Play e come web app.',
+    wp2_t: 'Un recap quieto delle notizie', wp2_pill: 'Rotta tracciata',
+    wp2_d: 'La seconda nave: le notizie del giorno, riassunte senza ansia. In cantiere.',
+    wp2_pill: 'In cantiere',
+    wp2_d: 'Il quaderno di bordo delle finanze personali: budget mensili chiari, tutto sul tuo dispositivo.',
+    wp3_t: 'La prossima idea', wp3_pill: 'Approdo aperto',
+    wp3_d: 'Nasce sempre da un problema reale. Se ne hai uno che merita, raccontacelo.',
+    wp3_cta: 'Scrivici',
+    bordo_log: 'Giornale di bordo · 2026',
+    bordo_quote: "«<b class=\"nm\">nautargo</b> è un cantiere di una persona: idee semplici, costruite con cura e con l'aiuto dell'AI dove serve. Niente dark pattern, niente rumore: solo strumenti che fanno una cosa e la fanno bene.»",
+    news_eyebrow: 'Diario di rotta', news_title: 'Segui la rotta',
+    news_desc: 'Aggiornamenti occasionali su <b class="nm">nautargo</b> e sulle prossime app. Niente rumore, promesso.',
+    ig_cta: 'Segui su Instagram',
+    nl_placeholder: 'nome@esempio.com', nl_cta: 'Iscrivimi',
+    nl_consent: 'Acconsento alla gestione della mia email da parte di <b class="nm">nautargo</b> per ricevere aggiornamenti sulle sue app.',
+    nl_privacy_link: 'Informativa privacy',
+    nl_ok: 'Iscrizione inviata. Controlla la casella per confermare.',
+    nl_err_consent: 'Per iscriverti serve il consenso.',
+    nl_err_email: 'Inserisci un indirizzo email valido.',
+    nl_err_config: 'Form non ancora attivo: manca la configurazione Brevo.',
+    nl_sending: 'Invio in corso…', nl_err_generic: 'Qualcosa è andato storto. Riprova tra poco.',
+    footer_privacy: 'Privacy', contact_cta: 'Scrivici', ig_or: 'oppure',
+    tips_eyebrow: 'La cambusa', tips_title: 'Sostieni il cantiere',
+    tips_desc: 'Le app di <b class="nm">nautargo</b> restano semplici e leggere. Se una ti è stata utile, puoi lasciare una piccola tip: aiuta a tenere il cantiere a galla.',
+    tips_cta: 'Lascia una tip',
+    pv_title: 'Privacy',
+    pv_site: 'nautargo.com è una pagina statica: non usa cookie di profilazione e non raccoglie dati di navigazione.',
+    pv_nl_title: 'Informativa newsletter (art. 13 GDPR)',
+    pv_owner: 'Titolare del trattamento:',
+    pv_owner2: '<b class="nm">nautargo</b> (studio indipendente, sito nautargo.com).',
+    pv_data: "Dati raccolti: solo l'indirizzo email.",
+    pv_purpose: 'Finalità: invio di aggiornamenti su <b class="nm">nautargo</b> e sulle sue app; risposta ai messaggi inviati dal form di contatto.',
+    pv_basis: 'Base giuridica: consenso esplicito (art. 6.1.a GDPR), revocabile in ogni momento.',
+    pv_recipients: "Responsabile del trattamento: Brevo (Sendinblue SAS, Francia), server nell'UE, per newsletter e messaggi di contatto. Trasferimenti extra UE non previsti.",
+    pv_retention: 'Conservazione: fino alla revoca del consenso o alla disiscrizione.',
+    pv_rights: 'Diritti: accesso, rettifica, cancellazione, limitazione, opposizione, portabilità (artt. 15-22 GDPR).',
+    pv_withdraw: 'Revoca: link "disiscriviti" presente in ogni email.',
+    pv_complaint: 'Reclamo: Garante per la protezione dei dati personali.',
+    pv_optional: "Il conferimento dell'email è facoltativo: senza, semplicemente non riceverai aggiornamenti."
+  },
+  en: {
+    title: 'nautargo — everyday life, calmly navigated',
+    meta_desc: 'nautargo is an independent studio building small, calm apps for real problems. First ship: Sero, the packing assistant.',
+    ct_title: 'Get in touch', ct_desc: 'A real problem worth an app? A thought about Sero? Your message goes straight to the cabin.',
+    ct_email_ph: 'Your email', ct_msg_ph: 'Your message',
+    ct_send: 'Send', ct_sending: 'Sending…',
+    ct_ok: "Message sent. We'll get back to you as soon as possible.",
+    ct_err_email: 'Please enter a valid email address.',
+    ct_err_msg: 'Write a message before sending.',
+    ct_err_config: 'Form not active yet: Brevo configuration is missing.',
+    ct_err_generic: 'Something went wrong. Please try again shortly.',
+    ct_note: 'Sending implies nautargo handling your email for the sole purpose of replying.',
+    foot_nocookie: 'no tracking cookies',
+    pv_analytics: 'Statistics: this page uses GoatCounter, a cookieless analytics tool with no personal tracking. No identifying data is collected.',
+    hero_eyebrow: 'Independent studio',
+    hero_cta: 'See the course',
+    bussola_nl: 'Want to stay in the loop? Follow the course →',
+    hero_head: 'Everyday life, <em>calmly</em> navigated.',
+    bussola_eyebrow: 'The compass',
+    bussola_lead: 'Small apps that solve real problems. One at a time, no noise.',
+    b1_t: 'Simple on purpose', b1_d: 'Every app does one thing, with no friction and no feature bloat.',
+    b2_t: 'Calm by design', b2_d: 'Quiet interfaces: bars and words instead of shouting numbers.',
+    b3_t: 'Actually useful', b3_d: "Every project starts from a problem we've really run into.",
+    sero_eyebrow: 'First port of call',
+    sero_tag: 'The calm packing assistant.',
+    sero_desc: 'It tells you if your luggage fits, before you leave. A clear verdict, zero scale anxiety.',
+    chip1: 'Instant verdict', chip2: '11 trip presets', chip3: 'Ready to go',
+    mock_trip: 'Weekend in Lisbon', mock_cat: 'Essentials',
+    mock_i1: 'Passport', mock_i2: 'Charger', mock_i3: 'Packable hoodie',
+    mock_lbl: 'Verdict', mock_verdict: 'It fits ✓',
+    soon: 'soon', store_get: 'Get it on', store_open: 'Open', store_web: 'Web app',
+    rotta_eyebrow: 'The course', rotta_title: "Where we're headed",
+    wp1_pill: 'Under sail', wp1_d: 'The calm packing assistant, arriving on Google Play and as a web app.',
+    wp2_t: 'A quiet news recap', wp2_pill: 'Course charted',
+    wp2_d: "The second ship: the day's news, summed up without anxiety. In the shipyard.",
+    wp2_pill: 'In the shipyard',
+    wp2_d: 'The logbook of your personal finances: clear monthly budgets, all on your device.',
+    wp3_t: 'The next idea', wp3_pill: 'Open harbor',
+    wp3_d: 'It always starts from a real problem. Got one worth solving? Tell us.',
+    wp3_cta: 'Write to us',
+    bordo_log: "Ship's log · 2026",
+    bordo_quote: '"<b class="nm">nautargo</b> is a one-person shipyard: simple ideas, built with care and with AI where it helps. No dark patterns, no noise: just tools that do one thing and do it well."',
+    news_eyebrow: 'Course diary', news_title: 'Follow the course',
+    news_desc: 'Occasional updates on <b class="nm">nautargo</b> and upcoming apps. No noise, promise.',
+    ig_cta: 'Follow on Instagram',
+    nl_placeholder: 'name@example.com', nl_cta: 'Sign me up',
+    nl_consent: 'I consent to <b class="nm">nautargo</b> handling my email to receive updates about its apps.',
+    nl_privacy_link: 'Privacy notice',
+    nl_ok: 'Signup sent. Check your inbox to confirm.',
+    nl_err_consent: 'Consent is required to sign up.',
+    nl_err_email: 'Please enter a valid email address.',
+    nl_err_config: 'Form not active yet: Brevo configuration is missing.',
+    nl_sending: 'Sending…', nl_err_generic: 'Something went wrong. Please try again shortly.',
+    footer_privacy: 'Privacy', contact_cta: 'Get in touch', ig_or: 'or',
+    tips_eyebrow: 'The galley', tips_title: 'Support the shipyard',
+    tips_desc: '<b class="nm">nautargo</b> apps stay simple and light. If one helped you, you can leave a small tip: it helps keep the shipyard afloat.',
+    tips_cta: 'Leave a tip',
+    pv_title: 'Privacy',
+    pv_site: 'nautargo.com is a static page: it uses no profiling cookies and collects no browsing data.',
+    pv_nl_title: 'Newsletter privacy notice (art. 13 GDPR)',
+    pv_owner: 'Data controller:',
+    pv_owner2: '<b class="nm">nautargo</b> (independent studio, nautargo.com).',
+    pv_data: 'Data collected: email address only.',
+    pv_purpose: 'Purpose: sending updates about <b class="nm">nautargo</b> and its apps; replying to messages sent via the contact form.',
+    pv_basis: 'Legal basis: explicit consent (art. 6.1.a GDPR), revocable at any time.',
+    pv_recipients: 'Data processor: Brevo (Sendinblue SAS, France), servers in the EU, for the newsletter and contact messages. No transfers outside the EU planned.',
+    pv_retention: 'Retention: until consent is withdrawn or you unsubscribe.',
+    pv_rights: 'Rights: access, rectification, erasure, restriction, objection, portability (arts. 15-22 GDPR).',
+    pv_withdraw: 'Withdrawal: "unsubscribe" link included in every email.',
+    pv_complaint: 'Complaints: Italian Data Protection Authority (Garante).',
+    pv_optional: "Providing your email is optional: without it, you simply won't receive updates."
+  },
+  es: {
+    title: 'nautargo — lo cotidiano, navegado con calma',
+    meta_desc: 'nautargo es un estudio independiente que construye aplicaciones pequeñas y tranquilas para problemas reales. Primer barco: Sero, el asistente de equipaje.',
+    ct_title: 'Contáctanos', ct_desc: '¿Un problema real que merece una app? ¿Una idea sobre Sero? Tu mensaje llega directo a la cabina.',
+    ct_email_ph: 'Tu email', ct_msg_ph: 'Tu mensaje',
+    ct_send: 'Enviar', ct_sending: 'Enviando…',
+    ct_ok: 'Mensaje enviado. Te responderemos lo antes posible.',
+    ct_err_email: 'Introduce una dirección de email válida.',
+    ct_err_msg: 'Escribe un mensaje antes de enviar.',
+    ct_err_config: 'Formulario aún no activo: falta la configuración de Brevo.',
+    ct_err_generic: 'Algo salió mal. Inténtalo de nuevo en un momento.',
+    ct_note: 'El envío implica que nautargo gestione tu email con el único fin de responderte.',
+    foot_nocookie: 'sin cookies de rastreo',
+    pv_analytics: 'Estadísticas: la página usa GoatCounter, una herramienta de analítica sin cookies y sin rastreo personal. No se recogen datos identificativos.',
+    hero_eyebrow: 'Estudio independiente',
+    hero_cta: 'Descubre el rumbo',
+    bussola_nl: '¿Quieres estar al día? Sigue el rumbo →',
+    hero_head: 'Lo cotidiano, navegado <em>con calma</em>.',
+    bussola_eyebrow: 'La brújula',
+    bussola_lead: 'Aplicaciones pequeñas que resuelven problemas reales. Una a la vez, sin ruido.',
+    b1_t: 'Simple a propósito', b1_d: 'Cada app hace una sola cosa, sin fricción ni funciones superfluas.',
+    b2_t: 'Calma por diseño', b2_d: 'Interfaces silenciosas: barras y palabras en lugar de números que gritan.',
+    b3_t: 'Útil de verdad', b3_d: 'Cada proyecto nace de un problema encontrado de verdad.',
+    sero_eyebrow: 'Primer puerto',
+    sero_tag: 'El asistente de equipaje tranquilo.',
+    sero_desc: 'Te dice si tu equipaje cabe, antes de salir. Veredicto claro, cero ansiedad por la báscula.',
+    chip1: 'Veredicto inmediato', chip2: '11 preajustes de viaje', chip3: 'Listo para partir',
+    mock_trip: 'Fin de semana en Lisboa', mock_cat: 'Esenciales',
+    mock_i1: 'Pasaporte', mock_i2: 'Cargador', mock_i3: 'Sudadera comprimible',
+    mock_lbl: 'Veredicto', mock_verdict: 'Cabe ✓',
+    soon: 'pronto', store_get: 'Descárgalo en', store_open: 'Abrir', store_web: 'Web app',
+    rotta_eyebrow: 'La ruta', rotta_title: 'Hacia dónde vamos',
+    wp1_pill: 'En navegación', wp1_d: 'El asistente de equipaje tranquilo, próximamente en Google Play y como web app.',
+    wp2_t: 'Un resumen tranquilo de las noticias', wp2_pill: 'Ruta trazada',
+    wp2_d: 'El segundo barco: las noticias del día, resumidas sin ansiedad. En el astillero.',
+    wp2_pill: 'En el astillero',
+    wp2_d: 'El cuaderno de bitácora de tus finanzas personales: presupuestos mensuales claros, todo en tu dispositivo.',
+    wp3_t: 'La próxima idea', wp3_pill: 'Puerto abierto',
+    wp3_d: 'Siempre nace de un problema real. Si tienes uno que lo merece, cuéntanoslo.',
+    wp3_cta: 'Escríbenos',
+    bordo_log: 'Cuaderno de bitácora · 2026',
+    bordo_quote: '«<b class="nm">nautargo</b> es un astillero de una sola persona: ideas simples, construidas con cuidado y con IA donde ayuda. Sin dark patterns, sin ruido: solo herramientas que hacen una cosa y la hacen bien.»',
+    news_eyebrow: 'Diario de ruta', news_title: 'Sigue el rumbo',
+    news_desc: 'Novedades ocasionales sobre <b class="nm">nautargo</b> y las próximas apps. Sin ruido, prometido.',
+    ig_cta: 'Síguenos en Instagram',
+    nl_placeholder: 'nombre@ejemplo.com', nl_cta: 'Suscribirme',
+    nl_consent: 'Doy mi consentimiento a que <b class="nm">nautargo</b> gestione mi email para recibir novedades sobre sus apps.',
+    nl_privacy_link: 'Aviso de privacidad',
+    nl_ok: 'Suscripción enviada. Revisa tu correo para confirmar.',
+    nl_err_consent: 'Para suscribirte es necesario el consentimiento.',
+    nl_err_email: 'Introduce una dirección de email válida.',
+    nl_err_config: 'Formulario aún no activo: falta la configuración de Brevo.',
+    nl_sending: 'Enviando…', nl_err_generic: 'Algo salió mal. Inténtalo de nuevo en un momento.',
+    footer_privacy: 'Privacidad', contact_cta: 'Contáctanos', ig_or: 'o',
+    tips_eyebrow: 'La despensa', tips_title: 'Apoya el astillero',
+    tips_desc: 'Las apps de <b class="nm">nautargo</b> siguen siendo simples y ligeras. Si alguna te ha servido, puedes dejar una pequeña propina: ayuda a mantener el astillero a flote.',
+    tips_cta: 'Dejar una propina',
+    pv_title: 'Privacidad',
+    pv_site: 'nautargo.com es una página estática: no usa cookies de perfilado y no recopila datos de navegación.',
+    pv_nl_title: 'Aviso de privacidad de la newsletter (art. 13 RGPD)',
+    pv_owner: 'Responsable del tratamiento:',
+    pv_owner2: '<b class="nm">nautargo</b> (estudio independiente, sitio nautargo.com).',
+    pv_data: 'Datos recogidos: solo la dirección de email.',
+    pv_purpose: 'Finalidad: envío de novedades sobre <b class="nm">nautargo</b> y sus apps; respuesta a los mensajes enviados desde el formulario de contacto.',
+    pv_basis: 'Base jurídica: consentimiento explícito (art. 6.1.a RGPD), revocable en cualquier momento.',
+    pv_recipients: 'Encargado del tratamiento: Brevo (Sendinblue SAS, Francia), servidores en la UE, para la newsletter y los mensajes de contacto. No se prevén transferencias fuera de la UE.',
+    pv_retention: 'Conservación: hasta la revocación del consentimiento o la baja.',
+    pv_rights: 'Derechos: acceso, rectificación, supresión, limitación, oposición, portabilidad (arts. 15-22 RGPD).',
+    pv_withdraw: 'Revocación: enlace "darse de baja" incluido en cada email.',
+    pv_complaint: 'Reclamación: autoridad de protección de datos competente.',
+    pv_optional: 'Facilitar el email es opcional: sin él, simplemente no recibirás novedades.'
+  }
+};
+
+let currentLang = 'en';
+
+function detectLang(){
+  try{
+    const q = new URLSearchParams(location.search).get('lang');
+    if(q && I18N[q]) return q;
+  }catch(e){}
+  try{ const s = localStorage.getItem('nautargo-lang'); if(s && I18N[s]) return s; }catch(e){}
+  const nav = (navigator.language || 'en').toLowerCase();
+  if(nav.startsWith('it')) return 'it';
+  if(nav.startsWith('es')) return 'es';
+  return 'en';
+}
+function setLang(lang){
+  currentLang = lang;
+  const d = I18N[lang];
+  document.documentElement.lang = lang;
+  document.title = d.title;
+  const md = document.querySelector('meta[name="description"]');
+  if(md && d.meta_desc) md.setAttribute('content', d.meta_desc);
+  document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.getAttribute('data-i18n'); if(d[k]!==undefined) el.textContent = d[k]; });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => { const k = el.getAttribute('data-i18n-html'); if(d[k]!==undefined) el.innerHTML = d[k]; });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => { const k = el.getAttribute('data-i18n-ph'); if(d[k]!==undefined) el.setAttribute('placeholder', d[k]); });
+  document.querySelectorAll('.lang').forEach(b => b.classList.toggle('active', b.dataset.lang===lang));
+  try{ localStorage.setItem('nautargo-lang', lang); }catch(e){}
+}
+document.querySelectorAll('.lang').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+
+function initNewsChannel(){
+  const ig = document.getElementById('news-instagram');
+  const form = document.getElementById('news-form');
+  const pvNl = document.getElementById('pv-newsletter');
+  document.getElementById('ig-link').href = CONFIG.instagramUrl;
+  const showForm = CONFIG.newsChannel === 'form';
+  form.hidden = !showForm;
+  pvNl.hidden = !showForm;
+  ig.hidden = false;               // il link Instagram resta sempre disponibile
+}
+function activateCta(a, url, topKey){
+  a.href = url; a.removeAttribute('aria-disabled'); a.removeAttribute('tabindex');
+  const top = a.querySelector('.store-top');
+  if(top){ top.setAttribute('data-i18n', topKey); top.textContent = I18N[currentLang][topKey]; }
+}
+function initCtas(){
+  if(CONFIG.playStoreUrl) activateCta(document.getElementById('cta-play'), CONFIG.playStoreUrl, 'store_get');
+  if(CONFIG.seroWebAppUrl) activateCta(document.getElementById('cta-web'), CONFIG.seroWebAppUrl, 'store_open');
+  if(CONFIG.stripeTipUrl){
+    const t = document.getElementById('tip-btn');
+    t.href = CONFIG.stripeTipUrl; t.removeAttribute('aria-disabled'); t.removeAttribute('tabindex');
+    t.target = '_blank'; t.rel = 'noopener';
+    const top = t.querySelector('.store-top'); if(top) top.remove();
+  }
+}
+
+const nlForm = document.getElementById('news-form');
+/* Iscrivimi attivo solo dopo il consenso all'informativa */
+const nlConsent = document.getElementById('nl-consent');
+const nlBtn = nlForm.querySelector('button[type="submit"]');
+nlConsent.addEventListener('change', () => { nlBtn.disabled = !nlConsent.checked; });
+nlForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const msg = document.getElementById('form-msg');
+  const d = I18N[currentLang];
+  const email = document.getElementById('nl-email');
+  const consent = document.getElementById('nl-consent');
+  const btn = nlForm.querySelector('button[type="submit"]');
+  if(!email.value || !email.checkValidity()){ msg.textContent = d.nl_err_email; email.focus(); return; }
+  if(!consent.checked){ msg.textContent = d.nl_err_consent; return; }
+  if(!CONFIG.brevoFormAction){ msg.textContent = d.nl_err_config; return; }
+  btn.disabled = true; msg.textContent = d.nl_sending;
+  try{
+    const fd = new FormData();
+    fd.append('EMAIL', email.value);
+    fd.append('email', email.value);   // compatibile con entrambe le convenzioni dei form Brevo
+    await fetch(CONFIG.brevoFormAction, { method:'POST', body:fd, mode:'no-cors' });
+    msg.textContent = d.nl_ok; email.value=''; consent.checked=false;
+  }catch(err){
+    msg.textContent = d.nl_err_generic;
+  }finally{
+    btn.disabled = false;
+  }
+});
+
+/* Focus trap nei modali: Tab/Shift+Tab restano confinati nel pannello aperto */
+function trapFocus(ov){
+  ov.addEventListener('keydown', e => {
+    if(e.key !== 'Tab') return;
+    const sel = 'button,[href],input,textarea,select,[tabindex]:not([tabindex="-1"])';
+    const list = [...ov.querySelectorAll(sel)].filter(el => !el.disabled && el.tabIndex >= 0 && el.offsetParent !== null);
+    if(!list.length) return;
+    const first = list[0], last = list[list.length - 1];
+    if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  });
+}
+
+const overlay = document.getElementById('privacy-overlay');
+const ctOverlay = document.getElementById('contact-overlay');
+let lastFocus = null;
+let ctOpenedAt = 0;
+function openPrivacy(){ lastFocus = document.activeElement; overlay.hidden=false; document.getElementById('privacy-close').focus(); }
+function closePrivacy(){ overlay.hidden=true; if(lastFocus) lastFocus.focus(); }
+function openContact(){ lastFocus = document.activeElement; ctOverlay.hidden=false; ctOpenedAt = Date.now(); document.getElementById('ct-email').focus(); }
+function closeContact(){ ctOverlay.hidden=true; if(lastFocus) lastFocus.focus(); }
+document.querySelectorAll('.open-privacy').forEach(a => a.addEventListener('click', e => { e.preventDefault(); openPrivacy(); }));
+document.querySelectorAll('.open-contact').forEach(a => a.addEventListener('click', e => { e.preventDefault(); openContact(); }));
+document.getElementById('privacy-close').addEventListener('click', closePrivacy);
+document.getElementById('contact-close').addEventListener('click', closeContact);
+overlay.addEventListener('click', e => { if(e.target===overlay) closePrivacy(); });
+ctOverlay.addEventListener('click', e => { if(e.target===ctOverlay) closeContact(); });
+trapFocus(overlay);
+trapFocus(ctOverlay);
+document.addEventListener('keydown', e => {
+  if(e.key==='Escape'){
+    if(!overlay.hidden) closePrivacy();
+    if(!ctOverlay.hidden) closeContact();
+  }
+});
+
+/* Form contatto: instradato via Brevo, nessuna email esposta.
+   Anti-spam: honeypot + tempo minimo di compilazione (3 s). */
+const ctForm = document.getElementById('contact-form');
+ctForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const d = I18N[currentLang];
+  const msg = document.getElementById('ct-form-msg');
+  const email = document.getElementById('ct-email');
+  const text = document.getElementById('ct-msg');
+  const hp = ctForm.querySelector('.hp');
+  const btn = ctForm.querySelector('button[type="submit"]');
+  /* Bot: honeypot compilato o invio troppo rapido -> finto successo, nessuna chiamata */
+  if(hp.value || (Date.now() - ctOpenedAt) < 3000){
+    msg.textContent = d.ct_ok; return;
+  }
+  if(!email.value || !email.checkValidity()){ msg.textContent = d.ct_err_email; email.focus(); return; }
+  if(!text.value.trim()){ msg.textContent = d.ct_err_msg; text.focus(); return; }
+  if(!CONFIG.contactFormAction){ msg.textContent = d.ct_err_config; return; }
+  btn.disabled = true; msg.textContent = d.ct_sending;
+  try{
+    const fd = new FormData();
+    fd.append('EMAIL', email.value);
+    fd.append('email', email.value);
+    fd.append('MESSAGE', text.value.trim());
+    await fetch(CONFIG.contactFormAction, { method:'POST', body:fd, mode:'no-cors' });
+    msg.textContent = d.ct_ok; email.value=''; text.value='';
+  }catch(err){
+    msg.textContent = d.ct_err_generic;
+  }finally{
+    btn.disabled = false;
+  }
+});
+
+function initReveal(){
+  const els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(el => el.classList.add('in')); return;
+  }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  els.forEach(el => io.observe(el));
+}
+
+/* Parallax hero: contenuto e stelle scorrono a velocità diverse dal mare */
+function initParallax(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const inner = document.querySelector('.hero-inner');
+  const stars = document.querySelector('.stars');
+  let ticking = false;
+  function update(){
+    const y = window.scrollY;
+    if(y < window.innerHeight){
+      inner.style.transform = 'translateY(' + (y * 0.28) + 'px)';
+      inner.style.opacity = Math.max(0, 1 - y / (window.innerHeight * 0.85));
+      stars.style.transform = 'translateY(' + (y * 0.14) + 'px)';
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => { if(!ticking){ requestAnimationFrame(update); ticking = true; } }, {passive:true});
+  update();
+}
+
+/* Analytics GoatCounter (cookieless): caricato solo se configurato */
+function initAnalytics(){
+  if(!CONFIG.goatCounterCode) return;
+  const sc = document.createElement('script');
+  sc.async = true;
+  sc.src = 'https://gc.zgo.at/count.js';
+  sc.setAttribute('data-goatcounter', 'https://' + CONFIG.goatCounterCode + '.goatcounter.com/count');
+  document.body.appendChild(sc);
+}
+
+/* Stato di visibilità dell'hero, condiviso tra pausa CSS e ciclo costellazioni */
+let heroVisible = true;
+const heroResumeQueue = [];
+
+/* Pausa delle animazioni dell'hero fuori viewport (superfici calde, stelle, costellazioni).
+   Subordinato a prefers-reduced-motion: se attivo, le animazioni sono già spente a monte. */
+function initHeroPause(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if(!('IntersectionObserver' in window)) return;
+  const hero = document.querySelector('.hero');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      heroVisible = en.isIntersecting;
+      hero.classList.toggle('paused', !heroVisible);
+      if(heroVisible) heroResumeQueue.splice(0).forEach(r => r());
+    });
+  }, { threshold: 0 });
+  io.observe(hero);
+}
+
+/* Costellazioni: due o tre figure diverse appaiono lentamente nel cielo, una alla volta.
+   .vis governa la dissolvenza, .draw il tracciamento delle linee. */
+function initConstellations(){
+  const cs = [...document.querySelectorAll('.const')];
+  if(!cs.length) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    cs[0].classList.add('vis');           // una sola costellazione, statica
+    return;
+  }
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  const whenVisible = () => heroVisible ? Promise.resolve() : new Promise(r => heroResumeQueue.push(r));
+  let i = 0;
+  (async function loop(){
+    await sleep(2500);
+    for(;;){
+      await whenVisible();
+      const c = cs[i % cs.length];
+      c.classList.add('draw', 'vis');
+      await sleep(14000);                  // tracciamento + permanenza
+      await whenVisible();
+      c.classList.remove('vis');           // dissolvenza (2.8 s)
+      await sleep(3200);
+      c.classList.remove('draw');          // reset linee a costellazione invisibile
+      await sleep(2400);                   // pausa a cielo libero
+      i++;
+    }
+  })();
+}
+
+/* Stella cadente occasionale nel cielo dell'hero */
+function initShootingStar(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const sky = document.querySelector('.stars');
+  const star = document.createElement('div');
+  star.className = 'shooting';
+  sky.appendChild(star);
+  function launch(){
+    /* parte da destra-alto e cade verso sinistra-basso lungo la propria scia */
+    star.style.left = (34 + Math.random()*52) + '%';
+    star.style.top = (5 + Math.random()*30) + '%';
+    star.style.setProperty('--ang', '-' + (16 + Math.random()*18).toFixed(0) + 'deg');
+    star.classList.remove('go');
+    void star.offsetWidth;               // riavvia l'animazione
+    star.classList.add('go');
+  }
+  setTimeout(launch, 4000);
+  setInterval(launch, 14000 + Math.random()*6000);
+}
+
+/* Micro-interazione: click sul vascello -> beccheggio + luce spezzata */
+function initVesselKick(){
+  const mark = document.querySelector('.mark');
+  if(!mark) return;
+  mark.addEventListener('click', () => {
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    mark.classList.remove('kick');
+    void mark.getBoundingClientRect();
+    mark.classList.add('kick');
+    setTimeout(() => mark.classList.remove('kick'), 1200);
+  });
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+setLang(detectLang());
+initNewsChannel();
+initCtas();
+initReveal();
+initParallax();
+initAnalytics();
+initShootingStar();
+initVesselKick();
+initHeroPause();
+initConstellations();
+</script>
+</body>
+</html>
