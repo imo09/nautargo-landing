@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>nautargo - il quotidiano, navigato con calma</title>
-<meta name="description" content="nautargo è un cantiere di una persona: app piccole e calme che fanno una cosa sola e tengono i dati sul tuo dispositivo. Sero, Sestante, folio e lare sono già in mare: provale nel browser.">
+<meta name="description" content="nautargo è un cantiere di una persona: app piccole e calme che fanno una cosa sola e tengono i dati sul tuo dispositivo. Sero, Sestante, folio, lare e teca sono già in mare: provale nel browser.">
 <meta name="theme-color" content="#171C22">
 <link rel="canonical" href="https://nautargo.com/">
 <link rel="alternate" hreflang="it" href="https://nautargo.com/?lang=it">
@@ -13,7 +13,7 @@
 <link rel="alternate" hreflang="x-default" href="https://nautargo.com/">
 <meta property="og:site_name" content="nautargo">
 <meta property="og:title" content="nautargo - il quotidiano, navigato con calma">
-<meta property="og:description" content="App piccole e calme che fanno una cosa sola e tengono i dati sul tuo dispositivo. Sero, Sestante, folio e lare sono già in mare: provale nel browser.">
+<meta property="og:description" content="App piccole e calme che fanno una cosa sola e tengono i dati sul tuo dispositivo. Sero, Sestante, folio, lare e teca sono già in mare: provale nel browser.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nautargo.com/">
 <meta property="og:image" content="https://nautargo.com/og-image.png">
@@ -21,7 +21,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="nautargo - il quotidiano, navigato con calma">
-<meta name="twitter:description" content="App piccole e calme che fanno una cosa sola e tengono i dati sul tuo dispositivo. Sero, Sestante, folio e lare sono già in mare: provale nel browser.">
+<meta name="twitter:description" content="App piccole e calme che fanno una cosa sola e tengono i dati sul tuo dispositivo. Sero, Sestante, folio, lare e teca sono già in mare: provale nel browser.">
 <meta name="twitter:image" content="https://nautargo.com/og-image.png">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -37,7 +37,8 @@
  {"@type":"SoftwareApplication","name":"Sestante","url":"https://sestante.nautargo.com","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"Il quaderno di bordo delle finanze personali: buste per le spese, Stelle per i traguardi, tutto sul tuo dispositivo.","publisher":{"@type":"Organization","name":"nautargo"}}
 ,
  {"@type":"SoftwareApplication","name":"folio","url":"https://folio.nautargo.com","applicationCategory":"ProductivityApplication","operatingSystem":"Web","description":"Il blocco note calmo: note in Markdown, ordinate in volumi e capitoli, che restano sul tuo dispositivo.","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},
- {"@type":"SoftwareApplication","name":"lare","url":"https://lare.nautargo.com","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"Quanto costa davvero la casa che vuoi: mutuo, spese e arredi, con tutti i conti in chiaro.","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
+ {"@type":"SoftwareApplication","name":"lare","url":"https://lare.nautargo.com","applicationCategory":"FinanceApplication","operatingSystem":"Web","description":"Quanto costa davvero la casa che vuoi: mutuo, spese e arredi, con tutti i conti in chiaro.","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},
+ {"@type":"SoftwareApplication","name":"teca","url":"https://teca.nautargo.com","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","description":"Apre pagine, libri, fumetti, tabelle e codice, al sicuro sul tuo dispositivo.","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}}
 ]}
 </script>
 <script>document.documentElement.classList.add('js')</script>
@@ -98,9 +99,6 @@
   .brand svg{width:22px;height:auto;transition:transform .6s cubic-bezier(.3,1.5,.5,1)}
   .brand:hover svg{transform:rotate(-9deg) translateY(-1px)}
   .brand span{font-size:19px;color:var(--nav-fg)}
-  .nav-links{display:flex;gap:26px;margin-left:auto;margin-right:26px}
-  .nav-links a{font-size:14.5px;font-weight:500;color:var(--nav-fg-dim);text-decoration:none;transition:color .2s}
-  .nav-links a:hover{color:var(--nav-fg)}
   .nav-right{display:flex;align-items:center;gap:18px}
   .nav-mail{font-family:var(--mono);font-size:12.5px;color:var(--nav-fg-dim);text-decoration:none;transition:color .2s}
   .nav-mail:hover{color:var(--amber)}
@@ -109,7 +107,6 @@
     font-size:11px;letter-spacing:.08em;padding:5px 10px;border-radius:999px;transition:color .2s,background .2s}
   .lang:hover{color:var(--nav-fg)}
   .lang.active{color:var(--abisso);background:var(--amber)}
-  footer .langs{background:rgba(244,239,232,.05)}
 
   /* ============ HERO: dalla notte all'alba ============
      Il blocco resta fermo (sticky) per una schermata e mezza di scroll:
@@ -151,6 +148,8 @@
   .btn-sunset{background:var(--sunset);color:#fff}
   .btn-sunset:hover{background:var(--sunset-deep);transform:translateY(-2px)}
   .btn-sunset:disabled{opacity:.45;cursor:not-allowed;pointer-events:none;transform:none}
+  .btn-ghost{color:var(--on-dark);border-color:rgba(244,239,232,.35);background:rgba(244,239,232,.06)}
+  .btn-ghost:hover{border-color:rgba(244,239,232,.75);background:rgba(244,239,232,.1)}
 
   .hero-cue{position:absolute;left:50%;bottom:max(14px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:5;
     width:52px;height:52px;display:flex;align-items:center;justify-content:center;color:var(--on-dark);
@@ -236,7 +235,7 @@
   html.locked{overflow:hidden}
   .tryout{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:20px;
     background:rgba(14,18,23,.8);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);animation:fade .25s ease}
-  .try-box{display:flex;flex-direction:column;align-items:center;gap:14px;animation:rise .45s cubic-bezier(.2,.9,.3,1.1)}
+  .try-box{display:flex;flex-direction:column;align-items:center;gap:14px;min-width:min(340px,100%);animation:rise .45s cubic-bezier(.2,.9,.3,1.1)}
   @keyframes fade{from{opacity:0}}
   @keyframes rise{from{opacity:0;transform:translateY(24px) scale(.97)}}
   .try-bar{width:100%;display:flex;align-items:center;gap:14px;color:var(--on-dark)}
@@ -248,10 +247,23 @@
   .try-close{flex:0 0 auto;width:40px;height:40px;border-radius:50%;border:1px solid rgba(244,239,232,.22);background:rgba(244,239,232,.06);
     color:var(--on-dark);font-size:22px;line-height:1;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .35s}
   .try-close:hover{background:rgba(244,239,232,.14);transform:rotate(90deg)}
-  .phone{position:relative;height:min(780px,calc(100svh - 150px));aspect-ratio:9/19.5;border-radius:46px;background:#0B0F14;
-    border:8px solid #161B21;overflow:hidden;isolation:isolate;box-shadow:0 50px 100px -40px rgba(0,0,0,.7),0 0 0 1px rgba(244,239,232,.08)}
-  .phone iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#F4F1EA}
-  .phone .island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:70px;height:20px;border-radius:999px;background:#0B0F14;z-index:3;pointer-events:none}
+  /* Il telefono simulato ha lo schermo di un telefono vero (390 x 844 px) e viene rimpicciolito
+     tutto insieme di un fattore --k: l'app si impagina come su un telefono, solo più piccola. */
+  .phone{--k:.7;position:relative;flex:none;box-sizing:content-box;width:calc(390px * var(--k));height:calc(844px * var(--k));padding:8px;
+    border-radius:calc(40px * var(--k) + 8px);background:#161B21;overflow:hidden;isolation:isolate;
+    box-shadow:0 50px 100px -40px rgba(0,0,0,.7),0 0 0 1px rgba(244,239,232,.08)}
+  .dev{width:390px;height:844px;transform:scale(var(--k));transform-origin:0 0;display:flex;flex-direction:column;
+    border-radius:40px;overflow:hidden;background:#0B0F14}
+  .dev-top{flex:none;height:36px;display:flex;align-items:center;justify-content:center;background:#161B21}
+  .dev-top .cam{width:12px;height:12px;border-radius:50%;background:#050608;box-shadow:0 0 0 1.5px #232A33}
+  .dev-screen{flex:1;position:relative;overflow:hidden}
+  .dev-screen iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#F4F1EA}
+  .try-zoom{display:flex;align-items:center;gap:4px;padding:3px;border-radius:999px;background:rgba(244,239,232,.07);border:1px solid rgba(244,239,232,.14)}
+  .try-zoom button{width:34px;height:34px;border-radius:50%;border:0;background:none;color:var(--on-dark);display:flex;align-items:center;justify-content:center;transition:background .2s}
+  .try-zoom button:hover{background:rgba(244,239,232,.12)}
+  .try-zoom button:disabled{opacity:.3;cursor:default;background:none}
+  .try-zoom svg{width:15px;height:15px}
+  .try-zoom output{min-width:48px;text-align:center;font-family:var(--mono);font-size:12px;color:var(--on-dark-dim)}
   .try-note{font-size:13px;color:var(--on-dark-dim);text-align:center;max-width:36ch;line-height:1.45}
   .cover{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;
     padding:42% 24px 0;transition:opacity .6s ease}
@@ -267,6 +279,8 @@
   .cover.sestante::after{content:"";position:absolute;left:-10%;right:-10%;bottom:-10%;height:28%;background:#E9EDEC;border-radius:50% 50% 0 0/100% 100% 0 0}
   .cover.folio{background:#F6F0E3;color:#2A2621}
   .cover.lare{background:radial-gradient(120% 60% at 50% 30%,rgba(193,145,63,.22) 0%,rgba(16,33,46,0) 60%),#10212E;color:#EEF2F1}
+  .cover.teca{background:#EDEFEC;color:#0E1D2A}
+  .cover.teca .nm{border:3px solid #C99A4E;border-radius:12px;padding:0 14px 4px;line-height:1.3}
   .cover.folio .nm::after{content:"";display:inline-block;width:.19em;height:.19em;border-radius:50%;background:#8F5F22;margin-left:.07em}
 
   /* ---- Il cantiere ---- */
@@ -369,14 +383,16 @@
 
   /* ---- Footer ---- */
   footer{background:var(--fondale);color:var(--on-dark-dim);padding:44px 0;font-size:14px}
-  .foot-row{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
-  .foot-brand{display:flex;align-items:center;gap:9px}
+  /* logo a sinistra, link al centro della pagina, riga del 2026 sotto e centrata */
+  .foot-grid{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:22px 20px}
+  .foot-brand{display:flex;align-items:center;gap:9px;justify-self:start}
   .foot-brand svg{width:17px;height:auto;opacity:.85}
   .foot-brand b{color:var(--on-dark)}
-  .foot-links{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+  .foot-links{display:flex;gap:28px;align-items:center;justify-self:center}
   .foot-links a{text-decoration:none;transition:color .2s}
   .foot-links a:hover{color:var(--on-dark)}
-  .copy{opacity:.6;font-family:var(--mono);font-size:12px}
+  .copy{grid-column:1/-1;justify-self:center;text-align:center;opacity:.6;font-family:var(--mono);font-size:12px}
+  .copy .nm{font-size:13px}
 
   /* ---- Overlay ---- */
   .overlay{position:fixed;inset:0;z-index:50;background:rgba(18,22,27,.72);display:flex;align-items:center;justify-content:center;padding:24px}
@@ -388,11 +404,12 @@
   .overlay-close{position:absolute;top:14px;right:14px;background:none;border:none;font-size:22px;line-height:1;color:var(--soft);padding:8px;border-radius:8px}
   .overlay-close:hover{color:var(--slate)}
   .contact-form{display:flex;flex-direction:column;gap:12px;margin-top:20px}
-  .contact-form input[type="email"],.contact-form textarea{width:100%;padding:13px 16px;border-radius:14px;border:1.5px solid var(--linea);
+  .contact-form input[type="text"],.contact-form input[type="email"],.contact-form textarea{width:100%;padding:13px 16px;border-radius:14px;border:1.5px solid var(--linea);
     background:#fff;color:var(--slate);font:inherit;font-size:15px;resize:vertical}
-  .contact-form input[type="email"]:focus,.contact-form textarea:focus{border-color:var(--sunset);outline:none}
+  .contact-form input[type="text"]:focus,.contact-form input[type="email"]:focus,.contact-form textarea:focus{border-color:var(--sunset);outline:none}
   .contact-form .btn{align-self:flex-start;margin-top:4px}
-  .contact-form .form-msg{color:var(--sunset-deep)}
+  .contact-form .form-msg{color:#3F7D5A;font-weight:500}
+  .contact-form .form-msg.ko{color:#B4544A}
   .ct-note{font-size:12.5px;color:var(--soft)}
   .ct-note a{color:var(--sunset)}
   .hp{position:absolute;left:-5000px;width:1px;height:1px;opacity:0;pointer-events:none}
@@ -405,7 +422,6 @@
     .ship-ctas{padding-left:84px}
   }
   @media (max-width:1000px){
-    .nav-links{display:none}
     .man-grid{grid-template-columns:1fr;gap:40px}
     /* il cantiere diventa una colonna: la rotta scende a sinistra delle card */
     .wp-grid{grid-template-columns:1fr;max-width:600px;margin-top:56px;padding-left:34px}
@@ -419,9 +435,10 @@
     .wrap{padding:0 22px}
     .cantiere{padding-top:120px}
     .news{padding-top:104px}
-    .nav-mail{display:none}
+    .nav-right{gap:12px}
     .lang{padding:7px 11px}
-    .hero-ctas .btn{padding:15px 34px}
+    .hero-ctas{gap:10px}
+    .hero-ctas .btn{padding:14px 24px}
     .fleet{margin-top:40px}
     .ship{padding:26px 0;gap:18px}
     .app-mark{width:54px;height:54px}
@@ -432,19 +449,25 @@
     .store-btn{width:auto;min-height:54px;padding:9px 13px;gap:10px}
     .store-top{font-size:9.5px;letter-spacing:.06em}
     .man-quote{font-size:23px}
-    .foot-row{flex-direction:column;justify-content:center;text-align:center}
+    .foot-grid{grid-template-columns:1fr;justify-items:center;gap:18px}
+    .foot-brand{justify-self:center}
     .news-form .row{flex-direction:column}
     .news-form .btn{justify-content:center}
     .tips-card{padding:36px 22px}
     .overlay-panel{padding:30px 22px}
+  }
+  @media (max-width:380px){
+    .nav-right{gap:8px}
+    .lang{padding:6px 8px}
   }
   /* su telefono la prova occupa tutto lo schermo, senza cornice */
   @media (max-width:600px){
     .tryout{padding:0;background:#12161B;-webkit-backdrop-filter:none;backdrop-filter:none}
     .try-box{width:100%;height:100%;gap:0}
     .try-bar{flex:0 0 auto;min-height:58px;padding:env(safe-area-inset-top) 10px 0 20px}
-    .phone{flex:1;width:100%;height:auto;aspect-ratio:auto;border:0;border-radius:0;box-shadow:none}
-    .phone .island,.try-note{display:none}
+    .phone{flex:1;width:100%;height:auto;padding:0;border-radius:0;box-shadow:none;background:#0B0F14}
+    .dev{width:100%;height:100%;transform:none;border-radius:0}
+    .dev-top,.try-zoom,.try-note{display:none}
   }
   @media (max-height:800px){
     .hero-inner{padding-top:72px}
@@ -467,14 +490,8 @@
       <svg viewBox="300 85 220 335" aria-hidden="true"><path d="M475.937 98.7457L452.965 215.21L351.835 240.434Z" fill="#5A646E"/><path d="M452.945 215.214L351.845 240.423L408.472 267.511Z" fill="#4C565F"/><path d="M351.84 240.421L407.127 266.797L335.389 347.492Z" fill="#5A646E"/><path d="M438.972 261.011L452.957 215.21L491.352 298.816Z" fill="#525C66"/><path d="M335.397 347.455L377.479 344.597L459.711 301.475L438.972 261.011L335.397 347.455Z" fill="#48525B"/><path d="M335.386 347.489L438.972 261.011L452.961 215.198Z" fill="#6A747E"/><path d="M459.695 301.468L491.357 298.844L438.98 261.015Z" fill="#6A747E"/><path d="M311.404 363.14L392.687 408.599L381.125 357.818Z" fill="#CB763F"/><path d="M392.678 408.589L418.308 408.507L503.519 311.874L463.239 314.994L381.119 357.813L392.678 408.589Z" fill="#D07C49"/><path d="M507.958 359.386L503.521 311.871L418.301 408.507Z" fill="#C06A37"/></svg>
       <span class="nm">nautargo</span>
     </a>
-    <div class="nav-links">
-      <a href="#flotta" data-i18n="nav_apps">Le app</a>
-      <a href="#cantiere" data-i18n="nav_yard">Cantiere</a>
-      <a href="#manifesto" data-i18n="nav_manifesto">Manifesto</a>
-      <a href="#news" data-i18n="nav_news">Novità</a>
-    </div>
     <div class="nav-right">
-      <a class="nav-mail open-contact" href="#contatto" data-i18n="contact_cta">Scrivici</a>
+      <a class="nav-mail open-contact" href="#contatto" data-i18n="contact_cta">Contatti</a>
       <nav class="langs" aria-label="Lingua">
         <button type="button" class="lang" data-lang="it">IT</button>
         <button type="button" class="lang" data-lang="en">EN</button>
@@ -511,6 +528,7 @@
     <h1 class="headline" data-i18n="hero_head">Il quotidiano, navigato con calma.</h1>
     <div class="hero-ctas">
       <a class="btn btn-sunset" href="#flotta" data-i18n="hero_cta1">Prova le app</a>
+      <a class="btn btn-ghost open-contact" href="#contatto" data-i18n="ct_title">Scrivici</a>
     </div>
   </div>
 
@@ -620,14 +638,11 @@
       <li class="ship" data-app="lare">
         <div class="ship-id">
         <svg class="app-mark" viewBox="0 0 72 72" role="img" aria-label="Logo lare" xmlns="http://www.w3.org/2000/svg">
-          <defs><radialGradient id="lareGlow"><stop offset="0" stop-color="#E7B866" stop-opacity=".55"/><stop offset="1" stop-color="#C1913F" stop-opacity="0"/></radialGradient></defs>
+          <defs><radialGradient id="lareGlow"><stop offset="0" stop-color="#E7B866" stop-opacity=".6"/><stop offset="1" stop-color="#C1913F" stop-opacity="0"/></radialGradient></defs>
           <rect x="4" y="4" width="64" height="64" rx="17" fill="#10212E"/>
-          <circle class="la-glow" cx="36" cy="41" r="15" fill="url(#lareGlow)"/>
-          <circle class="mk-pop" cx="36" cy="41" r="6.2" fill="#C1913F"/>
-          <g fill="none" stroke="#EEF2F1" stroke-width="4" stroke-linecap="round">
-            <path class="mk-draw" pathLength="1" d="M24 54V35a12 12 0 0 1 24 0v19"/>
-            <path class="mk-draw d2" pathLength="1" d="M16 54h40"/>
-          </g>
+          <circle class="la-glow" cx="36" cy="43" r="13" fill="url(#lareGlow)"/>
+          <path class="mk-draw" pathLength="1" d="M22 53V35L36 22L50 35V53Z" fill="none" stroke="#EEF2F1" stroke-width="4" stroke-linejoin="round"/>
+          <rect class="mk-pop" x="31.5" y="38.5" width="9" height="9" rx="1.6" fill="#C1913F"/>
         </svg>
           <div>
             <h3 class="app-name nm">lare</h3>
@@ -644,6 +659,33 @@
             <span class="store-tx"><span class="store-top" data-i18n="soon">presto</span><span class="store-name" data-i18n="store_web">Web app</span></span>
           </a>
           <a class="store-btn play" href="#" aria-disabled="true" tabindex="-1" aria-label="Play Store lare">
+            <span class="store-icon"><svg viewBox="0 0 24 26" aria-hidden="true"><path d="M2.5 1.2 14.8 13 2.5 24.8c-.5-.3-.8-.9-.8-1.6V2.8c0-.7.3-1.3.8-1.6Z" fill="#E8A867"/><path d="M2.5 1.2c.5-.3 1.1-.3 1.7.1l12.9 7.4-3.3 3.1L2.5 1.2Z" fill="#5BC8AC"/><path d="m17.1 8.7 3.6 2.1c1 .6 1 1.9 0 2.5l-3.7 2.1-3.3-3.1 3.4-3.6Z" fill="#F6C34D"/><path d="M2.5 24.8 13.8 13.3l3.3 3.1L5.1 24c-.9.5-1.9.5-2.6.8Z" fill="#E1604C"/></svg></span>
+            <span class="store-tx"><span class="store-top" data-i18n="soon">presto</span><span class="store-name">Play Store</span></span>
+          </a>
+        </div>
+      </li>
+      <li class="ship" data-app="teca">
+        <div class="ship-id">
+        <svg class="app-mark" viewBox="0 0 72 72" role="img" aria-label="Logo teca" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="4" width="64" height="64" rx="16" fill="#EDEFEC"/>
+          <rect class="mk-draw" pathLength="1" x="6.2" y="6.2" width="59.6" height="59.6" rx="13.8" fill="none" stroke="#C99A4E" stroke-width="4.4"/>
+          <g class="mk-pop"><path transform="translate(27.24 51.9) scale(.046)" fill="#0E1D2A" d="M232 -439V-171Q232 -143 245.5 -130.5Q259 -118 291 -118H356V0H268Q91 0 91 -172V-439H25V-554H91V-691H232V-554H356V-439Z"/></g>
+        </svg>
+          <div>
+            <h3 class="app-name nm">teca</h3>
+            <p class="app-desc" data-i18n="teca_desc">Apre pagine, libri, fumetti, tabelle e codice, al sicuro sul tuo dispositivo.</p>
+          </div>
+        </div>
+        <div class="ship-ctas">
+          <button type="button" class="store-btn try" data-try="teca" disabled>
+            <span class="store-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5.5" y="2" width="13" height="20" rx="3.2"/><path class="tri" d="M10.4 9.2v5.6l4.6-2.8z" fill="currentColor" stroke="none"/></svg></span>
+            <span class="store-tx"><span class="store-top" data-i18n="soon">presto</span><span class="store-name" data-i18n="try_name">Prova</span></span>
+          </button>
+          <a class="store-btn web" href="#" aria-disabled="true" tabindex="-1" aria-label="Web app teca">
+            <span class="store-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#E8A867" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><ellipse cx="12" cy="12" rx="4" ry="9.5"/><path d="M2.8 9h18.4M2.8 15h18.4"/></svg></span>
+            <span class="store-tx"><span class="store-top" data-i18n="soon">presto</span><span class="store-name" data-i18n="store_web">Web app</span></span>
+          </a>
+          <a class="store-btn play" href="#" aria-disabled="true" tabindex="-1" aria-label="Play Store teca">
             <span class="store-icon"><svg viewBox="0 0 24 26" aria-hidden="true"><path d="M2.5 1.2 14.8 13 2.5 24.8c-.5-.3-.8-.9-.8-1.6V2.8c0-.7.3-1.3.8-1.6Z" fill="#E8A867"/><path d="M2.5 1.2c.5-.3 1.1-.3 1.7.1l12.9 7.4-3.3 3.1L2.5 1.2Z" fill="#5BC8AC"/><path d="m17.1 8.7 3.6 2.1c1 .6 1 1.9 0 2.5l-3.7 2.1-3.3-3.1 3.4-3.6Z" fill="#F6C34D"/><path d="M2.5 24.8 13.8 13.3l3.3 3.1L5.1 24c-.9.5-1.9.5-2.6.8Z" fill="#E1604C"/></svg></span>
             <span class="store-tx"><span class="store-top" data-i18n="soon">presto</span><span class="store-name">Play Store</span></span>
           </a>
@@ -767,24 +809,16 @@
 </main>
 
 <footer data-navbg="#12161B" data-navtheme="dark">
-  <div class="wrap foot-row">
+  <div class="wrap foot-grid">
     <div class="foot-brand">
       <svg viewBox="300 85 220 335" aria-hidden="true"><path d="M475.937 98.7457L452.965 215.21L351.835 240.434Z" fill="#5A646E"/><path d="M452.945 215.214L351.845 240.423L408.472 267.511Z" fill="#4C565F"/><path d="M351.84 240.421L407.127 266.797L335.389 347.492Z" fill="#5A646E"/><path d="M438.972 261.011L452.957 215.21L491.352 298.816Z" fill="#525C66"/><path d="M335.397 347.455L377.479 344.597L459.711 301.475L438.972 261.011L335.397 347.455Z" fill="#48525B"/><path d="M335.386 347.489L438.972 261.011L452.961 215.198Z" fill="#6A747E"/><path d="M459.695 301.468L491.357 298.844L438.98 261.015Z" fill="#6A747E"/><path d="M311.404 363.14L392.687 408.599L381.125 357.818Z" fill="#CB763F"/><path d="M392.678 408.589L418.308 408.507L503.519 311.874L463.239 314.994L381.119 357.813L392.678 408.589Z" fill="#D07C49"/><path d="M507.958 359.386L503.521 311.871L418.301 408.507Z" fill="#C06A37"/></svg>
       <b class="nm">nautargo</b>
     </div>
     <div class="foot-links">
-      <a href="#flotta" data-i18n="nav_apps">Le app</a>
-      <a href="#cantiere" data-i18n="nav_yard">Cantiere</a>
-      <a href="#manifesto" data-i18n="nav_manifesto">Manifesto</a>
-      <a class="open-contact" href="#contatto" data-i18n="contact_cta">Scrivici</a>
+      <a class="open-contact" href="#contatto" data-i18n="contact_cta">Contatti</a>
       <a href="#" class="open-privacy" data-i18n="footer_privacy">Privacy</a>
     </div>
-    <nav class="langs" aria-label="Lingua">
-      <button type="button" class="lang" data-lang="it">IT</button>
-      <button type="button" class="lang" data-lang="en">EN</button>
-      <button type="button" class="lang" data-lang="es">ES</button>
-    </nav>
-    <span class="copy">© <span id="year">2026</span> nautargo - <span data-i18n="foot_nocookie">niente cookie di tracciamento</span></span>
+    <span class="copy">© <span id="year">2026</span> <b class="nm">nautargo</b> - <span data-i18n="foot_nocookie">niente cookie di tracciamento</span></span>
   </div>
 </footer>
 
@@ -796,19 +830,19 @@
     <p data-i18n="pv_site">nautargo.com è una pagina statica: non usa cookie di profilazione e non raccoglie dati di navigazione.</p>
     <p data-i18n="pv_analytics">Statistiche: la pagina usa GoatCounter, uno strumento di analytics senza cookie e senza tracciamento personale. Nessun dato identificativo viene raccolto.</p>
     <p data-i18n="pv_apps">Le prove delle app in questa pagina sono le app stesse, caricate dai loro indirizzi solo quando premi Prova: quello che inserisci resta nel tuo browser e non viene inviato a nessun server.</p>
-    <div id="pv-newsletter" hidden>
-      <h4 data-i18n="pv_nl_title">Informativa newsletter (art. 13 GDPR)</h4>
+    <div id="pv-newsletter">
+      <h4 data-i18n="pv_nl_title">Informativa newsletter e contatti (art. 13 GDPR)</h4>
       <ul>
         <li><span data-i18n="pv_owner">Titolare del trattamento:</span> <span data-i18n-html="pv_owner2"><b class="nm">nautargo</b> (studio indipendente, sito nautargo.com).</span></li>
-        <li data-i18n="pv_data">Dati raccolti: solo l'indirizzo email.</li>
+        <li data-i18n="pv_data">Dati raccolti: l'indirizzo email per la newsletter; nome, email e messaggio quando scrivi dal modulo Contatti.</li>
         <li data-i18n-html="pv_purpose">Finalità: invio di aggiornamenti su <b class="nm">nautargo</b> e sulle sue app; risposta ai messaggi inviati dal form di contatto.</li>
-        <li data-i18n="pv_basis">Base giuridica: consenso esplicito (art. 6.1.a GDPR), revocabile in ogni momento.</li>
-        <li data-i18n="pv_recipients">Responsabile del trattamento: Brevo (Sendinblue SAS, Francia), server nell'UE, per newsletter e messaggi di contatto. Trasferimenti extra UE non previsti.</li>
-        <li data-i18n="pv_retention">Conservazione: fino alla revoca del consenso o alla disiscrizione.</li>
+        <li data-i18n="pv_basis">Base giuridica: per la newsletter il consenso esplicito (art. 6.1.a GDPR), revocabile in ogni momento; per i messaggi la tua richiesta di ricevere una risposta (art. 6.1.b GDPR).</li>
+        <li data-i18n="pv_recipients">Responsabili del trattamento: Brevo (Sendinblue SAS, Francia), server nell'UE, per la newsletter; Web3Forms (Web3Creative, India) per recapitare i messaggi del modulo Contatti. Con Web3Forms i dati possono essere trattati fuori dall'UE, con le Clausole contrattuali standard approvate dalla Commissione europea.</li>
+        <li data-i18n="pv_retention">Conservazione: per la newsletter fino alla revoca del consenso o alla disiscrizione; i messaggi per il tempo necessario a rispondere, con una copia presso Web3Forms per al massimo 3 anni.</li>
         <li data-i18n="pv_rights">Diritti: accesso, rettifica, cancellazione, limitazione, opposizione, portabilità (artt. 15-22 GDPR).</li>
         <li data-i18n="pv_withdraw">Revoca: link "disiscriviti" presente in ogni email.</li>
         <li data-i18n="pv_complaint">Reclamo: Garante per la protezione dei dati personali.</li>
-        <li data-i18n="pv_optional">Il conferimento dell'email è facoltativo: senza, semplicemente non riceverai aggiornamenti.</li>
+        <li data-i18n="pv_optional">Il conferimento dei dati è facoltativo: senza email non riceverai aggiornamenti, e senza nome ed email non potremo risponderti.</li>
       </ul>
     </div>
   </div>
@@ -821,10 +855,11 @@
     <h3 id="contact-title" data-i18n="ct_title">Scrivici</h3>
     <p data-i18n="ct_desc">Un problema reale che merita un'app? Un pensiero su una delle app? Il messaggio arriva dritto in cabina.</p>
     <form id="contact-form" class="contact-form" novalidate>
-      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <input type="email" id="ct-email" name="EMAIL" required autocomplete="email" inputmode="email" data-i18n-ph="ct_email_ph" placeholder="La tua email" aria-label="Email">
-      <textarea id="ct-msg" name="MESSAGE" rows="5" required data-i18n-ph="ct_msg_ph" placeholder="Il tuo messaggio" aria-label="Messaggio"></textarea>
-      <p class="ct-note"><span data-i18n="ct_note">L'invio comporta la gestione dell'email da parte di nautargo al solo scopo di risponderti.</span> <a href="#" class="open-privacy" data-i18n="nl_privacy_link">Informativa privacy</a></p>
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="text" id="ct-name" name="name" required autocomplete="name" maxlength="80" data-i18n-ph="ct_name_ph" placeholder="Il tuo nome" aria-label="Nome" data-i18n-aria="ct_name_aria">
+      <input type="email" id="ct-email" name="email" required autocomplete="email" inputmode="email" data-i18n-ph="ct_email_ph" placeholder="La tua email" aria-label="Email">
+      <textarea id="ct-msg" name="message" rows="5" maxlength="4000" required data-i18n-ph="ct_msg_ph" placeholder="Il tuo messaggio" aria-label="Messaggio"></textarea>
+      <p class="ct-note"><span data-i18n-html="ct_note">Nome, email e messaggio servono solo a risponderti e arrivano a <b class="nm">nautargo</b> tramite Web3Forms.</span> <a href="#" class="open-privacy" data-i18n="nl_privacy_link">Informativa privacy</a></p>
       <button type="submit" class="btn btn-sunset" data-i18n="ct_send">Invia</button>
       <p class="form-msg" id="ct-form-msg" role="status" aria-live="polite"></p>
     </form>
@@ -842,10 +877,19 @@
       </a>
       <button type="button" class="try-close" id="try-close" aria-label="Chiudi" data-i18n-aria="try_close">×</button>
     </div>
-    <div class="phone">
-      <span class="island" aria-hidden="true"></span>
-      <div class="cover" id="try-cover" aria-hidden="true"><span class="nm" id="try-cover-nm">sero</span><span class="ld" data-i18n="try_loading">in arrivo</span></div>
-      <iframe id="try-frame" title="App in prova" allow="web-share; clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <div class="phone" id="try-phone">
+      <div class="dev">
+        <div class="dev-top" aria-hidden="true"><span class="cam"></span></div>
+        <div class="dev-screen">
+          <div class="cover" id="try-cover" aria-hidden="true"><span class="nm" id="try-cover-nm">sero</span><span class="ld" data-i18n="try_loading">in arrivo</span></div>
+          <iframe id="try-frame" title="App in prova" allow="web-share; clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="try-zoom" role="group" aria-label="Dimensione" data-i18n-aria="zoom_label">
+      <button type="button" id="zoom-out" aria-label="Rimpicciolisci" data-i18n-aria="zoom_out"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10"/></svg></button>
+      <output id="zoom-val">70%</output>
+      <button type="button" id="zoom-in" aria-label="Ingrandisci" data-i18n-aria="zoom_in"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M8 3v10"/></svg></button>
     </div>
     <p class="try-note" data-i18n="try_note">È l'app vera: quello che inserisci resta nel tuo browser.</p>
   </div>
@@ -860,18 +904,19 @@ const CONFIG = {
   sestanteWebAppUrl: 'https://sestante.nautargo.com',
   folioWebAppUrl: 'https://folio.nautargo.com',
   lareWebAppUrl: 'https://lare.nautargo.com',
+  tecaWebAppUrl: 'https://teca.nautargo.com',
   // Play Store: con '' il bottone resta spento con la scritta "presto"
-  seroPlayUrl: '', sestantePlayUrl: '', folioPlayUrl: '', larePlayUrl: '',
+  seroPlayUrl: '', sestantePlayUrl: '', folioPlayUrl: '', larePlayUrl: '', tecaPlayUrl: '',
   stripeTipUrl: 'https://donate.stripe.com/cNi00j0R5cxCeOgc1mbbG00',
-  contactFormAction: '',               // Brevo: URL d'azione del form di contatto
+  web3formsKey: '18216597-9e6e-4add-9aba-15fc4d99e73c',  // modulo Contatti: chiave Web3Forms (è pubblica per natura, rimanda solo alla casella di destinazione)
   goatCounterCode: 'nautargo'
 };
 
 const I18N = {
   it: {
     title: 'nautargo - il quotidiano, navigato con calma',
-    meta_desc: 'nautargo è un cantiere di una persona: app piccole e calme che fanno una cosa sola e tengono i dati sul tuo dispositivo. Sero, Sestante, folio e lare sono già in mare: provale nel browser.',
-    nav_apps: 'Le app', nav_yard: 'Cantiere', nav_manifesto: 'Manifesto', nav_news: 'Novità', contact_cta: 'Scrivici',
+    meta_desc: 'nautargo è un cantiere di una persona: app piccole e calme che fanno una cosa sola e tengono i dati sul tuo dispositivo. Sero, Sestante, folio, lare e teca sono già in mare: provale nel browser.',
+    contact_cta: 'Contatti',
     hero_head: 'Il quotidiano, navigato con calma.',
     hero_cta1: 'Prova le app', hero_cue: 'Vai alle app',
     flotta_eyebrow: 'La flotta', flotta_title: 'Già in navigazione.',
@@ -880,9 +925,10 @@ const I18N = {
     sestante_desc: 'Le finanze personali con buste e traguardi, senza banca collegata né cloud.',
     folio_desc: 'Note in Markdown, ordinate in volumi e capitoli, che restano sul tuo dispositivo.',
     lare_desc: 'Quanto costa davvero la casa che vuoi, con tutti i conti in chiaro.',
+    teca_desc: 'Apre pagine, libri, fumetti, tabelle e codice, al sicuro sul tuo dispositivo.',
     soon: 'presto', try_top: 'Senza installare', try_name: 'Prova', web_top: 'Apri e installa', store_web: 'Web app', store_get: 'Scarica su',
     try_full: 'Apri a schermo intero', try_close: 'Chiudi', try_loading: 'in arrivo',
-    try_note: "È l'app vera: quello che inserisci resta nel tuo browser.",
+    try_note: "È l'app vera: quello che inserisci resta nel tuo browser.", zoom_label: 'Dimensione', zoom_in: 'Ingrandisci', zoom_out: 'Rimpicciolisci',
     cant_eyebrow: 'Il cantiere', cant_title: 'Quello che sta prendendo forma.',
     cant_lead: 'Ogni app nasce da un problema incontrato per davvero. Queste sono le prossime.',
     pill_yard: 'In cantiere', pill_open: 'Approdo aperto',
@@ -910,31 +956,31 @@ const I18N = {
     tips_cta: 'Lascia una tip',
     footer_privacy: 'Privacy', foot_nocookie: 'niente cookie di tracciamento',
     ct_title: 'Scrivici', ct_desc: "Un problema reale che merita un'app? Un pensiero su una delle app? Il messaggio arriva dritto in cabina.",
-    ct_email_ph: 'La tua email', ct_msg_ph: 'Il tuo messaggio', ct_send: 'Invia', ct_sending: 'Invio in corso…',
+    ct_name_ph: 'Il tuo nome', ct_name_aria: 'Nome', ct_email_ph: 'La tua email', ct_msg_ph: 'Il tuo messaggio', ct_send: 'Invia', ct_sending: 'Invio in corso…',
     ct_ok: 'Messaggio inviato. Ti risponderemo appena possibile.',
-    ct_err_email: 'Inserisci un indirizzo email valido.', ct_err_msg: 'Scrivi un messaggio prima di inviare.',
-    ct_err_config: 'Form non ancora attivo: manca la configurazione Brevo.', ct_err_generic: 'Qualcosa è andato storto. Riprova tra poco.',
-    ct_note: "L'invio comporta la gestione dell'email da parte di nautargo al solo scopo di risponderti.",
+    ct_err_email: 'Inserisci un indirizzo email valido.', ct_err_msg: 'Scrivi un messaggio prima di inviare.', ct_err_name: 'Scrivi il tuo nome.',
+    ct_err_config: 'Modulo non ancora attivo.', ct_err_generic: 'Messaggio non inviato: controlla la connessione e riprova tra poco.', ct_err_fast: 'Un attimo: rileggi il messaggio e premi di nuovo Invia tra qualche secondo.',
+    ct_note: 'Nome, email e messaggio servono solo a risponderti e arrivano a <b class="nm">nautargo</b> tramite Web3Forms.',
     pv_title: 'Privacy',
     pv_site: 'nautargo.com è una pagina statica: non usa cookie di profilazione e non raccoglie dati di navigazione.',
     pv_analytics: 'Statistiche: la pagina usa GoatCounter, uno strumento di analytics senza cookie e senza tracciamento personale. Nessun dato identificativo viene raccolto.',
     pv_apps: 'Le prove delle app in questa pagina sono le app stesse, caricate dai loro indirizzi solo quando premi Prova: quello che inserisci resta nel tuo browser e non viene inviato a nessun server.',
-    pv_nl_title: 'Informativa newsletter (art. 13 GDPR)',
+    pv_nl_title: 'Informativa newsletter e contatti (art. 13 GDPR)',
     pv_owner: 'Titolare del trattamento:', pv_owner2: '<b class="nm">nautargo</b> (studio indipendente, sito nautargo.com).',
-    pv_data: "Dati raccolti: solo l'indirizzo email.",
+    pv_data: "Dati raccolti: l'indirizzo email per la newsletter; nome, email e messaggio quando scrivi dal modulo Contatti.",
     pv_purpose: 'Finalità: invio di aggiornamenti su <b class="nm">nautargo</b> e sulle sue app; risposta ai messaggi inviati dal form di contatto.',
-    pv_basis: 'Base giuridica: consenso esplicito (art. 6.1.a GDPR), revocabile in ogni momento.',
-    pv_recipients: "Responsabile del trattamento: Brevo (Sendinblue SAS, Francia), server nell'UE, per newsletter e messaggi di contatto. Trasferimenti extra UE non previsti.",
-    pv_retention: 'Conservazione: fino alla revoca del consenso o alla disiscrizione.',
+    pv_basis: 'Base giuridica: per la newsletter il consenso esplicito (art. 6.1.a GDPR), revocabile in ogni momento; per i messaggi la tua richiesta di ricevere una risposta (art. 6.1.b GDPR).',
+    pv_recipients: "Responsabili del trattamento: Brevo (Sendinblue SAS, Francia), server nell'UE, per la newsletter; Web3Forms (Web3Creative, India) per recapitare i messaggi del modulo Contatti. Con Web3Forms i dati possono essere trattati fuori dall'UE, con le Clausole contrattuali standard approvate dalla Commissione europea.",
+    pv_retention: 'Conservazione: per la newsletter fino alla revoca del consenso o alla disiscrizione; i messaggi per il tempo necessario a rispondere, con una copia presso Web3Forms per al massimo 3 anni.',
     pv_rights: 'Diritti: accesso, rettifica, cancellazione, limitazione, opposizione, portabilità (artt. 15-22 GDPR).',
     pv_withdraw: 'Revoca: link "disiscriviti" presente in ogni email.',
     pv_complaint: 'Reclamo: Garante per la protezione dei dati personali.',
-    pv_optional: "Il conferimento dell'email è facoltativo: senza, semplicemente non riceverai aggiornamenti."
+    pv_optional: "Il conferimento dei dati è facoltativo: senza email non riceverai aggiornamenti, e senza nome ed email non potremo risponderti."
   },
   en: {
     title: 'nautargo - everyday life, calmly navigated',
-    meta_desc: 'nautargo is a one-person shipyard: small, calm apps that do one thing and keep your data on your device. Sero, Sestante, folio and lare are already at sea: try them in your browser.',
-    nav_apps: 'The apps', nav_yard: 'Shipyard', nav_manifesto: 'Manifesto', nav_news: 'Updates', contact_cta: 'Get in touch',
+    meta_desc: 'nautargo is a one-person shipyard: small, calm apps that do one thing and keep your data on your device. Sero, Sestante, folio, lare and teca are already at sea: try them in your browser.',
+    contact_cta: 'Contact',
     hero_head: 'Everyday life, calmly navigated.',
     hero_cta1: 'Try the apps', hero_cue: 'Go to the apps',
     flotta_eyebrow: 'The fleet', flotta_title: 'Already under sail.',
@@ -943,9 +989,10 @@ const I18N = {
     sestante_desc: 'Personal finances with envelopes and goals, no bank link and no cloud.',
     folio_desc: 'Markdown notes, organised in volumes and chapters, that stay on your device.',
     lare_desc: 'What the home you want really costs, with every figure in plain sight.',
+    teca_desc: 'Opens pages, books, comics, tables and code, safely on your device.',
     soon: 'soon', try_top: 'No install', try_name: 'Try it', web_top: 'Open and install', store_web: 'Web app', store_get: 'Get it on',
     try_full: 'Open full screen', try_close: 'Close', try_loading: 'loading',
-    try_note: "It's the real app: what you enter stays in your browser.",
+    try_note: "It's the real app: what you enter stays in your browser.", zoom_label: 'Size', zoom_in: 'Zoom in', zoom_out: 'Zoom out',
     cant_eyebrow: 'The shipyard', cant_title: 'What is taking shape.',
     cant_lead: 'Every app starts from a problem met for real. These are the next ones.',
     pill_yard: 'In the shipyard', pill_open: 'Open harbour',
@@ -973,31 +1020,31 @@ const I18N = {
     tips_cta: 'Leave a tip',
     footer_privacy: 'Privacy', foot_nocookie: 'no tracking cookies',
     ct_title: 'Get in touch', ct_desc: 'A real problem worth an app? A thought about one of the apps? Your message goes straight to the cabin.',
-    ct_email_ph: 'Your email', ct_msg_ph: 'Your message', ct_send: 'Send', ct_sending: 'Sending…',
+    ct_name_ph: 'Your name', ct_name_aria: 'Name', ct_email_ph: 'Your email', ct_msg_ph: 'Your message', ct_send: 'Send', ct_sending: 'Sending…',
     ct_ok: "Message sent. We'll get back to you as soon as possible.",
-    ct_err_email: 'Please enter a valid email address.', ct_err_msg: 'Write a message before sending.',
-    ct_err_config: 'Form not active yet: Brevo configuration is missing.', ct_err_generic: 'Something went wrong. Please try again shortly.',
-    ct_note: 'Sending implies nautargo handling your email for the sole purpose of replying.',
+    ct_err_email: 'Please enter a valid email address.', ct_err_msg: 'Write a message before sending.', ct_err_name: 'Please enter your name.',
+    ct_err_config: 'The form is not active yet.', ct_err_generic: 'Message not sent: check your connection and try again shortly.', ct_err_fast: 'Just a moment: read your message again and press Send in a few seconds.',
+    ct_note: 'Your name, email and message are used only to reply to you and reach <b class="nm">nautargo</b> through Web3Forms.',
     pv_title: 'Privacy',
     pv_site: 'nautargo.com is a static page: it uses no profiling cookies and collects no browsing data.',
     pv_analytics: 'Statistics: the page uses GoatCounter, a cookieless analytics tool with no personal tracking. No identifying data is collected.',
     pv_apps: 'The app trials on this page are the apps themselves, loaded from their own addresses only when you press Try it: what you enter stays in your browser and is not sent to any server.',
-    pv_nl_title: 'Newsletter privacy notice (art. 13 GDPR)',
+    pv_nl_title: 'Newsletter and contact privacy notice (art. 13 GDPR)',
     pv_owner: 'Data controller:', pv_owner2: '<b class="nm">nautargo</b> (independent studio, nautargo.com).',
-    pv_data: 'Data collected: email address only.',
+    pv_data: 'Data collected: your email address for the newsletter; your name, email and message when you write through the Contact form.',
     pv_purpose: 'Purpose: sending updates about <b class="nm">nautargo</b> and its apps; replying to messages sent via the contact form.',
-    pv_basis: 'Legal basis: explicit consent (art. 6.1.a GDPR), revocable at any time.',
-    pv_recipients: 'Data processor: Brevo (Sendinblue SAS, France), servers in the EU, for the newsletter and contact messages. No transfers outside the EU planned.',
-    pv_retention: 'Retention: until consent is withdrawn or you unsubscribe.',
+    pv_basis: 'Legal basis: for the newsletter, explicit consent (art. 6.1.a GDPR), revocable at any time; for messages, your request to receive a reply (art. 6.1.b GDPR).',
+    pv_recipients: 'Data processors: Brevo (Sendinblue SAS, France), servers in the EU, for the newsletter; Web3Forms (Web3Creative, India) to deliver messages from the Contact form. With Web3Forms, data may be processed outside the EU under the Standard Contractual Clauses approved by the European Commission.',
+    pv_retention: 'Retention: for the newsletter, until consent is withdrawn or you unsubscribe; messages for as long as needed to reply, with a copy kept by Web3Forms for up to 3 years.',
     pv_rights: 'Rights: access, rectification, erasure, restriction, objection, portability (arts. 15-22 GDPR).',
     pv_withdraw: 'Withdrawal: "unsubscribe" link included in every email.',
     pv_complaint: 'Complaints: Italian Data Protection Authority (Garante).',
-    pv_optional: "Providing your email is optional: without it, you simply won't receive updates."
+    pv_optional: "Providing your data is optional: without an email you won't receive updates, and without a name and email we can't reply to you."
   },
   es: {
     title: 'nautargo - lo cotidiano, navegado con calma',
-    meta_desc: 'nautargo es un astillero de una persona: apps pequeñas y tranquilas que hacen una sola cosa y guardan tus datos en tu dispositivo. Sero, Sestante, folio y lare ya están en el mar: pruébalas en el navegador.',
-    nav_apps: 'Las apps', nav_yard: 'Astillero', nav_manifesto: 'Manifiesto', nav_news: 'Novedades', contact_cta: 'Escríbenos',
+    meta_desc: 'nautargo es un astillero de una persona: apps pequeñas y tranquilas que hacen una sola cosa y guardan tus datos en tu dispositivo. Sero, Sestante, folio, lare y teca ya están en el mar: pruébalas en el navegador.',
+    contact_cta: 'Contacto',
     hero_head: 'Lo cotidiano, navegado con calma.',
     hero_cta1: 'Prueba las apps', hero_cue: 'Ir a las apps',
     flotta_eyebrow: 'La flota', flotta_title: 'Ya en navegación.',
@@ -1006,9 +1053,10 @@ const I18N = {
     sestante_desc: 'Finanzas personales con sobres y metas, sin banco conectado ni nube.',
     folio_desc: 'Notas en Markdown, ordenadas en volúmenes y capítulos, que se quedan en tu dispositivo.',
     lare_desc: 'Cuánto cuesta de verdad la casa que quieres, con todas las cuentas a la vista.',
+    teca_desc: 'Abre páginas, libros, cómics, tablas y código, a salvo en tu dispositivo.',
     soon: 'pronto', try_top: 'Sin instalar', try_name: 'Pruébala', web_top: 'Abrir e instalar', store_web: 'Web app', store_get: 'Descárgalo en',
     try_full: 'Abrir a pantalla completa', try_close: 'Cerrar', try_loading: 'cargando',
-    try_note: 'Es la app real: lo que introduces se queda en tu navegador.',
+    try_note: 'Es la app real: lo que introduces se queda en tu navegador.', zoom_label: 'Tamaño', zoom_in: 'Ampliar', zoom_out: 'Reducir',
     cant_eyebrow: 'El astillero', cant_title: 'Lo que está tomando forma.',
     cant_lead: 'Cada app nace de un problema encontrado de verdad. Estas son las próximas.',
     pill_yard: 'En el astillero', pill_open: 'Puerto abierto',
@@ -1036,26 +1084,26 @@ const I18N = {
     tips_cta: 'Dejar una propina',
     footer_privacy: 'Privacidad', foot_nocookie: 'sin cookies de rastreo',
     ct_title: 'Escríbenos', ct_desc: '¿Un problema real que merece una app? ¿Una idea sobre alguna de las apps? Tu mensaje llega directo a la cabina.',
-    ct_email_ph: 'Tu email', ct_msg_ph: 'Tu mensaje', ct_send: 'Enviar', ct_sending: 'Enviando…',
+    ct_name_ph: 'Tu nombre', ct_name_aria: 'Nombre', ct_email_ph: 'Tu email', ct_msg_ph: 'Tu mensaje', ct_send: 'Enviar', ct_sending: 'Enviando…',
     ct_ok: 'Mensaje enviado. Te responderemos lo antes posible.',
-    ct_err_email: 'Introduce una dirección de email válida.', ct_err_msg: 'Escribe un mensaje antes de enviar.',
-    ct_err_config: 'Formulario aún no activo: falta la configuración de Brevo.', ct_err_generic: 'Algo salió mal. Inténtalo de nuevo en un momento.',
-    ct_note: 'El envío implica que nautargo gestione tu email con el único fin de responderte.',
+    ct_err_email: 'Introduce una dirección de email válida.', ct_err_msg: 'Escribe un mensaje antes de enviar.', ct_err_name: 'Escribe tu nombre.',
+    ct_err_config: 'El formulario aún no está activo.', ct_err_generic: 'Mensaje no enviado: revisa la conexión e inténtalo de nuevo en un momento.', ct_err_fast: 'Un momento: relee el mensaje y pulsa Enviar de nuevo en unos segundos.',
+    ct_note: 'Tu nombre, email y mensaje sirven solo para responderte y llegan a <b class="nm">nautargo</b> a través de Web3Forms.',
     pv_title: 'Privacidad',
     pv_site: 'nautargo.com es una página estática: no usa cookies de perfilado ni recoge datos de navegación.',
     pv_analytics: 'Estadísticas: la página usa GoatCounter, una herramienta de analítica sin cookies y sin rastreo personal. No se recogen datos identificativos.',
     pv_apps: 'Las pruebas de las apps en esta página son las propias apps, cargadas desde sus direcciones solo cuando pulsas Pruébala: lo que introduces se queda en tu navegador y no se envía a ningún servidor.',
-    pv_nl_title: 'Aviso de privacidad del boletín (art. 13 RGPD)',
+    pv_nl_title: 'Aviso de privacidad del boletín y del contacto (art. 13 RGPD)',
     pv_owner: 'Responsable del tratamiento:', pv_owner2: '<b class="nm">nautargo</b> (estudio independiente, nautargo.com).',
-    pv_data: 'Datos recogidos: solo la dirección de email.',
+    pv_data: 'Datos recogidos: la dirección de email para el boletín; nombre, email y mensaje cuando escribes desde el formulario de Contacto.',
     pv_purpose: 'Finalidad: envío de novedades sobre <b class="nm">nautargo</b> y sus apps; respuesta a los mensajes enviados desde el formulario de contacto.',
-    pv_basis: 'Base jurídica: consentimiento explícito (art. 6.1.a RGPD), revocable en cualquier momento.',
-    pv_recipients: 'Encargado del tratamiento: Brevo (Sendinblue SAS, Francia), servidores en la UE, para el boletín y los mensajes de contacto. No se prevén transferencias fuera de la UE.',
-    pv_retention: 'Conservación: hasta la revocación del consentimiento o la baja.',
+    pv_basis: 'Base jurídica: para el boletín, el consentimiento explícito (art. 6.1.a RGPD), revocable en cualquier momento; para los mensajes, tu solicitud de recibir una respuesta (art. 6.1.b RGPD).',
+    pv_recipients: 'Encargados del tratamiento: Brevo (Sendinblue SAS, Francia), servidores en la UE, para el boletín; Web3Forms (Web3Creative, India) para entregar los mensajes del formulario de Contacto. Con Web3Forms los datos pueden tratarse fuera de la UE, con las Cláusulas contractuales tipo aprobadas por la Comisión Europea.',
+    pv_retention: 'Conservación: para el boletín, hasta la revocación del consentimiento o la baja; los mensajes, el tiempo necesario para responder, con una copia en Web3Forms durante un máximo de 3 años.',
     pv_rights: 'Derechos: acceso, rectificación, supresión, limitación, oposición, portabilidad (arts. 15-22 RGPD).',
     pv_withdraw: 'Revocación: enlace "darse de baja" incluido en cada email.',
     pv_complaint: 'Reclamación: autoridad de protección de datos competente.',
-    pv_optional: 'Facilitar el email es opcional: sin él, simplemente no recibirás novedades.'
+    pv_optional: 'Facilitar los datos es opcional: sin email no recibirás novedades, y sin nombre y email no podremos responderte.'
   }
 };
 
@@ -1114,7 +1162,6 @@ function initCtas(){
   document.getElementById('ig-link').href = CONFIG.instagramUrl;
   const showForm = CONFIG.newsChannel === 'form';
   document.getElementById('news-form').hidden = !showForm;
-  document.getElementById('pv-newsletter').hidden = !showForm;
 }
 
 /* ---------- Prova: l'app vera in un telefono, caricata solo al primo tocco su Prova ---------- */
@@ -1128,6 +1175,7 @@ function openTry(app){
   document.getElementById('try-full').href = url;
   if(tryFrame.dataset.app !== app){ tryout.classList.remove('live'); tryFrame.dataset.app = app; tryFrame.src = url; }
   tryout.hidden = false;
+  setK(tryK || kFit());
   document.documentElement.classList.add('locked');
   document.getElementById('try-close').focus();
 }
@@ -1137,6 +1185,21 @@ function closeTry(){
   if(tryLast) tryLast.focus();
 }
 let tryLast = null;
+/* Dimensione del telefono: all'apertura la più grande che entra nella finestra, poi + e - a passi del 10% */
+const tryPhone = document.getElementById('try-phone'), zoomVal = document.getElementById('zoom-val');
+const zoomIn = document.getElementById('zoom-in'), zoomOut = document.getElementById('zoom-out');
+let tryK = 0;
+function kFit(){ return Math.floor(Math.min(1, (innerHeight - 220) / 844, (innerWidth - 64) / 390) * 20) / 20; }
+function setK(k){
+  const max = Math.max(.3, kFit()), min = Math.min(.5, max);
+  tryK = Math.min(max, Math.max(min, Math.round(k * 100) / 100));
+  tryPhone.style.setProperty('--k', tryK);
+  zoomVal.textContent = Math.round(tryK * 100) + '%';
+  zoomOut.disabled = tryK <= min; zoomIn.disabled = tryK >= max;
+}
+zoomOut.addEventListener('click', () => setK(Math.ceil(tryK * 10 - .001) / 10 - .1));
+zoomIn.addEventListener('click', () => setK(Math.floor(tryK * 10 + .001) / 10 + .1));
+window.addEventListener('resize', () => { if(!tryout.hidden) setK(tryK); }, {passive:true});
 tryFrame.addEventListener('load', () => { if(tryFrame.getAttribute('src')) tryout.classList.add('live'); });
 document.getElementById('try-close').addEventListener('click', closeTry);
 tryout.addEventListener('click', e => { if(e.target === tryout) closeTry(); });
@@ -1190,7 +1253,7 @@ const ctOverlay = document.getElementById('contact-overlay');
 let lastFocus = null, ctOpenedAt = 0;
 function openPrivacy(){ lastFocus = document.activeElement; overlay.hidden=false; document.getElementById('privacy-close').focus(); }
 function closePrivacy(){ overlay.hidden=true; if(lastFocus) lastFocus.focus(); }
-function openContact(){ lastFocus = document.activeElement; ctOverlay.hidden=false; ctOpenedAt = Date.now(); document.getElementById('ct-email').focus(); }
+function openContact(){ lastFocus = document.activeElement; ctOverlay.hidden=false; ctOpenedAt = Date.now(); document.getElementById('ct-name').focus(); }
 function closeContact(){ ctOverlay.hidden=true; if(lastFocus) lastFocus.focus(); }
 document.querySelectorAll('.open-privacy').forEach(a => a.addEventListener('click', e => { e.preventDefault(); openPrivacy(); }));
 document.querySelectorAll('.open-contact').forEach(a => a.addEventListener('click', e => { e.preventDefault(); openContact(); }));
@@ -1201,24 +1264,32 @@ ctOverlay.addEventListener('click', e => { if(e.target===ctOverlay) closeContact
 trapFocus(overlay); trapFocus(ctOverlay); trapFocus(tryout);
 document.addEventListener('keydown', e => { if(e.key==='Escape'){ if(!overlay.hidden) closePrivacy(); if(!ctOverlay.hidden) closeContact(); if(!tryout.hidden) closeTry(); } });
 
-/* Form contatto via Brevo: honeypot + tempo minimo di compilazione (3 s) */
+/* Form contatto via Web3Forms: casella trappola + tempo minimo di compilazione (4 s), poi invio con risposta verificata.
+   Ogni esito viene mostrato: verde se il messaggio è partito, rosso se no (i campi restano compilati). */
 const ctForm = document.getElementById('contact-form');
 ctForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const d = I18N[currentLang], msg = document.getElementById('ct-form-msg');
-  const email = document.getElementById('ct-email'), text = document.getElementById('ct-msg');
+  const name = document.getElementById('ct-name'), email = document.getElementById('ct-email'), text = document.getElementById('ct-msg');
   const hp = ctForm.querySelector('.hp'), btn = ctForm.querySelector('button[type="submit"]');
-  if(hp.value || (Date.now() - ctOpenedAt) < 3000){ msg.textContent = d.ct_ok; return; }
-  if(!email.value || !email.checkValidity()){ msg.textContent = d.ct_err_email; email.focus(); return; }
-  if(!text.value.trim()){ msg.textContent = d.ct_err_msg; text.focus(); return; }
-  if(!CONFIG.contactFormAction){ msg.textContent = d.ct_err_config; return; }
-  btn.disabled = true; msg.textContent = d.ct_sending;
+  const say = (t, ko) => { msg.textContent = t; msg.classList.toggle('ko', !!ko); };
+  if(hp.checked){ say(d.ct_ok); return; }                      // solo i bot spuntano la casella invisibile
+  if(!name.value.trim()){ say(d.ct_err_name, 1); name.focus(); return; }
+  if(!email.value || !email.checkValidity()){ say(d.ct_err_email, 1); email.focus(); return; }
+  if(!text.value.trim()){ say(d.ct_err_msg, 1); text.focus(); return; }
+  if((Date.now() - ctOpenedAt) < 4000){ say(d.ct_err_fast, 1); return; }
+  if(!CONFIG.web3formsKey){ say(d.ct_err_config, 1); return; }
+  btn.disabled = true; say(d.ct_sending);
   try{
-    const fd = new FormData();
-    fd.append('EMAIL', email.value); fd.append('email', email.value); fd.append('MESSAGE', text.value.trim());
-    await fetch(CONFIG.contactFormAction, { method:'POST', body:fd, mode:'no-cors' });
-    msg.textContent = d.ct_ok; email.value=''; text.value='';
-  }catch(err){ msg.textContent = d.ct_err_generic; }
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method:'POST', headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
+      body: JSON.stringify({ access_key: CONFIG.web3formsKey, subject: 'Nuovo messaggio da nautargo.com', from_name: 'nautargo.com',
+        name: name.value.trim(), email: email.value.trim(), replyto: email.value.trim(), message: text.value.trim(), lingua: currentLang, botcheck: false })
+    });
+    const out = await res.json().catch(() => ({}));
+    if(!res.ok || !out.success) throw new Error(out.message || res.status);
+    say(d.ct_ok); name.value = ''; email.value = ''; text.value = '';
+  }catch(err){ say(d.ct_err_generic, 1); }
   finally{ btn.disabled = false; }
 });
 
